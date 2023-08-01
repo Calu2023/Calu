@@ -1,0 +1,28 @@
+.btn_delete {
+  display: flex;
+  justify-content: center;
+}
+.card p {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+.image {
+  text-align: center;
+  margin: 20px 0px 5px 0px;
+}
+.title {
+  color: white;
+  text-align: center;
+  margin: 10px 0px 0px 0px;
+}
+
+.card_btn {
+  text-align: center;
+  margin-bottom: 50px;
+}
+@media (max-width: 1024px) {
+  .title {
+    margin: 0px;
+  }
+}

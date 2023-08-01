@@ -1,0 +1,82 @@
+.contact_button_ctn {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  justify-content: center;
+  bottom: 0;
+  right: 0;
+  margin: 0 30px 80px 0;
+  z-index: 1;
+  cursor: pointer;
+  border-radius: 50px;
+  background: linear-gradient(transparent, rgba(4, 25, 88, 0.6) 0%) top,
+    linear-gradient(rgba(4, 25, 88, 0.6) 100%, transparent) bottom,
+    linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) top,
+    linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) bottom;
+  background-size: 100% 49.05%, 100% 51%;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(1px);
+}
+.contact_ctn {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact_ctn button {
+  cursor: pointer;
+}
+.text_hover_ctn {
+  background: linear-gradient(transparent, rgba(4, 25, 88, 0.6) 0%) top,
+    linear-gradient(rgba(4, 25, 88, 0.6) 100%, transparent) bottom;
+
+  background-size: 100% 49.05%, 100% 51%;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(3px);
+  border-radius: 50px;
+  position: relative;
+  right: 350px;
+  bottom: 130px;
+  width: 310px;
+  height: 80px;
+}
+.text_hover {
+  color: #eb39d9;
+  display: flex;
+  position: relative;
+  top: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact_button {
+  display: flex;
+  margin-right: 10px;
+  align-items: center;
+}
+.contact_logo {
+  width: 90px;
+  margin: 15px 0 10px 15px;
+}
+
+@media (max-width: 767px) {
+  .contact_logo {
+    width: 60px;
+    margin: 15px 0 10px 10px;
+  }
+  .contact_button_ctn {
+    margin: 0 20px 50px 0;
+    width: 90px;
+    height: 90px;
+    border-radius: 30px;
+  }
+  .arrow_up {
+    right: 50px;
+    margin-bottom: 170px;
+    bottom: -25px;
+    width: 40px;
+    width: 30px;
+  }
+  .text_hover {
+    top: 20px;
+  }
+}

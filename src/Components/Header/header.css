@@ -1,0 +1,246 @@
+.navBar {
+  width: 100%;
+  height: 18%;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+}
+
+.header_items {
+  margin: 0 2% 0 5.5%;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.logoCalu {
+  height: 11rem;
+  margin: 10px 100px 0 0;
+}
+
+.navBar nav {
+  display: flex;
+  margin-right: 35px;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 10px;
+  width: 90%;
+  height: 120px;
+}
+
+.links_ctn {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-right: 100px;
+  text-decoration: none;
+}
+
+.links a {
+  text-decoration: none;
+  color: white;
+  height: 31px;
+  font-size: 1.5rem;
+  margin-right: 5%;
+}
+
+.links a:hover {
+  font-size: 28px;
+  font-weight: bold;
+  color: #3af6ff;
+}
+
+.link {
+  display: none;
+}
+
+.bar {
+  display: none;
+}
+
+.admin-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.admin-btn {
+  background-color: transparent;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+.admin-dropdown {
+  position: absolute;
+  top: 100%;
+  right: -60px;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-dropdown a,
+.admin-dropdown button {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.admin-dropdown a:hover,
+.admin-dropdown button:hover {
+  background-color: #f1f1f1;
+}
+
+.links .cart-2 {
+  position: absolute;
+  right: 50px;
+}
+.links .carrito {
+  height: initial;
+  display: flex;
+  cursor: pointer;
+  width: 20px;
+  height: 50px;
+}
+
+.links .carrito .totalItems {
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  margin-left: 40px;
+  top: -20px;
+  text-align: center;
+  font-size: 15px;
+  width: 20px;
+  color: white;
+}
+
+@media (max-width: 900px) {
+  .links_ctn {
+    margin-top: 10px;
+    border: solid 2px rgb(206, 206, 206);
+    width: 90%;
+    height: 90%;
+    display: flex;
+    margin: 8px 0 0 0;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .line {
+    border: solid 1px rgb(206, 206, 206);
+  }
+
+  hr {
+    color: white;
+    width: 100%;
+    margin: 0;
+  }
+
+  .btn.bar {
+    display: block;
+    width: 5vh;
+    height: 5vh;
+    margin: 15px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .navBar nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .btn i {
+    background-color: #fff;
+    width: 4vh;
+    height: 5px;
+    margin: 6px;
+    transition: all 0.2s ease-in;
+    display: block;
+    border-radius: 5px;
+  }
+
+  .btn.cross i:nth-child(1) {
+    transform: translateY(200%) rotate(-135deg);
+  }
+
+  .btn.cross i:nth-child(2) {
+    opacity: 0;
+  }
+
+  .btn.cross i:nth-child(3) {
+    transform: translateY(-200%) rotate(135deg);
+    position: relative;
+    bottom: 2px;
+  }
+
+  .link.show,
+  .links {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+    height: 250px;
+    transform: translateY(40%);
+    opacity: 0.9;
+    z-index: 99;
+    overflow-y: auto;
+    transition: opacity 0.3s ease-in;
+    background: linear-gradient(transparent, rgba(4, 25, 88, 0.8) 10%) top,
+      linear-gradient(rgba(4, 25, 88, 0.8) 95%, transparent) bottom,
+      linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) top,
+      linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) bottom;
+    background-size: 100% 49.05%, 100% 51%, 100% calc(50% - 5px), 100% calc(50% - 5px), 100% 100%;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(1px);
+  }
+
+  .links {
+    transform: translateY(-200%);
+  }
+
+  .link.show a,
+  .links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    margin: 12px 10px;
+  }
+  .carrito {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .carrito img {
+    width: 50px;
+    margin-right: 50px;
+    cursor: pointer;
+  }
+  .carrito .totalItems {
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    margin-right: 30px;
+    bottom: -20px;
+    width: 20px;
+    text-align: center;
+    font-size: 20px;
+  }
+  .logoCalu {
+    height: 9rem;
+  }
+  .admin-dropdown {
+    right: -120px;
+  }
+}

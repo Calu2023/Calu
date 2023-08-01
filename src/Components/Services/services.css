@@ -1,0 +1,126 @@
+.navBar {
+  height: initial;
+}
+.services_container {
+  margin-bottom: 100px;
+  margin-top: 100px;
+}
+
+.scroll_ctn {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+section {
+  justify-content: center;
+  height: 100vh;
+  scroll-snap-align: start;
+}
+.srv_title {
+  display: flex;
+  justify-content: center;
+  color: #3af6ff;
+}
+
+.srv_cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.card_srv_cont {
+  display: flex;
+  justify-content: center;
+  margin: 80px 10px 30px 10px;
+  height: 100%;
+}
+.card_srv_cont_inv {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  margin: 30px 10px 30px 10px;
+  height: 450px;
+}
+.card_srv_info {
+  max-width: 1200px;
+  margin: 0 50px 0 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.card_srv_info_inv {
+  max-width: 1000px;
+  display: flex;
+  justify-content: center;
+  text-align: right;
+  flex-direction: column;
+  margin: 0 20px 5px 5px;
+}
+.srv_icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.srv_icon img {
+  height: 100%;
+  width: 500px;
+}
+.title_srv {
+  color: rgba(185, 4, 139, 0.9154228855721394);
+  font-size: 38px;
+  font-weight: bold;
+}
+.sub_d {
+  color: white;
+  font-weight: bold;
+  margin: 10px 0px 0px 0px;
+  font-size: 28px;
+}
+.des_1d,
+.des_2d {
+  font-size: 28px;
+  margin-top: 20px;
+  color: rgb(192, 192, 192);
+}
+.des_3d {
+  color: #3af6ff;
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+@media (max-width: 1024px) {
+  .srv_cards {
+    display: block;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .slider_cards {
+    margin-top: 100px;
+    width: 350px;
+  }
+}
+
+@media (max-width: 767px) {
+  .srv_title h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    margin-top: 150px;
+  }
+}
+
+@media (max-width: 386px) {
+  .srv_title h1 {
+    font-size: 30px;
+  }
+}
+
+.footer-services {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: 300px;
+}

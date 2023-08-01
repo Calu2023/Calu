@@ -1,0 +1,109 @@
+.onboarding {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  height: 100%;
+  margin-left: 7%;
+  flex-direction: row;
+}
+.onb_items {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.onboarding .logoOnboard {
+  display: none;
+}
+
+.onboarding .parrafo {
+  color: white;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  z-index: 2;
+  margin-right: 7%;
+}
+.onboarding .parrafo p {
+  text-align: justify;
+
+  margin-bottom: 0;
+}
+
+.onboarding h1 {
+  color: #eb39d9;
+
+  margin-bottom: 0;
+}
+
+.onboarding h2 {
+  color: #3af6ff;
+}
+
+.contactFlex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 5%;
+  position: relative;
+  bottom: 40vh;
+}
+
+.contact-btn {
+  background-image: linear-gradient(
+    rgba(58, 246, 255, 0.2) 30%,
+    rgba(185, 4, 139, 0.2) 60%
+  );
+  border-radius: 50px;
+  width: 15rem;
+  height: 6vh;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-btn a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+@media (min-width: 900px) {
+  .logo_ctn {
+    width: 1000px;
+  }
+  .onboarding .logoOnboard {
+    display: block;
+    position: relative;
+    right: 100px;
+    width: 120%;
+  }
+
+  .onboarding {
+    display: flex;
+    align-items: center;
+  }
+
+  .onboarding .parrafo {
+    position: static;
+    z-index: initial;
+    margin-right: 100px;
+  }
+
+  .onboarding .parrafo h1 {
+    font-size: 38px;
+    margin-bottom: 0;
+  }
+  .onboarding .parrafo p {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .onboarding .parrafo h1 {
+    font-size: 26px;
+    margin-bottom: 0;
+  }
+}

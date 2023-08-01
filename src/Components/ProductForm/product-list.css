@@ -1,0 +1,147 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.main-container h1 {
+  color: aqua;
+}
+.our-products {
+  color: #eb39d9;
+}
+
+.main-product {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0px 30px 0px;
+  border-radius: 30% 0% 30% 0%;
+  width: 100%;
+  position: relative;
+  transition: transform 0.5s ease;
+}
+
+.product-inner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  perspective: 1000px;
+  transition: transform 0.5s;
+}
+
+.flipped .product-inner {
+  transform: rotateY(180deg);
+  /* Rotar la tarjeta 180 grados en el eje Y cuando esté volteada */
+}
+
+.product-front {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0px 30px 0px;
+  border-radius: 30% 0% 30% 0%;
+  width: 250px;
+  min-height: 250px;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
+}
+
+.product-back {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0px 30px 0px;
+  border-radius: 30% 0% 30% 0%;
+  width: 250px;
+  min-height: 250px;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
+  color: white;
+}
+
+.hidden {
+  display: none;
+  /* Oculta el contenido de la tarjeta que no está visible */
+}
+
+.product img {
+  border-radius: 10px;
+}
+
+.main-product img {
+  height: 150px;
+  width: 150px;
+}
+
+.main-product.flipped {
+  transform: rotateY(180deg);
+  /* Gira toda la tarjeta cuando está volteada */
+}
+
+.product-price .price {
+  color: rgba(185, 4, 139, 0.9154228855721394);
+  font-weight: 700;
+}
+
+.product-price .carrito-price {
+  color: #3294bc;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .main-product {
+    width: 50%;
+  }
+
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 992px) {
+  .main-product {
+    width: 30%;
+    display: block;
+  }
+}
+
+@keyframes rotateFlip {
+  0% {
+    transform: rotateY(0deg) scaleX(1);
+  }
+  50% {
+    transform: rotateY(90deg) scaleX(0.8);
+  }
+  100% {
+    transform: rotateY(0deg) scaleX(1);
+  }
+}
+
+.product-inner.flipped {
+  animation: rotateFlip 0.5s;
+}
+
+@keyframes rotateFlipReturn {
+  0% {
+    transform: rotateY(0deg) scaleX(1);
+  }
+  50% {
+    transform: rotateY(90deg) scaleX(0.8);
+  }
+  100% {
+    transform: rotateY(0deg) scaleX(1);
+  }
+}
+
+.product-inner:not(.flipped) {
+  animation: rotateFlipReturn 0.5s;
+}

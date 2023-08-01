@@ -1,0 +1,53 @@
+.container {
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+section {
+  flex: none;
+  justify-content: center;
+  height: 100vh;
+  scroll-snap-align: start;
+}
+.arrow_up {
+  position: fixed;
+  z-index: 99;
+  rotate: 90deg;
+  bottom: 0;
+  right: 75px;
+  margin-bottom: 230px;
+  width: 40px;
+  cursor: pointer;
+}
+
+.sub-first {
+  color: #eb39d9;
+  text-align: center;
+  line-height: 15px;
+}
+
+.sub-second {
+  color: white;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.text-first {
+  text-align: center;
+  margin-top: 40px; /* Ajusta el valor de margin-top según sea necesario */
+}
+
+.text-second {
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 40px; /* Ajusta el valor de margin-top según sea necesario */
+}
+
+.title-first-portafolio {
+  color: #3af6ff;
+  text-align: center;
+  padding: 0;
+  margin-top: 40px; /* Ajusta el valor de margin-top según sea necesario */
+}

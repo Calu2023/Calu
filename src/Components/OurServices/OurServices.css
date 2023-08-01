@@ -1,0 +1,54 @@
+.ourServices_text {
+  margin: 0 7% 0% 7%;
+}
+
+.text-description {
+  text-align: justify;
+  margin: 0% 0 0% 0%;
+  color: white;
+}
+.title-first-nuestros-servicios {
+  color: #3af6ff;
+  text-align: left;
+  margin: 3% 0 10px 0;
+}
+
+.icono-servicios {
+  width: 10vh;
+}
+.ourServices {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 100%;
+}
+
+.react-multi-carousel-dot-list {
+  display: none;
+}
+.text-icono-servicios {
+  font-weight: bold;
+}
+
+@media (min-width: 375px) {
+  .ctn-servicios {
+    overflow: hidden;
+    justify-content: flex-start;
+  }
+  .ourServices {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+  .ourServices_text {
+    margin: 50px 15% 0% 7%;
+  }
+
+  .ctn-servicios .nuestros-servicios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

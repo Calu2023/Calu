@@ -1,0 +1,26 @@
+  .payment-options {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .payment-option {
+    width: 200px;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .payment-option img {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .payment-option:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  

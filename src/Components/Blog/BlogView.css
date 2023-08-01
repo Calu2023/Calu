@@ -1,0 +1,160 @@
+.view {
+  display: flex;
+  justify-content: center;
+}
+.blogContainer {
+  display: flex;
+}
+.blogView-sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.blogTitle{
+  text-align: center;
+  color: aqua;
+}
+
+.mini-description {
+  font-size: 24px;
+}
+
+.blogCard {
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 80%;
+  color: white;
+  padding: 2rem;
+  row-gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.blogImg {
+  width: 50%;
+}
+.blogView .contact_ctn .arrow_up {
+  position: fixed;
+}
+.contact_ctn .arrow_up {
+  position: fixed;
+}
+.blogCard .blogText p {
+  font-size: 16px;
+}
+
+@media (min-width: 375px) {
+  .blogTitle {
+    font-size: 44px;
+    margin-top: 200px;
+    color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .blogContainer {
+    flex-wrap: wrap;
+  }
+  .blogCard {
+    width: 100%;
+    border-radius: 15px;
+  }
+  .blogImg {
+    margin-left: auto;
+    margin-right: auto;
+    width: 320px;
+    border-radius: 15px;
+  }
+  .date-tagContainer {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .date-tagContainer hr {
+    width: 100%;
+  }
+  .date-tags {
+    color: white;
+    width: 100%;
+  }
+
+  .ctn .CTN_ctn {
+    height: initial;
+  }
+  .ctn .CTN_ctn .CTN_title {
+    margin: 25px 0 25px;
+  }
+  .ctn .CTN_ctn .CTN_ctn2 p {
+    margin: 0;
+  }
+  .footer-blogView .footer_container {
+    position: relative;
+    z-index: 0;
+  }
+  .blogCard .youtubePlayer {
+    height: 200px;
+  }
+  .youtubePlayer iframe {
+    width: 100%;
+    height: auto;
+  }
+}
+@media (min-width: 900px) {
+  .blogImg {
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+  }
+  .blogContainer {
+    width: 80%;
+  }
+  .date-tagContainer {
+    justify-content: flex-start;
+    margin-left: 90px;
+  }
+  .lateralBar {
+    position: initial;
+  }
+  .youtubePlayer {
+    display: flex;
+    justify-content: center;
+    height: 200px;
+  }
+  .youtubePlayer iframe {
+    width: 100%;
+  }
+}
+@media (min-width: 1920px) {
+  .blogContainer {
+    flex-wrap: nowrap;
+    width: 40%;
+  }
+  .blogImg {
+    display: block;
+    margin: 0 auto;
+  }
+  .blogCard .blogText h2 {
+    text-align: center;
+    margin: 0;
+    font-size: larger;
+  }
+  .blogCard .youtubePlayer {
+    height: 300px;
+  }
+  .youtubePlayer iframe {
+    width: 600px;
+    height: 250px;
+  }
+  .lateralBar {
+    display: flex;
+    flex-direction: column;
+    max-width: 390px;
+    height: fit-content;
+    margin: 0 15px;
+  }
+  .blogTitle {
+    margin-right: 400px;
+  }
+}

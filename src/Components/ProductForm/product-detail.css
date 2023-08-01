@@ -1,0 +1,418 @@
+.main-detail-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    color: white;
+}
+
+.main-detail-container h2{
+    color: aqua;
+}
+
+.main-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    margin-top: 30px;
+    text-align: center;
+    padding: 20px;
+    width: 75%;
+    row-gap: 20px;
+    background: linear-gradient(rgba(58, 246, 255, 0.2) 30%,
+            rgba(185, 4, 139, 0.2) 60%);
+    box-shadow: 1px 2px 22px 6px rgba(87, 85, 85, 0.88);
+    -webkit-box-shadow: 1px 2px 22px 6px rgba(91, 84, 84, 0.88);
+    -moz-box-shadow: 1px 2px 22px 6px rgba(255, 255, 255, 0.88);
+}
+
+.title-tablet {
+    display: none;
+}
+
+.main-detail img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.main-detail .price-detail {
+    text-align: left;
+    margin-bottom: 0px;
+    font-weight: 700;
+}
+
+.main-detail .e-book {
+    text-align: left;
+    font-size: 14px;
+    margin-top: 0px;
+    font-weight: 500;
+}
+
+.main-detail hr {
+    opacity: .50;
+    border: 0.1px solid white;
+    width: 75%;
+}
+
+.buying {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+
+.img-container {
+    width: 100%;
+}
+
+.buying .price-p {
+    text-align: left;
+    margin-top: -5px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.buying button {
+    width: 200px;
+    height: 34px;
+    border-radius: 20px;
+    background-color: rgba(4, 25, 88, 0.6) ;
+    color: white;
+    outline: none;
+    border: none;
+    margin-left: 30px;
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+.download-button {
+    width: 200px;
+    height: 34px;
+    border-radius: 20px;
+    background-color: rgba(4, 25, 88, 0.6);
+    outline: none;
+    border: none;
+    margin-left: 30px;
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+.detail-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 20px;
+}
+
+.detail-content p {}
+
+.price-detail {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.star-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 0px;
+}
+
+.star-container img {
+    width: 15px;
+    height: 15px;
+}
+
+.star-container p {
+    font-size: 12px;
+}
+
+.extra {
+    display: none;
+
+}
+
+.disponibilidad {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.interaction {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+}
+
+.interaction-box {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.interaction-box p {
+    font-size: 12px;
+}
+
+.interaction-box img {
+    width: 15px;
+    height: 15px;
+}
+
+.book-description {
+    text-align: left;
+    width: 90%;
+}
+
+.book-description span {}
+
+.book-description .dropdown-button {
+    width: 100%;
+    height: 30px;
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+}
+
+.book-description .dropdown-button p {
+    font-size: 16px;
+    position: absolute;
+    top: -10px;
+    font-weight: 600;
+}
+
+.recomendation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.book-recomendation {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.book-recomendation .book-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.book {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.book img {
+    width: 20px;
+    height: 20px;
+}
+
+.title-autor {}
+
+.title-autor h4 {
+    font-size: 14px;
+}
+
+.title-autor h6 {
+    margin-top: -15px;
+}
+
+.type-price {
+    margin-top: -15px;
+}
+
+.type-price p:nth-child(1) {
+    font-weight: 500;
+}
+
+.type-price p:nth-child(2) {
+    margin-top: -10px;
+    font-weight: 700;
+}
+
+
+
+
+.book-recomendation .book-content {
+    width: 90%;
+    height: 120px;
+    background-color: beige;
+}
+
+.book p {
+    font-size: 12px;
+}
+
+.carrito-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: white;
+    background-color: rgba(4, 25, 88, 0.6);
+
+}
+
+@media (min-width: 768px) {
+    .main-detail {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 80%;
+    }
+
+    .detail-content {
+        width: 40%;
+    }
+
+    .img-container {
+        width: 40%;
+    }
+
+    .extra {
+        display: block;
+        width: 40%;
+    }
+
+    .title-mobile {
+        display: none;
+    }
+
+    .title-tablet {
+        display: block;
+    }
+
+    .disponibilidad {
+        margin-left: 35px;
+    }
+
+    .book-description {
+        text-align: left;
+    }
+
+    .interaction {
+        gap: 30px;
+    }
+
+    .interaction-box {}
+
+    .interaction-box img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .interaction-box p {
+        font-size: 14px;
+    }
+
+    .book-description {
+        width: 75%;
+    }
+
+    .book-recomendation .book-content {
+        width: 70%;
+        height: 200px;
+    }
+}
+
+@media (min-width: 992px) {
+    .main-detail {
+
+        width: 60%;
+        justify-content: space-around;
+        margin-bottom: 50px;
+
+    }
+
+    .img-container img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .detail-content {
+        row-gap: 20px;
+    }
+
+    .title-tablet h3 {
+        font-size: 26px;
+    }
+
+    .main-detail .price-detail {
+        font-size: 16px;
+    }
+
+    .main-detail .e-book {
+        font-size: 16px;
+    }
+
+    .buying .price-p {
+        font-size: 20px;
+    }
+
+    .star-container img {
+        width: 30px;
+        height: 30px;
+    }
+.star-container p {
+    font-size: 16px;
+}
+    .buying button {
+        width: 250px;
+        cursor: pointer;
+    }
+
+
+
+    .disponibilidad {
+        margin-left: -220px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .interaction-box p {
+        font-size: 16px;
+    }
+
+    .book-description span {
+        font-size: 20px;
+    }
+
+    .book-recomendation .book-content {
+        width: 75%;
+        min-height: 300px;
+    }
+
+    .title-autor h4 {
+        font-size: 20px;
+    }
+
+    .title-autor h6 {
+        font-size: 16px;
+    }
+
+    .recomendation h3 {
+        margin-bottom: 30px;
+    }
+
+
+    .type-price p:nth-child(1) {
+        font-size: 16px;
+    }
+
+    .type-price p:nth-child(2) {
+        font-size: 14px;
+    }
+}
