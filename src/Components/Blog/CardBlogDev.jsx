@@ -1,17 +1,20 @@
 // CardBlogDev.js
 import React from 'react';
 import logo from '../../images/logocalu.png';
+import CardNews from '../News/Card_news/Card_news';
+import './blog.css';
 
 const CardBlogDev = ({ deletePost, handlePostClick }) => {
   return (
     <div className='card-blog' onClick={() => handlePostClick(1)}>
-      <div className='blogImage'>
-        <img src={logo} alt='' />
-      </div>
+      <div className='blogImage'></div>
+      <CardNews
+        image={<img src={logo} alt='' width='50%' />}
+        description={'Lorem ipsum Lorem ipsum'}
+        title={<h2>Lorem ipsum.</h2>}
+      />
       <div className='cardHeaderblog'>
-        <div className='titleblog'>
-          <h2>Lorem ipsum.</h2>
-        </div>
+        <span>1/1/1</span>
         <div className='deleteblog'>
           <>
             <button
@@ -33,6 +36,7 @@ const CardBlogDev = ({ deletePost, handlePostClick }) => {
           </>
         </div>
       </div>
+      <div className='cardFooterblog'></div>
     </div>
   );
 };

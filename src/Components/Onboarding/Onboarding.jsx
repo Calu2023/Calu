@@ -8,21 +8,30 @@ import logoCalu from "../../images/logocalu.png";
 
 const Onboarding = () => {
   const [onboardinginfo, setOnboardinginfo] = useState([]);
-
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const getOnboarding = async () => {
       const OnboardingDoc = doc(db, "home", "Onboarding");
       const docSnapshot = await getDoc(OnboardingDoc);
       if (docSnapshot.exists()) {
         setOnboardinginfo(docSnapshot.data());
+        setLoading(false);
       }
     };
     getOnboarding();
   }, []);
-
+  const documentHeight = () => {
+    const doc = document.documentElement;
+    doc.style.setProperty("--doc-height", `${window.innerHeight}px`);
+  };
+  window.addEventListener("resize", documentHeight);
+  documentHeight();
+  if (loading) {
+    return <p>Cargando...</p>;
+  }
   return (
-    <div>
-      <div className="onboarding">
+    <div className="onboarding">
+      <div className="onb_items">
         <div className="parrafo">
           <h1>{onboardinginfo.title}</h1>
 

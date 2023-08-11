@@ -2,6 +2,17 @@
     display: flex;
     flex-wrap: wrap;
   }
+
+  .payment-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .title-payment{
+    color:aqua
+  }
   
   .payment-option {
     width: 200px;

@@ -1,7 +1,7 @@
-import React from 'react';
-import './slider.css';
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
+import React from "react";
+import "./slider.css";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 function Slider({ children }) {
   const responsive = {
@@ -20,18 +20,18 @@ function Slider({ children }) {
   };
 
   return (
-    <div className='carousel'>
+    <div className="carousel">
       <Carousel
-        containerClass='carousel-container'
+        containerClass="carousel-container"
         swipeable={true}
         draggable={true}
-        removeArrowOnDeviceType={['mobile', 'tablet']}
+        removeArrowOnDeviceType={["mobile", "tablet"]}
         infinite={true}
         responsive={responsive}
         showDots={true}
-        itemClass='carouselItem'
+        itemClass="carouselItem"
         autoplay={true}
-        autoplaySpeed={'4500'}
+        autoplaySpeed={"4500"}
       >
         {children.map((children, index) => {
           return <div key={index}>{children}</div>;

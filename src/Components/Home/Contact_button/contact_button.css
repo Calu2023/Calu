@@ -1,20 +1,21 @@
 .contact_button_ctn {
   position: absolute;
-  width: 130px;
-  height: 130px;
+  width: 90px;
+  height: 90px;
   justify-content: center;
   bottom: 0;
   right: 0;
   margin: 0 30px 80px 0;
   z-index: 1;
   cursor: pointer;
-  border-radius: 50px;
+  border-radius: 30px;
   background: linear-gradient(transparent, rgba(4, 25, 88, 0.6) 0%) top,
     linear-gradient(rgba(4, 25, 88, 0.6) 100%, transparent) bottom,
     linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) top,
     linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) bottom;
   background-size: 100% 49.05%, 100% 51%;
   background-repeat: no-repeat;
+  -webkit-backdrop-filter: blur(1px);
   backdrop-filter: blur(1px);
 }
 .contact_ctn {
@@ -31,11 +32,12 @@
 
   background-size: 100% 49.05%, 100% 51%;
   background-repeat: no-repeat;
+  -webkit-backdrop-filter: blur (3px);
   backdrop-filter: blur(3px);
   border-radius: 50px;
   position: relative;
   right: 350px;
-  bottom: 130px;
+  bottom: 110px;
   width: 310px;
   height: 80px;
 }
@@ -43,7 +45,7 @@
   color: #eb39d9;
   display: flex;
   position: relative;
-  top: 15px;
+  top: 20px;
   justify-content: center;
   align-items: center;
 }
@@ -54,29 +56,30 @@
   align-items: center;
 }
 .contact_logo {
-  width: 90px;
-  margin: 15px 0 10px 15px;
+  width: 65px;
+  margin: 12px 0 10px 10px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 844px) {
   .contact_logo {
-    width: 60px;
-    margin: 15px 0 10px 10px;
+    width: 50px;
+    margin: 10px 0 10px 7px;
   }
   .contact_button_ctn {
-    margin: 0 20px 50px 0;
-    width: 90px;
-    height: 90px;
-    border-radius: 30px;
+    margin: 0 20px 20px 0;
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
   }
   .arrow_up {
-    right: 50px;
-    margin-bottom: 170px;
+    right: 45px;
+    margin-bottom: 120px;
     bottom: -25px;
-    width: 40px;
-    width: 30px;
+
+    width: 25px;
   }
-  .text_hover {
-    top: 20px;
+
+  .text_hover_ctn {
+    display: none;
   }
 }

@@ -10,7 +10,7 @@ import yt_logo from "./icons/youtube.png";
 
 const Footer = () => {
   const [width, setWidth] = React.useState(window.innerWidth);
-  const breakpoint = 767;
+  const breakpoint = 1024;
   React.useEffect(() => {
     const handleResizeWindow = () => setWidth(window.innerWidth);
 
@@ -66,22 +66,22 @@ const Footer = () => {
           <div className="redes">
             <h1>REDES</h1>
             <div className="social_icons">
-              <a href="">
+              <a href="https://www.linkedin.com/company/calu-mktdigital/">
                 <img src={ld_logo} alt="linkedin" />
               </a>
-              <a href="">
+              <a href="https://www.facebook.com/profile.php?id=100090611090874">
                 <img src={fb_logo} alt="facebook" />
               </a>
-              <a href="">
+              <a href="https://www.instagram.com/calu.mktdigital/ ">
                 <img src={insta_logo} alt="instagram" />
               </a>
-              <a href="">
+              <a href="https://www.tiktok.com/@calumktdigital?is_from_webapp=1&sender_device=pc">
                 <img src={tk_logo} alt="tiktok" />
               </a>
-              <a href="">
+              <a href="https://open.spotify.com/user/31qdqqxbhaph6tshdgkoidsug6ae ">
                 <img src={sp_logo} alt="spotify" />
               </a>
-              <a href="">
+              <a href="https://youtube.com/@CaluMktdigital">
                 <img src={yt_logo} alt="youtube" />
               </a>
             </div>
@@ -134,20 +134,23 @@ const Footer = () => {
         <div className="redes">
           <h1>REDES</h1>
           <div className="social_icons">
-            <a href="">
+            <a href="https://www.linkedin.com/company/calu-mktdigital/">
               <img src={ld_logo} alt="linkedin" />
             </a>
-            <a href="">
+            <a href="https://www.facebook.com/profile.php?id=100090611090874">
               <img src={fb_logo} alt="facebook" />
             </a>
-            <a href="">
+            <a href="https://www.instagram.com/calu.mktdigital/">
               <img src={insta_logo} alt="instagram" />
             </a>
-            <a href="">
+            <a href="https://www.tiktok.com/@calumktdigital?is_from_webapp=1&sender_device=pc">
               <img src={tk_logo} alt="tiktok" />
             </a>
-            <a href="">
+            <a href="https://open.spotify.com/user/31qdqqxbhaph6tshdgkoidsug6ae">
               <img src={sp_logo} alt="spotify" />
+            </a>
+            <a href="https://youtube.com/@CaluMktdigital">
+              <img src={yt_logo} alt="youtube" />
             </a>
           </div>
         </div>

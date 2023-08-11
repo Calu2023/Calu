@@ -4,7 +4,7 @@ import { useState } from "react";
 import { doc, getDoc, updateDoc, setDoc } from "firebase/firestore";
 import { useEffect } from "react";
 import { db } from "../../firebase-config";
-
+import { Link } from "react-router-dom";
 const CTN = () => {
   const [ctninfo, setCtninfo] = useState([]);
 
@@ -25,7 +25,12 @@ const CTN = () => {
         <div className="edit">
           <h1 className="CTN_title">{ctninfo.title}</h1>
         </div>
-        <button className="ctn_button"> CONTACTANOS </button>
+        <button className="ctn_button">
+          <Link className="link_ctn" to={"/Contact"}>
+            {" "}
+            ¡Contáctanos!{" "}
+          </Link>{" "}
+        </button>
         <div className="ctn_p">
           <p> {ctninfo.t1}</p>
         </div>

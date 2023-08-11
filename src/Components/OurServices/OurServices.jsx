@@ -5,6 +5,7 @@ import { useState } from "react";
 import { doc, getDoc, collection, getDocs, query } from "firebase/firestore";
 import { useEffect } from "react";
 import { db } from "../../firebase-config";
+import { Link } from "react-router-dom";
 
 const OurServices = () => {
   const [ourServicesinfo, setOurServicesinfo] = useState([]);
@@ -34,7 +35,6 @@ const OurServices = () => {
     const service = await getServices();
 
     setServices(service.docs);
-    console.log(services);
   };
   ////////////////////////
   return (
@@ -54,8 +54,9 @@ const OurServices = () => {
         <div className="slider">
           <Slider>
             {services &&
-              services.map((services) => (
+              services.map((services, index) => (
                 <Card_our
+                  key={index}
                   image={
                     <img
                       className="icono-servicios"
@@ -65,11 +66,7 @@ const OurServices = () => {
                   }
                   title={services.data().title}
                   des={services.data().sub}
-                  btn={
-                    <a className=" button_portfolio" href="/services">
-                      Ver más
-                    </a>
-                  }
+                  btn={<Link className="button_portfolio" to={"/services"}>Ver más</Link>}
                 ></Card_our>
               ))}
           </Slider>

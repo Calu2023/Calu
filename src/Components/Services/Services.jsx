@@ -11,8 +11,10 @@ import { db, storage } from "../../firebase-config";
 import { ref } from "firebase/storage";
 import Contact_button from "../Home/Contact_button/Contact_button";
 import arrow_L from "../Home/icon_arrow_left.svg";
+import { useCustomContext } from "../../Hooks/Context/Context";
 
 const Services = () => {
+  const { cart, removeFromCart } = useCustomContext();
   const [width, setWidth] = React.useState(window.innerWidth);
   const breakpoint = 1024;
   React.useEffect(() => {
@@ -47,7 +49,7 @@ const Services = () => {
           <img className="arrow_up" src={arrow_L} />
         </button>
         <Contact_button />
-        <Header />;
+        <Header cartItem={cart} handleDelete={removeFromCart} />;
         <div className="services_container">
           <div className="srv_title">
             <h1>Nuestros Servicios</h1>
@@ -59,22 +61,47 @@ const Services = () => {
                   <div className="srv_cards" key={index}>
                     <div className="card_srv_cont">
                       <div className="card_srv_info">
-                        <div className="title_srv">{servicio.title}</div>
-                        <div className="sub_d">{servicio.sub}</div>
-                        <div className="des_1d">
-                          <div>{servicio.des_1}</div>
-                          <br />
-                          <div>{servicio.des_2}</div>
-                        </div>
-                        <div className="des_3d">{servicio.des_3}</div>
-                      </div>
-                      <div className="srv_icon">
-                        <div>
-                          <img
-                            src={servicio.img}
-                            alt={servicio.img}
-                            width="210px"
-                          />
+                        <div
+                          className={
+                            index % 2 == 0
+                              ? "card_srv_cont"
+                              : "card_srv_cont_inv"
+                          }
+                        >
+                          <div
+                            className={
+                              index % 2 == 0
+                                ? "card_srv_info"
+                                : "card_srv_info_inv"
+                            }
+                          >
+                            <div className="title_srv">
+                              <h1>{servicio.title}</h1>
+                            </div>
+                            <div className="sub_d">
+                              <h2>{servicio.sub}</h2>
+                            </div>
+                            <div className="des_1d">
+                              <p>{servicio.des_1}</p>
+                            </div>
+                            <br />
+                            <div className="des_2d">
+                              <p>{servicio.des_2}</p>
+                            </div>
+
+                            <div className="des_3d">
+                              <p>{servicio.des_3}</p>
+                            </div>
+                          </div>
+                          <div className="srv_icon">
+                            <div>
+                              <img
+                                src={servicio.img}
+                                alt={servicio.img}
+                                width="210px"
+                              />
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -100,7 +127,7 @@ const Services = () => {
         <img className="arrow_up" src={arrow_L} />
       </button>
       <Contact_button />
-      <Header />
+      <Header cartItem={cart} handleDelete={removeFromCart} />
       <div className="services_container" ref={firstSection}>
         <div className="srv_cards">
           <div className="srv_title">

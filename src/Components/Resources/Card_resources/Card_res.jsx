@@ -43,7 +43,7 @@ const Card_res = ({ title, description, button }) => {
         </div>
       </div>
 
-      <div className="title_news">{title}</div>
+      <div className="title_res">{title}</div>
     </div>
   );
 };

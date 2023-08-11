@@ -1,25 +1,22 @@
-.cartPage {
-  width: 100%;
-  height: calc(100vh - 80px);
-  display: grid;
-  place-items: center;
-  margin-top: 500px;
-}
-
 .cartContainer {
-  width: 600px;
-  height: auto;
   padding: 20px;
-  background-color: black;
+  background-color: rgba(0, 0, 255, 0.3);
   border-radius: 12px;
   color: white;
   display: flex;
   flex-direction: column;
+  overflow: scroll;
+  position: absolute;
+  border: solid 1px white;
+  right: 0;
+  width: 300px;
+  height: 200px;
 }
 
 .cartContainer h2 {
   text-align: center;
   margin: 0;
+  font-size: 24px;
 }
 
 .cartContainer .closeCart {
@@ -41,44 +38,78 @@
 }
 .cartItem p {
   display: flex;
-  width: 400px;
   justify-content: space-around;
   align-items: center;
+  font-size: 14px;
 }
 
 .cartContainer button {
-  margin-top: 20px;
+  margin-top: 0px;
   height: 40px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 18px;
 }
-@media (max-width: 900px) {
+.cartContainer .cartItem,
+.cartContainer .cartItem p,
+.cartContainer .total {
+  align-items: center;
+  margin: 5px auto;
+  width: 100%;
+}
+.email_btn_ctn {
+}
+.emailModal {
+  position: fixed;
+  background: rgba(0, 0, 255, 0.7);
+  top: 190%;
+  left: 50%;
+  width: 350px;
+  transform: translate(-50%, -50%);
+  border: solid 1px white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.email_btn {
+  color: white;
+  width: 220px;
+  height: 50px;
+  background: linear-gradient(
+    rgba(58, 246, 255, 0.2) 30%,
+    rgba(185, 4, 139, 0.2) 60%
+  );
+  border-radius: 3rem 0 3rem 0;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 55px;
+
+  border-radius: 50px;
+  box-shadow: 5.5px 5px 10px rgb(61, 59, 59);
+  font-weight: bold;
+  font-size: 14px;
+}
+.emailModal form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.emailModal input {
+  border-radius: 6px;
+  padding: 12px 16px;
+  border: 1px solid #ccc;
+}
+
+.emailModal button {
+  margin-top: 10px;
+}
+.emailModal h3 {
+  color: white;
+}
+@media (min-width: 1024px) {
   .cartContainer {
-    position: absolute;
-    top: 0;
-    right: 0;
-    max-width: 300px;
-    height: 200px;
-    overflow: scroll;
-  }
-  .cartContainer h2 {
-    font-size: 18px;
-  }
-  .cartItem,
-  .cartItem p,
-  .cartContainer .total {
-    font-size: 10px;
-    align-items: center;
-    margin: 5px auto;
-    width: 100%;
-  }
-  .cartContainer .total {
-  }
-  .cartItem .deleteItem button {
-    height: 20px;
-    font-size: 10px;
-    margin: 2px;
+    height: 400px;
   }
 }

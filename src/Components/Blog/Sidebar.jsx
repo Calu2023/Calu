@@ -51,9 +51,12 @@ const Sidebar = () => {
         {posts &&
           posts.map((post) => (
             <div className="sb_blog_title">
-              <p>{post.data().title}</p>
+              <p>
+                <Link className="sb_blog_title" to={post.id}>
+                  {post.data().title}
+                </Link>
+              </p>
               <hr />
-              <Link to={post.id}>Ver más</Link>
             </div>
           ))}
       </div>

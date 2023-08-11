@@ -44,9 +44,40 @@ const Resources = () => {
   if (width > breakpoint) {
     return (
       <div className="res_ctn">
+        <div className="res_items">
+          <h1 className="res_title_adm">RECURSOS PARA TU NEGOCIO</h1>
+
+          <div className="res_card">
+            {cards &&
+              cards.map((product) => (
+                <Card_res
+                  description={product.data().thumbnail} // Pass the thumbnail URL as the description
+                  title={product.data().title}
+                  button={
+                    <Link to={`/product/${product.id}`}>
+                      <div className="res_cart">
+                        <img src={elipse} alt=" " className="elipse" />
+                        <img src={cart} alt=" " className="cart" />
+                      </div>
+                    </Link>
+                  }
+                ></Card_res>
+              ))}
+          </div>
+          <Link className="btn_res_more" to={"/product-list"}>
+            Ver Más
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="res_ctn">
+      <div className="res_items">
         <h1 className="res_title_adm">RECURSOS PARA TU NEGOCIO</h1>
 
-        <div className="res_card">
+        <Slider>
           {cards &&
             cards.map((product) => (
               <Card_res
@@ -62,24 +93,11 @@ const Resources = () => {
                 }
               ></Card_res>
             ))}
-        </div>
+        </Slider>
+        <button className="btn_news" onClick={() => ""}>
+          Ver Más
+        </button>
       </div>
-    );
-  }
-
-  return (
-    <div className="res_ctn">
-      <h1 className="res_title_adm">RECURSOS PARA TU NEGOCIO</h1>
-
-      <Slider>
-        {cards &&
-          cards.map((product) => (
-            <Card_res
-              description={product.data().thumbnail} // Pass the thumbnail URL as the description
-              title={product.data().title}
-            ></Card_res>
-          ))}
-      </Slider>
     </div>
   );
 };

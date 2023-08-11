@@ -1,5 +1,4 @@
 .carousel {
-  display: flex;
   justify-content: center;
 }
 .carousel-container {
@@ -20,7 +19,6 @@
 }
 
 .carouselItem {
-  display: flex;
   justify-content: center;
 }
 

@@ -1,14 +1,13 @@
 .container {
-  height: 100vh;
+  /*height: 100vh;*/
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   scroll-behavior: smooth;
 }
 
 section {
-  flex: none;
   justify-content: center;
-  height: 100vh;
+  position: relative;
   scroll-snap-align: start;
 }
 .arrow_up {
@@ -16,9 +15,9 @@ section {
   z-index: 99;
   rotate: 90deg;
   bottom: 0;
-  right: 75px;
-  margin-bottom: 230px;
-  width: 40px;
+  right: 65px;
+  margin-bottom: 180px;
+  width: 30px;
   cursor: pointer;
 }
 

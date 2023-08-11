@@ -1,23 +1,25 @@
-import React from 'react';
-import './card_srv_flip.css';
+import React from "react";
+import "./card_srv_flip.css";
 
 const Card_srv_flip = ({ image, title, sub, des_1, des_2, des_3 }) => {
   const handleClick = () => {};
 
   return (
-    <div class='flip-card'>
-      <div class='flip-card-inner'>
-        <div class='flip-card-front'>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
           <div>
-            {' '}
-            <img src={image} alt={image} width='210px' />
+            <div className="front_items">
+              {" "}
+              <img src={image} alt={image} width="150px" />
+            </div>
+            <div className="title_flip">{title}</div>
+            <br />
+            <div className="sub">{sub}</div>
           </div>
-          <div className='title'>{title}</div>
-          <br />
-          <div className='sub'>{sub}</div>
         </div>
 
-        <div class='flip-card-back'>
+        <div class="flip-card-back">
           <div>
             <p>{des_1}</p>
           </div>
@@ -26,7 +28,7 @@ const Card_srv_flip = ({ image, title, sub, des_1, des_2, des_3 }) => {
             <p>{des_2}</p>
           </div>
 
-          <div className='des_3'>
+          <div className="des_3_flip">
             <p>{des_3}</p>
           </div>
         </div>

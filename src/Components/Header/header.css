@@ -4,6 +4,8 @@
   position: fixed;
   top: 0;
   z-index: 99;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
 }
 
 .header_items {
@@ -139,7 +141,6 @@
   hr {
     color: white;
     width: 100%;
-    margin: 0;
   }
 
   .btn.bar {
@@ -168,6 +169,7 @@
   }
 
   .btn.cross i:nth-child(1) {
+    -webkit-transform: translateY(200%) rotate(-135deg);
     transform: translateY(200%) rotate(-135deg);
   }
 
@@ -176,6 +178,7 @@
   }
 
   .btn.cross i:nth-child(3) {
+    -webkit-transform: translateY(-200%) rotate(135deg);
     transform: translateY(-200%) rotate(135deg);
     position: relative;
     bottom: 2px;
@@ -192,6 +195,7 @@
     align-items: center;
     margin-top: 25px;
     height: 250px;
+    -webkit-transform: translateY(40%);
     transform: translateY(40%);
     opacity: 0.9;
     z-index: 99;
@@ -201,12 +205,15 @@
       linear-gradient(rgba(4, 25, 88, 0.8) 95%, transparent) bottom,
       linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) top,
       linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) bottom;
-    background-size: 100% 49.05%, 100% 51%, 100% calc(50% - 5px), 100% calc(50% - 5px), 100% 100%;
+    background-size: 100% 49.05%, 100% 51%, 100% calc(50% - 5px),
+      100% calc(50% - 5px), 100% 100%;
     background-repeat: no-repeat;
+    -webkit-backdrop-filter: blur(1px);
     backdrop-filter: blur(1px);
   }
 
   .links {
+    -webkit-transform: translateY(-200%);
     transform: translateY(-200%);
   }
 
@@ -224,6 +231,7 @@
   }
   .carrito img {
     width: 50px;
+    height: 50px;
     margin-right: 50px;
     cursor: pointer;
   }

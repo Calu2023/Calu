@@ -1,7 +1,7 @@
 .lateralBar {
-  background-color: rgba(255, 255, 255, 0.2);
-  width: 30%;
-  min-height: 800px;
+  background-color: rgba(0, 0, 255, 0.2);
+  width: 40%;
+  box-shadow: 5.5px 5px 10px rgb(61, 59, 59);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,6 +19,7 @@
 hr {
   color: rgba(255, 255, 255, 0.8);
   margin-top: 5px;
+  max-width: 100px;
 }
 .lastBlogs {
   display: flex;
@@ -31,17 +32,19 @@ hr {
 }
 .sb_blog_title {
   font-weight: bold;
+  color: white;
 }
 
 .sb_blog_title a {
   text-decoration: none;
   display: flex;
   justify-content: center;
+  margin: 0 10px 0 10px;
 }
-@media (min-width: 375px) {
+@media (min-width: 340px) {
   .lateralBar {
     position: initial;
-    width: 80%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,9 +52,7 @@ hr {
     border-radius: 15px;
     margin-top: 50px;
   }
-  .lateralBar hr {
-    width: 50%;
-  }
+
   .lateralBar .blogTitle {
     margin: 15px 0;
   }
@@ -82,7 +83,10 @@ hr {
   }
 }
 
-@media (win-width: 1920px) {
+@media (min-width: 1920px) {
+  .lateralBar {
+    min-height: 800px;
+  }
   .lateralBar {
     top: 15%;
   }

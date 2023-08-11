@@ -1,15 +1,14 @@
 .onboarding {
-  display: flex;
   align-items: center;
   overflow: hidden;
-  height: 100%;
   margin-left: 7%;
-  flex-direction: row;
+  display: flex;
+  min-height: 100vh;
 }
+
 .onb_items {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  margin-top: -50px;
 }
 .onboarding .logoOnboard {
   display: none;
@@ -21,13 +20,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
   z-index: 2;
-  margin-right: 7%;
 }
 .onboarding .parrafo p {
   text-align: justify;
-
+  margin-right: 7%;
   margin-bottom: 0;
 }
 
@@ -42,7 +39,6 @@
 }
 
 .contactFlex {
-  display: flex;
   justify-content: flex-start;
   align-items: center;
   margin-left: 5%;
@@ -74,22 +70,17 @@
   .logo_ctn {
     width: 1000px;
   }
+
   .onboarding .logoOnboard {
     display: block;
     position: relative;
-    right: 100px;
-    width: 120%;
-  }
-
-  .onboarding {
-    display: flex;
-    align-items: center;
+    right: -110px;
+    width: 750px;
   }
 
   .onboarding .parrafo {
     position: static;
     z-index: initial;
-    margin-right: 100px;
   }
 
   .onboarding .parrafo h1 {
@@ -105,5 +96,93 @@
   .onboarding .parrafo h1 {
     font-size: 26px;
     margin-bottom: 0;
+  }
+}
+@media (max-width: 1314px) {
+  .onboarding .logoOnboard {
+    display: block;
+    position: relative;
+    right: -50px;
+    width: 500px;
+  }
+  .onboarding .parrafo {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 1218px) {
+  .onboarding .logoOnboard {
+    display: none;
+  }
+}
+@media (max-width: 900px) {
+  .onboarding {
+    align-items: center;
+    overflow: hidden;
+    margin-left: 7%;
+  }
+  .onb_items {
+    display: flex;
+    margin-top: 30px;
+  }
+  .onboarding .logoOnboard {
+    display: none;
+  }
+
+  .onboarding .parrafo {
+    color: white;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+  }
+  .onboarding .parrafo p {
+    text-align: justify;
+    margin-right: 7%;
+    margin-bottom: 0;
+  }
+
+  .onboarding h1 {
+    color: #eb39d9;
+
+    margin-bottom: 0;
+  }
+
+  .onboarding h2 {
+    color: #3af6ff;
+  }
+
+  .contactFlex {
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 5%;
+    position: relative;
+    bottom: 40vh;
+  }
+
+  .contact-btn {
+    background-image: linear-gradient(
+      rgba(58, 246, 255, 0.2) 30%,
+      rgba(185, 4, 139, 0.2) 60%
+    );
+    border-radius: 50px;
+    width: 15rem;
+    height: 6vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .contact-btn a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+  }
+}
+
+@media (max-height: 600px) {
+  .onb_items {
+    margin-top: 150px;
   }
 }

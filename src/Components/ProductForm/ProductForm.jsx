@@ -9,15 +9,15 @@ function ProductForm({ productId }) {
   const [title, setTitle] = useState("");
   const [thumbnailFile, setThumbnailFile] = useState(null);
   const [thumbnailName, setThumbnailName] = useState("");
-  const [pdfFile, setPdfFile] = useState(null);
-  const [pdfName, setPdfName] = useState("");
+  const [compressedFile, setCompressedFile] = useState(null);
+  const [compressedFileName, setCompressedFileName] = useState("");
   const [price, setPrice] = useState("");
   const [detail, setDetail] = useState("");
-  const [category, setCategory] = useState(""); // New category state
+  const [category, setCategory] = useState("");
   const [uploading, setUploading] = useState(false);
 
-  let history = useNavigate();
-  let location = useLocation();
+  const history = useNavigate();
+  const location = useLocation();
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -25,7 +25,6 @@ function ProductForm({ productId }) {
     try {
       setUploading(true);
 
-      // Subir la miniatura a Firebase Storage
       let thumbnailURL = "";
       if (thumbnailFile) {
         const thumbnailRef = ref(storage, `thumbnails/${thumbnailFile.name}`);
@@ -33,31 +32,28 @@ function ProductForm({ productId }) {
         thumbnailURL = await getDownloadURL(thumbnailRef);
       }
 
-      // Subir el archivo PDF a Firebase Storage
-      let pdfURL = "";
-      if (pdfFile) {
-        const pdfRef = ref(storage, `pdfs/${pdfFile.name}`);
-        await uploadBytes(pdfRef, pdfFile);
-        pdfURL = await getDownloadURL(pdfRef);
+      let compressedURL = "";
+      if (compressedFile) {
+        const compressedRef = ref(storage, `compressed/${compressedFile.name}`);
+        await uploadBytes(compressedRef, compressedFile);
+        compressedURL = await getDownloadURL(compressedRef);
       }
 
       const productData = {
         title,
         thumbnail: thumbnailURL,
-        pdf: pdfURL,
+        compressed: compressedURL,
         price: price || "Gratis",
         detail,
-        category, // Include the category field
+        category,
         createdAt: serverTimestamp(),
       };
 
       if (productId) {
-        // If productId is provided, it means we are updating the product
         const productDoc = doc(db, "e-commerce", productId);
         await updateDoc(productDoc, productData);
         console.log("Producto actualizado con ID:", productId);
       } else {
-        // If no productId, it means we are adding a new product
         const docRef = await addDoc(collection(db, "e-commerce"), productData);
         console.log("Producto agregado con ID:", docRef.id);
       }
@@ -65,14 +61,14 @@ function ProductForm({ productId }) {
       setTitle("");
       setThumbnailFile(null);
       setThumbnailName("");
-      setPdfFile(null);
-      setPdfName("");
+      setCompressedFile(null);
+      setCompressedFileName("");
       setPrice("");
       setDetail("");
-      setCategory(""); // Clear the category field
+      setCategory("");
       setUploading(false);
 
-      history("/"); // Navigate back to the ProductList after adding/editing a product
+      history("/"); // Navegar de vuelta a la lista de productos después de agregar/editar
     } catch (error) {
       console.error("Error al agregar o editar el producto:", error);
       setUploading(false);
@@ -87,11 +83,15 @@ function ProductForm({ productId }) {
     }
   };
 
-  const handlePdfChange = (e) => {
+  const handleCompressedChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setPdfName(file.name);
-      setPdfFile(file);
+      if (file.type === "application/x-rar-compressed" || file.type === "application/zip") {
+        setCompressedFileName(file.name);
+        setCompressedFile(file);
+      } else {
+        alert("Solo se permiten archivos .rar o .zip.");
+      }
     }
   };
 
@@ -101,7 +101,7 @@ function ProductForm({ productId }) {
       setTitle(productToEdit.title);
       setPrice(productToEdit.price);
       setDetail(productToEdit.detail);
-      setCategory(productToEdit.category); // Set the category field for editing
+      setCategory(productToEdit.category);
     } else if (productId) {
       const fetchProductData = async () => {
         try {
@@ -112,7 +112,7 @@ function ProductForm({ productId }) {
             setTitle(productData.title);
             setPrice(productData.price);
             setDetail(productData.detail);
-            setCategory(productData.category); // Set the category field for editing
+            setCategory(productData.category);
           }
         } catch (error) {
           console.error("Error al obtener los datos del producto:", error);
@@ -153,10 +153,10 @@ function ProductForm({ productId }) {
             {thumbnailName && <p>Archivo seleccionado: {thumbnailName}</p>}
           </div>
 
-          <div className="pdf-form">
-            <label htmlFor="pdf">PDF:</label>
-            <input type="file" id="pdf" onChange={handlePdfChange} />
-            {pdfName && <p>Archivo seleccionado: {pdfName}</p>}
+          <div className="compressed-form">
+            <label htmlFor="compressed">Archivo Comprimido:</label>
+            <input type="file" id="compressed" onChange={handleCompressedChange} />
+            {compressedFileName && <p>Archivo seleccionado: {compressedFileName}</p>}
           </div>
 
           <div className="category-form">

@@ -7,78 +7,125 @@
 }
 
 .scroll_ctn {
+  -ms-scroll-snap-type: y mandatory;
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   scroll-behavior: smooth;
 }
-section {
-  justify-content: center;
-  height: 100vh;
-  scroll-snap-align: start;
-}
 .srv_title {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   color: #3af6ff;
+  margin-top: 150px;
+  margin-bottom: -20px;
 }
 
 .srv_cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
-  height: 100%;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .card_srv_cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
-  margin: 80px 10px 30px 10px;
-  height: 100%;
+  margin: 130px 10px 30px 10px;
 }
+
 .card_srv_cont_inv {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
   flex-direction: row-reverse;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
-  margin: 30px 10px 30px 10px;
-  height: 450px;
+  margin: 30px -20px 30px 00px;
 }
 .card_srv_info {
-  max-width: 1200px;
-  margin: 0 50px 0 20px;
+  max-width: 1600px;
+  margin: -100px 50px 0 20px;
   display: flex;
-  justify-content: center;
   flex-direction: column;
 }
+
 .card_srv_info_inv {
-  max-width: 1000px;
+  max-width: 1600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   text-align: right;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0 20px 5px 5px;
+
+  margin: -90px 50px 0 110px;
 }
 .srv_icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  margin-top: -50px;
 }
 .srv_icon img {
   height: 100%;
-  width: 500px;
+  width: 280px;
 }
 .title_srv {
   color: rgba(185, 4, 139, 0.9154228855721394);
-  font-size: 38px;
+  margin-bottom: -30px;
   font-weight: bold;
+  font-size: 30px;
+}
+.title_srv h1 {
+  font-size: 38px;
 }
 .sub_d {
   color: white;
   font-weight: bold;
   margin: 10px 0px 0px 0px;
   font-size: 28px;
+  margin-bottom: -30px;
 }
-.des_1d,
+.des_1d {
+  margin-bottom: -30px;
+  font-size: 28px;
+  margin-top: 20px;
+  color: rgb(192, 192, 192);
+}
 .des_2d {
+  margin-bottom: -30px;
   font-size: 28px;
   margin-top: 20px;
   color: rgb(192, 192, 192);
@@ -89,26 +136,44 @@ section {
   font-weight: bold;
   margin-top: 10px;
 }
-
+@media only screen and (max-height: 767px) {
+  /*.srv_cards h1 {
+    margin-top: 180px;
+  }*/
+}
 @media (max-width: 1024px) {
   .srv_cards {
     display: block;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
   }
   .slider_cards {
-    margin-top: 100px;
-    width: 350px;
+    margin-top: 210px;
   }
 }
 
 @media (max-width: 767px) {
   .srv_title h1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
-    font-size: 40px;
-    margin-top: 150px;
+
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .services_container {
+    margin-top: 20px;
   }
 }
 
@@ -118,9 +183,8 @@ section {
   }
 }
 
-.footer-services {
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  margin-top: 300px;
+@media (max-height: 750px) {
+  .card_srv_cont {
+    margin-top: 250px;
+  }
 }

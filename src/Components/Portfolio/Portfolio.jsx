@@ -48,7 +48,7 @@ const Portfolio = () => {
 
   return (
     <div className="portfolio_container">
-      <div>
+      <div className="portfolio_items">
         <div className="portfolio_text">
           <div className="edit">
             <h1 className="title_portfolio">{portfolioinfo.title}</h1>
@@ -64,20 +64,22 @@ const Portfolio = () => {
             <Slider>
               {card &&
                 card.map((card) => (
-                  <Card
-                    image={<img src={card.data().imageUrl} width="150px" />}
-                    title={card.data().cardTitle}
-                    btn={
-                      <a
-                        target="_blank"
-                        className="
-                button_portfolio"
-                        href={card.data().link}
-                      >
-                        Ver más
-                      </a>
-                    }
-                  ></Card>
+                  <div className="card_slider_port">
+                    <Card
+                      image={<img src={card.data().imageUrl} />}
+                      title={card.data().cardTitle}
+                      btn={
+                        <a
+                          target="_blank"
+                          className="
+                  button_portfolio"
+                          href={card.data().link}
+                        >
+                          Ver más
+                        </a>
+                      }
+                    ></Card>
+                  </div>
                 ))}
             </Slider>
           </div>

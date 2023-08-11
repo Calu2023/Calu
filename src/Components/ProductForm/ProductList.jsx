@@ -1,23 +1,28 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { collection, getDocs, deleteDoc, doc, getDoc } from 'firebase/firestore';
-import { db, storage } from '../../firebase-config';
+import { db, storage, auth } from '../../firebase-config';
 import { Link, useNavigate } from 'react-router-dom';
 import { ref, deleteObject } from 'firebase/storage';
 import { Header } from '../Header/header';
 import './product-list.css';
-import CTN from '../CTN/CTN';
-import Footer from '../Footer/Footer';
-import { LoadingComponent } from '../LoadingComponent/LoadingComponent';
+import { useCustomContext } from '../../Hooks/Context/Context';
+import Contact_button from '../Home/Contact_button/Contact_button';
+import arrow_L from '../Home/icon_arrow_left.svg';
 
 function ProductList() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [flippedProductId, setFlippedProductId] = useState(null);
-  const [cart, setCart] = useState([]);
-  const isUserAuthenticated = localStorage.getItem('isAuth') === 'true';
+  const [user, setUser] = useState(null); // Add user state
   const navigate = useNavigate();
+  const { cart, addToCart, removeFromCart } = useCustomContext();
 
   const productsCollectionRef = collection(db, 'e-commerce');
+  const firstSection = useRef(null);
+
+  const scrollToTop = () => {
+    firstSection.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   const deleteProduct = async (id, thumbnail) => {
     const productDoc = doc(db, 'e-commerce', id);
@@ -40,30 +45,29 @@ function ProductList() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        setLoading(true); // Mostrar LoadingComponent mientras se obtienen los productos
         const querySnapshot = await getDocs(productsCollectionRef);
         const productsData = querySnapshot.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
         }));
         setProducts(productsData);
-        setLoading(false); // Indicar que se han cargado los productos correctamente
+        setLoading(false);
       } catch (error) {
         console.error('Error al obtener los productos:', error);
-        setLoading(false); // Indicar que ha ocurrido un error al cargar los productos
+        setLoading(false);
       }
     };
 
     fetchProducts();
+
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setUser(user);
+    });
+
+    return () => {
+      unsubscribe();
+    };
   }, [cart]);
-
-  if (loading) {
-    return <LoadingComponent />;
-  }
-
-  if (products.length === 0) {
-    return <p>No se encontraron productos.</p>;
-  }
 
   const handleFlipCard = (productId) => {
     setFlippedProductId(productId === flippedProductId ? null : productId);
@@ -73,61 +77,63 @@ function ProductList() {
     const querySnapshot = doc(db, 'e-commerce', id);
     const docSnapshot = await getDoc(querySnapshot);
     const productToAdd = docSnapshot.data();
-    setCart((prevCart) => [...prevCart, productToAdd]);
-  };
-
-  const handleDelete = (productTitle) => {
-    setCart((prevCart) => prevCart.filter((product) => product.title !== productTitle));
+    addToCart(productToAdd);
   };
 
   return (
-    <div className='main-container'>
-      <Header cartItem={cart} handleDelete={handleDelete} />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <h1>Lista de Productos</h1>
-      <h2 className='our-products'>Nuestros productos</h2>
+    <div>
+      <div className='main-container' ref={firstSection}>
+        <button className='arrow_up12' onClick={scrollToTop}>
+          <img className='arrow_up' src={arrow_L} alt='Arrow Up' />
+        </button>
+        <Contact_button />
+        <Header cartItem={cart} handleDelete={removeFromCart} />
 
-      <div className='products'>
-        {products.map((product) => (
-          <div className='main-product' key={product.id}>
-            <div
-              className={`product-inner ${flippedProductId === product.id ? 'flipped' : ''}`}
-              onClick={() => handleFlipCard(product.id)}
-            >
-              <div className={`product-front ${flippedProductId === product.id ? 'hidden' : ''}`}>
-                <img src={product.thumbnail} alt={product.title} />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <h1 className='products_title'>Lista de Productos</h1>
+        <h2 className='our-products'>Nuestro productos</h2>
+
+        <div className='products'>
+          {products.map((product) => (
+            <div className='main-product' key={product.id}>
+              <div
+                className={`product-inner ${flippedProductId === product.id ? 'flipped' : ''}`}
+                onClick={() => handleFlipCard(product.id)}
+              >
+                <div className={`product-front ${flippedProductId === product.id ? 'hidden' : ''}`}>
+                  <img src={product.thumbnail} alt={product.title} width='150px' />
+                </div>
+                <div className={`product-back ${flippedProductId === product.id ? '' : 'hidden'}`}>
+                  <p>{product.detail}</p>
+                </div>
               </div>
-              <div className={`product-back ${flippedProductId === product.id ? '' : 'hidden'}`}>
-                <p>{product.detail}</p>
+              <div className='product-price'>
+                <p className='price'>${product.price}</p>
+                <p className='carrito-price' onClick={() => handleAddToCart(product.id)}>
+                  Agregar al carrito
+                </p>
+                <Link className='link_' to={`/product/${product.id}`}>
+                  Ver Detalles
+                </Link>
+                {/* Botones de editar y eliminar */}
+                {user && (
+                  <div>
+                    <button className='edit-button' onClick={() => handleEditProduct(product.id)}>
+                      Editar
+                    </button>
+                    <button className='delete-button' onClick={() => deleteProduct(product.id, product.thumbnail)}>
+                      Eliminar
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
-            <div className='product-price'>
-              <p className='price'>${product.price}</p>
-              <p className='carrito-price' onClick={() => handleAddToCart(product.id)}>
-                Agregar al carrito
-              </p>
-              <Link to={`/product/${product.id}`}>Ver detalles</Link>
-            </div>
-            {isUserAuthenticated && (
-              <>
-                <button onClick={() => handleEditProduct(product.id)}>Editar</button>
-                <button onClick={() => deleteProduct(product.id, product.thumbnail)}>
-                  Eliminar
-                </button>
-              </>
-            )}
-          </div>
-        ))}
-      </div>
-      <div className='ctn'>
-        <CTN />
-      </div>
-      <div className='footer-blog'>
-        <Footer />
+          ))}
+        </div>
       </div>
     </div>
   );
