@@ -5,6 +5,7 @@
   justify-content: center;
   margin-left: 90px;
   margin-right: 90px;
+  cursor: pointer;
 }
 
 .card_cont {
@@ -21,8 +22,8 @@
   flex-direction: column;
   border-radius: 30% 0% 30% 0%;
   min-width: 150px;
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   background: linear-gradient(
     rgba(58, 246, 255, 0.2) 30%,
     rgba(185, 4, 139, 0.2) 60%
@@ -50,18 +51,21 @@
   color: white;
   text-align: center;
   margin: 20px 0;
-  font-size: 25px;
+
   font-weight: bold;
 }
 
 @media (max-width: 1024px) {
   .card_f_news {
-    width: 260px;
-    height: 250px;
+    width: 210px;
+    height: 210px;
   }
   .arrow_R {
     position: relative;
     width: 25px;
+  }
+  .title_news {
+font-size: 16px;
   }
 }
 @media (max-width: 1300px) {

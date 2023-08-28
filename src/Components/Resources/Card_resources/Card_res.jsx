@@ -8,7 +8,7 @@ import { db } from "../../../firebase-config";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-const Card_res = ({ title, description, button }) => {
+const Card_res = ({ title, description, button, price, more }) => {
   const [cards, setCard] = useState([]);
 
   const getCard = async () => {
@@ -24,9 +24,6 @@ const Card_res = ({ title, description, button }) => {
     const card = await getCard();
     setCard(card.docs.slice(-3));
   };
-  const handleClick = () => {
-    return <Link to={cards.id}></Link>;
-  };
 
   return (
     <div className="card_ctn">
@@ -36,14 +33,14 @@ const Card_res = ({ title, description, button }) => {
           <img src={arrow_R} alt=" " className="arrow_r" />
           {button}
         </div>
-
         <div className="res_description">
-          <img className="res_img" src={description} alt={title} />{" "}
-          {/* Render the thumbnail as an image */}
+          <img className="res_img" src={description} alt={title} />
         </div>
       </div>
 
       <div className="title_res">{title}</div>
+      <div>{price}</div>
+      <div>{more}</div>
     </div>
   );
 };

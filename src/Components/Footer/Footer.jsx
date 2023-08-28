@@ -66,22 +66,22 @@ const Footer = () => {
           <div className="redes">
             <h1>REDES</h1>
             <div className="social_icons">
-              <a href="https://www.linkedin.com/company/calu-mktdigital/">
+              <a href="https://www.linkedin.com/company/calu-mktdigital/" target="_blank">
                 <img src={ld_logo} alt="linkedin" />
               </a>
-              <a href="https://www.facebook.com/profile.php?id=100090611090874">
+              <a href="https://www.facebook.com/profile.php?id=100090611090874" target="_blank">
                 <img src={fb_logo} alt="facebook" />
               </a>
-              <a href="https://www.instagram.com/calu.mktdigital/ ">
+              <a href="https://www.instagram.com/calu.mktdigital/ " target="_blank">
                 <img src={insta_logo} alt="instagram" />
               </a>
-              <a href="https://www.tiktok.com/@calumktdigital?is_from_webapp=1&sender_device=pc">
+              <a href="https://www.tiktok.com/@calumktdigital?is_from_webapp=1&sender_device=pc" target="_blank">
                 <img src={tk_logo} alt="tiktok" />
               </a>
-              <a href="https://open.spotify.com/user/31qdqqxbhaph6tshdgkoidsug6ae ">
+              <a href="https://open.spotify.com/user/31qdqqxbhaph6tshdgkoidsug6ae " target="_blank">
                 <img src={sp_logo} alt="spotify" />
               </a>
-              <a href="https://youtube.com/@CaluMktdigital">
+              <a href="https://youtube.com/@CaluMktdigital" target="_blank">
                 <img src={yt_logo} alt="youtube" />
               </a>
             </div>
@@ -134,22 +134,22 @@ const Footer = () => {
         <div className="redes">
           <h1>REDES</h1>
           <div className="social_icons">
-            <a href="https://www.linkedin.com/company/calu-mktdigital/">
+            <a href="https://www.linkedin.com/company/calu-mktdigital/" target="_blank">
               <img src={ld_logo} alt="linkedin" />
             </a>
-            <a href="https://www.facebook.com/profile.php?id=100090611090874">
+            <a href="https://www.facebook.com/profile.php?id=100090611090874" target="_blank">
               <img src={fb_logo} alt="facebook" />
             </a>
             <a href="https://www.instagram.com/calu.mktdigital/">
               <img src={insta_logo} alt="instagram" />
             </a>
-            <a href="https://www.tiktok.com/@calumktdigital?is_from_webapp=1&sender_device=pc">
+            <a href="https://www.tiktok.com/@calumktdigital?is_from_webapp=1&sender_device=pc" target="_blank">
               <img src={tk_logo} alt="tiktok" />
             </a>
-            <a href="https://open.spotify.com/user/31qdqqxbhaph6tshdgkoidsug6ae">
+            <a href="https://open.spotify.com/user/31qdqqxbhaph6tshdgkoidsug6ae" target="_blank">
               <img src={sp_logo} alt="spotify" />
             </a>
-            <a href="https://youtube.com/@CaluMktdigital">
+            <a href="https://youtube.com/@CaluMktdigital" target="_blank">
               <img src={yt_logo} alt="youtube" />
             </a>
           </div>

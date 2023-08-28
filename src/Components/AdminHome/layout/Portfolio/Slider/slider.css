@@ -8,15 +8,16 @@
 .arrowL {
   position: absolute;
   z-index: 10;
-  left: 0;
+  left: -1px;
   top: 100px;
-  width: 50px;
+  width: 40px;
 }
 .arrowR {
   position: absolute;
   z-index: 10;
-  right: 0;
+  right: -1px;
   top: 100px;
+  width: 40px;
 }
 
 .carouselItem {

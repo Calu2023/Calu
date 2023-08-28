@@ -4,7 +4,11 @@ import contacto from '../../images/Contactanos.png';
 const LogoContact = () => {
   return (
     <div className='logo-contacto'>
-      <Link to={'/contact'}>
+      <Link to={'/contact'} onClick={() => {
+                      window.scroll({
+                        top: 0,
+                      });
+                    }}>
         <img src={contacto} alt='logo-contacto' />
       </Link>
     </div>

@@ -46,7 +46,7 @@ const Sidebar = () => {
   };
   return (
     <aside className="lateralBar">
-      <h2 className="blogTitle_">Novedades</h2>
+      <h2 className="blogTitle_">Sugerencias</h2>
       <div className="lateralContainer">
         {posts &&
           posts.map((post) => (

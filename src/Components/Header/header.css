@@ -13,11 +13,10 @@
 }
 
 ::-webkit-scrollbar {
-  display: none;
 }
 
 .logoCalu {
-  height: 11rem;
+  height: 9rem;
   margin: 10px 100px 0 0;
 }
 
@@ -43,12 +42,13 @@
   text-decoration: none;
   color: white;
   height: 31px;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-right: 5%;
 }
 
-.links a:hover {
-  font-size: 28px;
+.links a:hover,
+.links .headerLinks {
+  font-size: 24px;
   font-weight: bold;
   color: #3af6ff;
 }
@@ -102,7 +102,7 @@
   position: absolute;
   right: 50px;
 }
-.links .carrito {
+.carrito {
   height: initial;
   display: flex;
   cursor: pointer;
@@ -110,12 +110,12 @@
   height: 50px;
 }
 
-.links .carrito .totalItems {
+.carrito .totalItems {
   background-color: red;
   border-radius: 50%;
   position: absolute;
   margin-left: 40px;
-  top: -20px;
+  top: 30px;
   text-align: center;
   font-size: 15px;
   width: 20px;
@@ -147,7 +147,7 @@
     display: block;
     width: 5vh;
     height: 5vh;
-    margin: 15px;
+
     cursor: pointer;
     transition: all 0.5s ease-in-out;
   }
@@ -225,9 +225,9 @@
     margin: 12px 10px;
   }
   .carrito {
-    width: 100%;
     display: flex;
     justify-content: flex-end;
+    width: initial;
   }
   .carrito img {
     width: 50px;
@@ -240,10 +240,10 @@
     border-radius: 50%;
     position: absolute;
     margin-right: 30px;
-    bottom: -20px;
+
     width: 20px;
     text-align: center;
-    font-size: 20px;
+    font-size: 15px;
   }
   .logoCalu {
     height: 9rem;

@@ -38,7 +38,11 @@ const Contact_button = () => {
             onMouseOut={handleMouseOut}
             className="contact_button"
           >
-            <Link to={"/contact"}>
+            <Link to={"/contact"} onClick={() => {
+                      window.scroll({
+                        top: 0,
+                      });
+                    }}>
               <img className="contact_logo" src={icono_contacto} />
             </Link>
           </div>

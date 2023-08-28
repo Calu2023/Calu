@@ -4,6 +4,7 @@ const Context = createContext();
 
 export function Provider({ children }) {
   const [cart, setCart] = useState([]);
+  const [isAuth, setIsAuth] = useState(false);
 
   const addToCart = (product) => {
     setCart((prevCart) => [...prevCart, product]);
@@ -13,8 +14,20 @@ export function Provider({ children }) {
     setCart((prevCart) => prevCart.filter((product) => product.title !== productTitle));
   };
 
+  const loginGoogle = () => {
+    setIsAuth(true);
+  };
+
+  const logoutGoogle = () => {
+    setIsAuth(false);
+  };
+
   return (
-    <Context.Provider value={{ cart, addToCart, removeFromCart }}>{children}</Context.Provider>
+    <Context.Provider
+      value={{ cart, addToCart, removeFromCart, loginGoogle, logoutGoogle, isAuth }}
+    >
+      {children}
+    </Context.Provider>
   );
 }
 

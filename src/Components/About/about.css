@@ -46,7 +46,6 @@
     margin-bottom: -10px;
   }
   .about_items {
-    margin-top: 20px;
   }
 }
 
@@ -58,11 +57,9 @@
   .about_container p {
     color: white;
     margin-bottom: -5px;
-    font-size: 18px;
   }
   .about_container h2 {
     margin-bottom: 0;
-    font-size: 20px;
   }
   .title_about {
     margin-bottom: -30px;

@@ -1,5 +1,6 @@
 .lateralBar {
   background-color: rgba(0, 0, 255, 0.2);
+  backdrop-filter: blur(10px);
   width: 40%;
   box-shadow: 5.5px 5px 10px rgb(61, 59, 59);
   display: flex;
@@ -9,12 +10,14 @@
   right: 0;
   overflow: scroll;
 }
+.lateralBar::-webkit-scrollbar {
+  display: none;
+}
 .lateralBar .lateralContainer {
   color: white;
 }
 
 .lateralBar .lateralContainer p {
-  font-size: 25px;
 }
 hr {
   color: rgba(255, 255, 255, 0.8);
@@ -44,11 +47,11 @@ hr {
 @media (min-width: 340px) {
   .lateralBar {
     position: initial;
-    width: 70%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid white;
+
     border-radius: 15px;
     margin-top: 50px;
   }
@@ -80,6 +83,9 @@ hr {
   .lateralBar .lateralContainer .card_our {
     max-width: 250px;
     height: 250px;
+  }
+  .lateralBar {
+    width: 80%;
   }
 }
 

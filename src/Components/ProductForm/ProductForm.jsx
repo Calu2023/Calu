@@ -1,6 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { collection, addDoc, doc, updateDoc, serverTimestamp, getDoc } from "firebase/firestore";
+import {
+  collection,
+  addDoc,
+  doc,
+  updateDoc,
+  serverTimestamp,
+  getDoc,
+  setDoc,
+} from "firebase/firestore";
 import { db, storage } from "../../firebase-config";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import "./product-form.css";
@@ -50,7 +58,7 @@ function ProductForm({ productId }) {
       };
 
       if (productId) {
-        const productDoc = doc(db, "e-commerce", productId);
+        const productDoc = setDoc(doc(db, "e-commerce", productId));
         await updateDoc(productDoc, productData);
         console.log("Producto actualizado con ID:", productId);
       } else {
@@ -68,7 +76,7 @@ function ProductForm({ productId }) {
       setCategory("");
       setUploading(false);
 
-      history("/"); // Navegar de vuelta a la lista de productos después de agregar/editar
+      history("/product-list"); // Navegar de vuelta a la lista de productos después de agregar/editar
     } catch (error) {
       console.error("Error al agregar o editar el producto:", error);
       setUploading(false);
@@ -86,7 +94,10 @@ function ProductForm({ productId }) {
   const handleCompressedChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      if (file.type === "application/x-rar-compressed" || file.type === "application/zip") {
+      if (
+        file.type === "application/x-rar-compressed" ||
+        file.type === "application/zip"
+      ) {
         setCompressedFileName(file.name);
         setCompressedFile(file);
       } else {
@@ -130,6 +141,7 @@ function ProductForm({ productId }) {
           ? "Editar Producto"
           : "Agregar Producto"}
       </h2>
+
       <form onSubmit={handleFormSubmit}>
         <div className="container-form">
           <div className="title-form">
@@ -155,8 +167,14 @@ function ProductForm({ productId }) {
 
           <div className="compressed-form">
             <label htmlFor="compressed">Archivo Comprimido:</label>
-            <input type="file" id="compressed" onChange={handleCompressedChange} />
-            {compressedFileName && <p>Archivo seleccionado: {compressedFileName}</p>}
+            <input
+              type="file"
+              id="compressed"
+              onChange={handleCompressedChange}
+            />
+            {compressedFileName && (
+              <p>Archivo seleccionado: {compressedFileName}</p>
+            )}
           </div>
 
           <div className="category-form">
@@ -189,8 +207,10 @@ function ProductForm({ productId }) {
             ></textarea>
           </div>
 
-          <button type="submit" disabled={uploading}>
-            {uploading ? "Subiendo..." : "Agregar Producto"}
+          <button onClick={handleFormSubmit}>
+            {location.state && location.state.productToEdit
+              ? "Actualizar Producto"
+              : "Agregar Producto"}
           </button>
         </div>
       </form>

@@ -11,11 +11,20 @@
   right: 0;
   width: 300px;
   height: 200px;
+  box-shadow: 5.5px 5px 10px rgb(78, 77, 77);
+  margin-right: 50px;
+  backdrop-filter: blur(5px);
 }
 
+.deleteItem {
+  border: none;
+  background: none;
+  color: grey;
+  font-weight: bold;
+}
 .cartContainer h2 {
   text-align: center;
-  margin: 0;
+  margin: 0 0 20px 0;
   font-size: 24px;
 }
 
@@ -25,22 +34,36 @@
   text-align: end;
   margin: 0;
 }
-.cartContainer .total {
+.total {
   display: flex;
   justify-content: space-between;
 }
+
 .cartItem {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 10px;
 }
 .cartItem img {
-  width: 50%;
+  width: 60px;
+  height: 60px;
 }
+
 .cartItem p {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  flex-direction: row;
   font-size: 14px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+}
+.product_title {
+  display: flex;
+  flex-direction: row;
+  margin-left: 10px;
+  width: 120px;
+}
+.product_price {
+  margin-left: 20px;
 }
 
 .cartContainer button {
@@ -55,22 +78,23 @@
 .cartContainer .cartItem p,
 .cartContainer .total {
   align-items: center;
-  margin: 5px auto;
+
   width: 100%;
 }
-.email_btn_ctn {
-}
+
 .emailModal {
   position: fixed;
-  background: rgba(0, 0, 255, 0.7);
-  top: 190%;
+  top: 300%;
   left: 50%;
-  width: 350px;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  background: rgba(0, 0, 255, 0.3);
+  width: 350px;
   border: solid 1px white;
   padding: 20px;
   border-radius: 15px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 5.5px 5px 10px rgb(78, 77, 77);
+  z-index: 1;
 }
 .email_btn {
   color: white;
@@ -84,16 +108,27 @@
   text-decoration: none;
   border: none;
   cursor: pointer;
-  margin-left: 55px;
+  margin-left: 50px;
 
   border-radius: 50px;
   box-shadow: 5.5px 5px 10px rgb(61, 59, 59);
   font-weight: bold;
   font-size: 14px;
 }
+.modal-background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: -1;
+}
 .emailModal form {
   display: flex;
   flex-direction: column;
+  margin-left: 15px;
   gap: 10px;
 }
 .emailModal input {
@@ -108,6 +143,37 @@
 .emailModal h3 {
   color: white;
 }
+.terms {
+  display: flex;
+  color: white;
+  justify-content: center;
+  flex-direction: column;
+}
+.terms .check {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.terms .noCheck {
+  color: red;
+  font-weight: bold;
+}
+.terms p {
+  font-size: 15px;
+}
+@media (max-width: 767px) {
+  .emailModal {
+    width: 300px;
+  }
+  .email_btn {
+    margin-left: 25px;
+  }
+  .cartContainer {
+    margin-right: 15px;
+    margin-top: 35px;
+  }
+}
+
 @media (min-width: 1024px) {
   .cartContainer {
     height: 400px;

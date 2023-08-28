@@ -4,18 +4,16 @@
   align-items: center;
   text-align: center;
   position: relative;
-  margin-top: 200px;
+  margin-top: 65px;
 }
 .main-container .products {
   background-color: rgba(0, 0, 255, 0.2);
   box-shadow: 5.5px 5px 10px rgb(61, 59, 59);
   width: 90%;
+  backdrop-filter: blur(10px);
   border-radius: 15px;
-  border: solid 1px white;
 }
-.products_title {
-  margin-top: -20px;
-}
+
 .main-container h1 {
   color: aqua;
 }
@@ -23,7 +21,7 @@
   color: #eb39d9;
 }
 
-.arrow_up12{
+.arrow_up12 {
   background-color: transparent;
   border: none;
 }

@@ -1,54 +1,63 @@
 import "./services.css";
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Header } from "../Header/header";
 import Slider from "../Services/Card_srv/Slider/Slider";
-import Card_srv_flip from "./Card_srv/Card_srv_flip";
+import CardSrvFlip from "./Card_srv/Card_srv_flip";
 import Footer from "../Footer/Footer";
 import CTN from "../CTN/CTN";
-import { Link } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
-import { db, storage } from "../../firebase-config";
-import { ref } from "firebase/storage";
-import Contact_button from "../Home/Contact_button/Contact_button";
+import { db } from "../../firebase-config";
+import ContactButton from "../Home/Contact_button/Contact_button";
 import arrow_L from "../Home/icon_arrow_left.svg";
 import { useCustomContext } from "../../Hooks/Context/Context";
+import { useLocation } from "react-router";
 
 const Services = () => {
   const { cart, removeFromCart } = useCustomContext();
-  const [width, setWidth] = React.useState(window.innerWidth);
+  const [width, setWidth] = useState(window.innerWidth);
   const breakpoint = 1024;
-  React.useEffect(() => {
+  const [servicios, setServicios] = useState([]);
+  const serviciosRef = collection(db, "servicios");
+  const { search } = useLocation();
+  const queryParams = new URLSearchParams(search);
+  const serviceName = queryParams.get("serviceName");
+  const scrollRef = useRef(null);
+  useEffect(() => {
     const handleResizeWindow = () => setWidth(window.innerWidth);
 
     window.addEventListener("resize", handleResizeWindow);
-    return () => {
-      window.removeEventListener("resize", handleResizeWindow);
-    };
-  }, []);
-
-  const [servicios, setServicios] = useState([]);
-  const serviciosRef = collection(db, "servicios");
-  useEffect(() => {
     const getPosts = async () => {
       const data = await getDocs(serviciosRef);
       setServicios(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+
+      setTimeout(() => {
+        if (scrollRef.current) {
+          console.log(scrollRef);
+          scrollRef.current.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 1000);
     };
 
     getPosts();
-  }, []);
+    return () => {
+      window.removeEventListener("resize", handleResizeWindow);
+    };
+  }, [serviceName]);
+
   //////////// Scroll to top
   const firstSection = useRef(null);
   const scrollToTop = () => {
     firstSection.current?.scrollIntoView({ behavior: "smooth" });
   };
   //////////////
+
   if (width > breakpoint) {
     return (
       <div className="scroll_ctn" ref={firstSection}>
         <button onClick={scrollToTop}>
-          <img className="arrow_up" src={arrow_L} />
+          <img className="arrow_up" src={arrow_L} alt="Arrow Left" />
         </button>
-        <Contact_button />
+        <ContactButton />
         <Header cartItem={cart} handleDelete={removeFromCart} />;
         <div className="services_container">
           <div className="srv_title">
@@ -57,20 +66,23 @@ const Services = () => {
           <div>
             {servicios.map((servicio, index) => {
               return (
-                <section>
-                  <div className="srv_cards" key={index}>
-                    <div className="card_srv_cont">
-                      <div className="card_srv_info">
+                <section
+                  key={index}
+                  ref={serviceName === servicio.title ? scrollRef : null}
+                >
+                  <div>
+                    <div>
+                      <div>
                         <div
                           className={
-                            index % 2 == 0
+                            index % 2 === 0
                               ? "card_srv_cont"
                               : "card_srv_cont_inv"
                           }
                         >
                           <div
                             className={
-                              index % 2 == 0
+                              index % 2 === 0
                                 ? "card_srv_info"
                                 : "card_srv_info_inv"
                             }
@@ -124,9 +136,9 @@ const Services = () => {
   return (
     <>
       <button onClick={scrollToTop}>
-        <img className="arrow_up" src={arrow_L} />
+        <img className="arrow_up" src={arrow_L} alt="Arrow Left" />
       </button>
-      <Contact_button />
+      <ContactButton />
       <Header cartItem={cart} handleDelete={removeFromCart} />
       <div className="services_container" ref={firstSection}>
         <div className="srv_cards">
@@ -135,16 +147,16 @@ const Services = () => {
           </div>
           <section>
             <Slider>
-              {servicios.map((servicios) => (
-                <div className="slider_cards">
-                  <Card_srv_flip
+              {servicios.map((servicios, index) => (
+                <div className="slider_cards" key={index}>
+                  <CardSrvFlip
                     image={servicios.img}
                     title={servicios.title}
                     sub={servicios.sub}
                     des_1={servicios.des_1}
                     des_2={servicios.des_2}
                     des_3={servicios.des_3}
-                  ></Card_srv_flip>
+                  ></CardSrvFlip>
                 </div>
               ))}
             </Slider>

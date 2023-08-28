@@ -26,7 +26,11 @@ const CTN = () => {
           <h1 className="CTN_title">{ctninfo.title}</h1>
         </div>
         <button className="ctn_button">
-          <Link className="link_ctn" to={"/Contact"}>
+          <Link className="link_ctn" to={"/Contact"} onClick={() => {
+                      window.scroll({
+                        top: 0,
+                      });
+                    }}>
             {" "}
             ¡Contáctanos!{" "}
           </Link>{" "}

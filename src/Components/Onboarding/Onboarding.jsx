@@ -4,7 +4,7 @@ import { useState } from "react";
 import { doc, getDoc, updateDoc, setDoc } from "firebase/firestore";
 import { useEffect } from "react";
 import { db } from "../../firebase-config";
-import logoCalu from "../../images/logocalu.png";
+import logoCalu from "../../images/icono_calu.svg";
 
 const Onboarding = () => {
   const [onboardinginfo, setOnboardinginfo] = useState([]);
@@ -44,13 +44,17 @@ const Onboarding = () => {
           <h2>{onboardinginfo.t4}</h2>
 
           <div className="contact-btn">
-            <Link to={"/contact"}>¡Contáctanos!</Link>
+            <Link to={"/contact"} onClick={() => {
+                      window.scroll({
+                        top: 0,
+                      });
+                    }}>¡Contáctanos!</Link>
           </div>
         </div>
 
-        <div className="logo_ctn">
+       
           <img className="logoOnboard" src={logoCalu} alt="logo calu" />
-        </div>
+       
       </div>
 
       <div className="contactFlex"></div>

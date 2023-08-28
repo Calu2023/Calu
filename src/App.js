@@ -17,6 +17,7 @@ import ProductForm from "./Components/ProductForm/ProductForm";
 import ProductDetail_Screen from "./Components/ProductForm/ProductDetail_Screen";
 import Product_List from "./Components/ProductForm/Product_List";
 import PaymentGateway from "./Components/Payment/Payment";
+import Cart from "./Components/Cart/Cart";
 import { auth } from "./firebase-config";
 import EmailList from "./Components/Contact/EmailList";
 import { Provider } from "./Hooks/Context/Context";

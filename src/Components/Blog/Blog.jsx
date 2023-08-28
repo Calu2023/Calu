@@ -59,7 +59,12 @@ function Blog() {
   };
 
   const handlePostClick = (id) => {
+    navigate(`/blog/${id}`);
+    window.scroll({
+      top: 0,
+    });
   };
+
 
   useEffect(() => {
     const getPosts = async () => {
@@ -93,7 +98,8 @@ function Blog() {
   <div
     className='card-blog'
     key={post.id}
-    onClick={() => handlePostClick(post.id)}
+    onClick={() => handlePostClick(post.id)
+    }
   >
                   <div className='blogImage'>
 
