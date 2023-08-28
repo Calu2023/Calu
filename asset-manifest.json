@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.2c947641.css",
-    "main.js": "/static/js/main.04c10b22.js",
+    "main.css": "/static/css/main.0fa91e3d.css",
+    "main.js": "/static/js/main.adf45a2d.js",
     "static/js/787.0b9e84b2.chunk.js": "/static/js/787.0b9e84b2.chunk.js",
     "static/media/backgroundClouds.mp4": "/static/media/backgroundClouds.ff9b153928eef03f8cc4.mp4",
+    "static/media/icono_calu.svg": "/static/media/icono_calu.39d040f1ec1035ce873d633b874a77d7.svg",
     "static/media/logocalu.png": "/static/media/logocalu.5a2bcdb0ac25a7f97bb3.png",
     "static/media/cart.svg": "/static/media/cart.e4bcd540a42d70cef849bac263811e05.svg",
     "static/media/calu_logo.svg": "/static/media/calu_logo.eaa1cbf25cdd26bd48971a2447b46ca6.svg",
@@ -34,12 +35,12 @@
     "static/media/elipse.svg": "/static/media/elipse.b1643da5028c81ee983f607cf4e98356.svg",
     "static/media/icon_arrow_right.svg": "/static/media/icon_arrow_right.a38b232691160512c9a645530d50b282.svg",
     "static/media/icon_arrow_left.svg": "/static/media/icon_arrow_left.ce04c17efbac313e8f9cf8fa4cdb140f.svg",
-    "main.2c947641.css.map": "/static/css/main.2c947641.css.map",
-    "main.04c10b22.js.map": "/static/js/main.04c10b22.js.map",
+    "main.0fa91e3d.css.map": "/static/css/main.0fa91e3d.css.map",
+    "main.adf45a2d.js.map": "/static/js/main.adf45a2d.js.map",
     "787.0b9e84b2.chunk.js.map": "/static/js/787.0b9e84b2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2c947641.css",
-    "static/js/main.04c10b22.js"
+    "static/css/main.0fa91e3d.css",
+    "static/js/main.adf45a2d.js"
   ]
 }
