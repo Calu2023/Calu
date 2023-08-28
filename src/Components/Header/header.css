@@ -205,7 +205,7 @@
       linear-gradient(rgba(4, 25, 88, 0.8) 95%, transparent) bottom,
       linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) top,
       linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) bottom;
-    background-size: 100% 49.05%, 100% 51%, 100% calc(50% - 5px),
+    background-size: 100% 50%, 100% 50%, 100% calc(50% - 5px),
       100% calc(50% - 5px), 100% 100%;
     background-repeat: no-repeat;
     -webkit-backdrop-filter: blur(1px);

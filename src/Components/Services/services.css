@@ -30,7 +30,6 @@
   -ms-flex-pack: center;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
 }
 
 .card_srv_cont {
@@ -55,7 +54,6 @@
   justify-content: center;
 }
 .card_srv_info {
-
   margin: 0 50px 0 0;
   transform: translateY(220px);
   max-width: 70%;
@@ -74,7 +72,6 @@
 }
 
 .card_srv_info_inv {
-
   max-width: 70%;
   transform: translateY(240px);
 
@@ -105,7 +102,6 @@
   justify-content: center;
 
   transform: translateY(250px);
-
 }
 .srv_icon img {
   height: 100%;
@@ -148,7 +144,6 @@
 @media (max-width: 1200px) {
   .card_srv_info {
   }
-
 }
 @media (max-width: 1024px) {
   .srv_title {

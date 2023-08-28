@@ -1,14 +1,14 @@
 .about_container {
   flex-direction: column;
   justify-content: center;
-  margin: 0 15% 0% 7%;
-  min-height: 100vh;
-  display: flex;
+  margin: auto 15% auto 7%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-55%);
 }
 .about_items {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
 }
 .title_about {
   color: #3af6ff;
@@ -46,28 +46,5 @@
     margin-bottom: -10px;
   }
   .about_items {
-  }
-}
-
-@media (max-width: 480px) {
-  .sub_1 {
-    padding-top: 5%;
-  }
-
-  .about_container p {
-    color: white;
-    margin-bottom: -5px;
-  }
-  .about_container h2 {
-    margin-bottom: 0;
-  }
-  .title_about {
-    margin-bottom: -30px;
-  }
-}
-
-@media (max-height: 600px) {
-  .about_items {
-    margin-top: 150px;
   }
 }

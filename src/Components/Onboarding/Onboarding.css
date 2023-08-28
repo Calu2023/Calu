@@ -2,19 +2,19 @@
   align-items: center;
   overflow: hidden;
   margin-left: 7%;
-  display: flex;
-  min-height: 110vh;
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-55%);
 }
 
 .onb_items {
   display: flex;
   flex-direction: row;
-  margin-top: -50px;
 }
 .onboarding .logoOnboard {
   display: none;
 }
-
 .onboarding .parrafo {
   color: white;
   text-align: left;
@@ -28,17 +28,13 @@
   margin-right: 7%;
   margin-bottom: 0;
 }
-
 .onboarding h1 {
   color: #eb39d9;
-
   margin-bottom: 0;
 }
-
 .onboarding h2 {
   color: #3af6ff;
 }
-
 .contactFlex {
   justify-content: flex-start;
   align-items: center;
@@ -46,7 +42,6 @@
   position: relative;
   bottom: 40vh;
 }
-
 .contact-btn {
   background-image: linear-gradient(
     rgba(58, 246, 255, 0.2) 30%,
@@ -59,20 +54,17 @@
   display: flex;
   justify-content: center;
 }
-
 .contact-btn a {
   text-decoration: none;
   color: white;
   font-weight: bold;
   font-size: 18px;
 }
-
 @media (min-width: 900px) {
   .onboarding .logoOnboard {
     display: block;
     position: relative;
-
-    margin-left: 150px;
+    margin-left: 200px;
     max-width: 35%;
   }
 
@@ -80,7 +72,6 @@
     position: static;
     z-index: initial;
   }
-
   .onboarding .parrafo h1 {
     margin-bottom: 0;
   }
@@ -88,27 +79,24 @@
     margin-bottom: 0;
   }
 }
-
 @media (max-width: 360px) {
   .onboarding .parrafo h1 {
     margin-bottom: 0;
   }
 }
-
 @media (max-width: 900px) {
   .onboarding {
     align-items: center;
     overflow: hidden;
     margin-left: 7%;
+    transform: translateY(-70%);
   }
   .onb_items {
     display: flex;
-    /*margin-top: 30px;*/
   }
   .onboarding .logoOnboard {
     display: none;
   }
-
   .onboarding .parrafo {
     color: white;
     text-align: left;
@@ -122,17 +110,13 @@
     margin-right: 7%;
     margin-bottom: 0;
   }
-
   .onboarding h1 {
     color: #eb39d9;
-
     margin-bottom: 0;
   }
-
   .onboarding h2 {
     color: #3af6ff;
   }
-
   .contactFlex {
     justify-content: flex-start;
     align-items: center;
@@ -140,7 +124,6 @@
     position: relative;
     bottom: 40vh;
   }
-
   .contact-btn {
     background-image: linear-gradient(
       rgba(58, 246, 255, 0.2) 30%,
@@ -153,21 +136,10 @@
     display: flex;
     justify-content: center;
   }
-
   .contact-btn a {
     text-decoration: none;
     color: white;
     font-weight: bold;
     font-size: 18px;
-  }
-  @media (max-width: 767px) {
-    .onboarding {
-    }
-  }
-}
-
-@media (max-height: 520px) {
-  .onb_items {
-    margin-top: 80px;
   }
 }
