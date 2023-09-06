@@ -90,6 +90,7 @@
   justify-content: center;
   width: 140px;
   height: 140px;
+  box-shadow: 8px 8px 10px black;
 }
 
 .arrow_res {

@@ -17,6 +17,9 @@
   margin-top: 150px;
   margin-bottom: -130px;
 }
+.srv_title h1 {
+  font-size: 38px;
+}
 
 .srv_cards {
   display: -webkit-box;
@@ -55,7 +58,7 @@
 }
 .card_srv_info {
   margin: 0 50px 0 0;
-  transform: translateY(220px);
+  transform: translateY(210px);
   max-width: 70%;
 
   display: -webkit-box;
@@ -73,7 +76,7 @@
 
 .card_srv_info_inv {
   max-width: 70%;
-  transform: translateY(240px);
+  transform: translateY(220px);
 
   display: -webkit-box;
   display: -ms-flexbox;
@@ -114,6 +117,7 @@
   font-size: 30px;
 }
 .title_srv h1 {
+  font-size: 28px;
 }
 .sub_d {
   color: white;
@@ -121,6 +125,9 @@
   margin: 10px 0px 0px 0px;
   font-size: 28px;
   margin-bottom: -30px;
+}
+.sub_d h2 {
+  font-size: 22px;
 }
 .des_1d {
   margin-bottom: -30px;
@@ -141,10 +148,6 @@
   margin-top: 10px;
 }
 
-@media (max-width: 1200px) {
-  .card_srv_info {
-  }
-}
 @media (max-width: 1024px) {
   .srv_title {
     margin-bottom: -40px;

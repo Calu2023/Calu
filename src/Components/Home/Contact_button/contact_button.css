@@ -1,7 +1,7 @@
 .contact_button_ctn {
   position: absolute;
-  width: 75px;
-  height: 75px;
+  width: 65px;
+  height: 65px;
   justify-content: center;
   bottom: 0;
   right: 0;
@@ -57,16 +57,14 @@
   align-items: center;
 }
 .contact_logo {
-  width: 50px;
+  width: 40px;
   margin: 12px 0 10px 10px;
 }
 .arrow_up {
-  right: 55px;
+  right: 50px;
   margin-bottom: 110px;
-  bottom: -10px;
+  bottom: -20px;
   width: 28px;
-
- 
 }
 @media (max-width: 900px) {
   .contact_logo {

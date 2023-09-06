@@ -73,18 +73,22 @@ const News = () => {
               posts.map((post, index) => (
                 <div onClick={() => handlePostClick(post.id)} key={index}>
                   <Card_news
-                    image={<img src={post.data().imageUrl} width='140px' />}
+                    image={<img src={post.data().imageUrl} width='140px' height='140px' />}
                     title={post.data().title}
                   ></Card_news>
                 </div>
               ))}
           </div>
           <button className='btn_news'>
-            <Link className='btn_news' to={'/blog'} onClick={() => {
-                      window.scroll({
-                        top: 0,
-                      });
-                    }}>
+            <Link
+              className='btn_news'
+              to={'/blog'}
+              onClick={() => {
+                window.scroll({
+                  top: 0,
+                });
+              }}
+            >
               Ver Más
             </Link>
           </button>
@@ -118,11 +122,15 @@ const News = () => {
 
         <div className='btn_cont'>
           <button className='btn_news' onClick={() => ''}>
-            <Link className='btn_news' to={'/blog'} onClick={() => {
-                      window.scroll({
-                        top: 0,
-                      });
-                    }}>
+            <Link
+              className='btn_news'
+              to={'/blog'}
+              onClick={() => {
+                window.scroll({
+                  top: 0,
+                });
+              }}
+            >
               Ver Más
             </Link>
           </button>

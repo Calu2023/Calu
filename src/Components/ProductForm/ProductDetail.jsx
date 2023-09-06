@@ -7,7 +7,6 @@ import "./product-detail.css";
 import cart_img from "../Resources/Card_resources/cart.svg";
 import elipse from "../Resources/Card_resources/elipse.svg";
 import { useCustomContext } from "../../Hooks/Context/Context";
-import ModalBuy from "../Cart/ModalBuy";
 import { Link } from "react-router-dom";
 import Contact_button from "../Home/Contact_button/Contact_button";
 import arrow_L from "../Home/icon_arrow_left.svg";
@@ -22,7 +21,8 @@ function ProductDetail() {
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
   const navigate = useNavigate();
 
-  const { cart, addToCart, removeFromCart } = useCustomContext();
+  const { cart, addToCart, removeFromCart, handleBlur, setBlur } =
+    useCustomContext();
   const [similarProducts, setSimilarProducts] = useState([]);
   const firstSection = useRef(null);
   const scrollToTop = () => {
@@ -103,6 +103,8 @@ function ProductDetail() {
   const handleDownloadAndBuy = (id) => {
     handleAddToCart(id);
     setModal(true);
+    alert("Producto Agregado");
+    handleBlur();
     //handleDownload();
   };
   const saveEmailToFirebase = async (email) => {
@@ -142,7 +144,7 @@ function ProductDetail() {
       <br />
       <br />
 
-      <div className="main-detail-container" ref={firstSection}>
+      <div className={`main-detail-container `} ref={firstSection}>
         <h2>DETALLE DEL PRODUCTO</h2>
         <div className="main-detail">
           <div className="img-container">
@@ -162,8 +164,11 @@ function ProductDetail() {
             {product.price !== "Gratis" && product.price !== null ? (
               <div className="buying">
                 <p className="price-p">Precio: ${product.price}</p>
-                <button className="download-button" onClick={handleBuy}>
-                  Comprar
+                <button
+                  className="download-button"
+                  onClick={() => handleDownloadAndBuy(product.id)}
+                >
+                  Agregar al carrito
                 </button>
               </div>
             ) : (
@@ -174,16 +179,6 @@ function ProductDetail() {
                 >
                   Agregar al carrito
                 </button>
-                <div className="modalBuy">
-                  {modal && (
-                    <ModalBuy
-                      setIsModalOpen={setModal}
-                      email={email}
-                      setEmail={setEmail}
-                      handleSubmit={handleSubmit}
-                    />
-                  )}
-                </div>
               </>
             )}
           </div>

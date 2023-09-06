@@ -7,12 +7,13 @@
   flex-direction: column;
   overflow: scroll;
   position: absolute;
-  border: solid 1px white;
+
   right: 0;
   width: 300px;
   height: 200px;
-  box-shadow: 5.5px 5px 10px rgb(78, 77, 77);
+  box-shadow: 10px 10px 10px rgb(53, 52, 52);
   margin-right: 50px;
+  -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
 }
 
@@ -33,6 +34,7 @@
   cursor: pointer;
   text-align: end;
   margin: 0;
+  font-weight: bold;
 }
 .total {
   display: flex;
@@ -81,20 +83,24 @@
 
   width: 100%;
 }
+.ctn_modal {
+  width: fit-content;
+  height: 250px;
 
+  margin: auto;
+}
 .emailModal {
-  position: fixed;
-  top: 300%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  margin: 150px auto 0 auto;
+
   background: rgba(0, 0, 255, 0.3);
-  width: 350px;
-  border: solid 1px white;
+  max-width: 350px;
+
   padding: 20px;
   border-radius: 15px;
-  box-shadow: 5.5px 5px 10px rgb(78, 77, 77);
+  box-shadow: 10px 10px 10px rgb(78, 77, 77);
   z-index: 1;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
 }
 .email_btn {
   color: white;
@@ -164,6 +170,7 @@
 @media (max-width: 767px) {
   .emailModal {
     width: 300px;
+    margin-top: 70px;
   }
   .email_btn {
     margin-left: 25px;

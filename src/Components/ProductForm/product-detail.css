@@ -6,12 +6,16 @@
   color: white;
   margin-top: 50px;
 }
+
 .disponibilty {
   display: flex;
   justify-content: center;
 }
 .link_ {
   color: rgba(185, 4, 139, 0.9);
+}
+.link_ img {
+  box-shadow: 8px 8px 10px black;
 }
 .main_first {
   display: flex;
@@ -23,10 +27,12 @@
   color: aqua;
 }
 .img-container img {
+  box-shadow: 8px 8px 10px black;
   width: 250px;
   height: 250px;
 }
 .main-detail {
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
@@ -95,10 +101,7 @@
   width: 220px;
   height: 50px;
   border-radius: 20px;
-  background: linear-gradient(
-    rgba(58, 246, 255, 0.2) 30%,
-    rgba(185, 4, 139, 0.2) 60%
-  );
+  background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
   outline: none;
   border: none;
 
@@ -107,15 +110,9 @@
 }
 
 .download-button {
-  width: 200px;
-  height: 34px;
-  border-radius: 20px;
-  background-color: rgba(4, 25, 88, 0.6);
-  outline: none;
-  border: none;
   color: white;
   cursor: pointer;
-
+  width: 220px;
   margin-top: 10px;
   font-weight: 700;
   box-shadow: 5.5px 5px 10px rgb(61, 59, 59);
@@ -404,7 +401,8 @@
   .star-container p {
     font-size: 16px;
   }
-  .buying button {
+  .buying button,
+  .download-button {
     width: 250px;
     cursor: pointer;
   }

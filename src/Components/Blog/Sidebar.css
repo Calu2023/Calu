@@ -1,6 +1,7 @@
 .lateralBar {
   background-color: rgba(0, 0, 255, 0.2);
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
   width: 40%;
   box-shadow: 5.5px 5px 10px rgb(61, 59, 59);
   display: flex;
@@ -36,6 +37,7 @@ hr {
 .sb_blog_title {
   font-weight: bold;
   color: white;
+  cursor:pointer;
 }
 
 .sb_blog_title a {

@@ -46,7 +46,9 @@
   text-align: center;
   margin-top: 15px;
 }
-
+.image_ img {
+  box-shadow: 8px 8px 10px black;
+}
 .title_news {
   color: white;
   text-align: center;
@@ -65,7 +67,7 @@
     width: 25px;
   }
   .title_news {
-font-size: 16px;
+    font-size: 16px;
   }
 }
 @media (max-width: 1300px) {

@@ -6,6 +6,11 @@ export function Provider({ children }) {
   const [cart, setCart] = useState([]);
   const [isAuth, setIsAuth] = useState(false);
 
+  const [blur, setBlur] = useState(false);
+  const handleBlur = () => {
+    setBlur(!blur);
+  };
+
   const addToCart = (product) => {
     setCart((prevCart) => [...prevCart, product]);
   };
@@ -24,7 +29,16 @@ export function Provider({ children }) {
 
   return (
     <Context.Provider
-      value={{ cart, addToCart, removeFromCart, loginGoogle, logoutGoogle, isAuth }}
+      value={{
+        cart,
+        addToCart,
+        removeFromCart,
+        loginGoogle,
+        logoutGoogle,
+        isAuth,
+        handleBlur,
+        blur,
+      }}
     >
       {children}
     </Context.Provider>

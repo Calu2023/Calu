@@ -95,3 +95,39 @@ iframe[src^="https://www.google.com/recaptcha/"]
     font-size: 18px;
   }
 }
+.contenedor {
+  margin: 2rem auto;
+  border: 1px solid #aaa;
+  height: 300px;
+  width: 90%;
+  max-width: 400px;
+  background: #f1f2f3;
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 0 1rem;
+}
+
+/* Estilos para motores Webkit y blink (Chrome, Safari, Opera... )*/
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+::-webkit-scrollbar:vertical {
+  width: 20px;
+  background-color: rgba(153, 0, 153, 0.116);
+}
+
+::-webkit-scrollbar-button:increment,
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(10, 4, 88, 0.61);
+  border-radius: 20px;
+}

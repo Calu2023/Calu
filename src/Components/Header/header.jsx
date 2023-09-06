@@ -13,7 +13,7 @@ import { collection, addDoc } from 'firebase/firestore';
 import { useCustomContext } from '../../Hooks/Context/Context';
 
 export const Header = ({ cartItem, handleDelete }) => {
-  const { isAuth, logoutGoogle } = useCustomContext();
+  const { isAuth, logoutGoogle, handleBlur } = useCustomContext();
   const [showAdminMenu, setShowAdminMenu] = useState(false);
   const [showCart, setShowCart] = useState(false);
   const location = useLocation();
@@ -86,6 +86,7 @@ export const Header = ({ cartItem, handleDelete }) => {
   const handlePay = () => {
     setIsModalOpen(true);
     setShowCart(false);
+    handleBlur();
   };
   const scroll_top = () => {
     window.scroll({

@@ -51,6 +51,7 @@
 .BlogView .banner img {
   width: 90%;
   height: 90%;
+  box-shadow: 8px 8px 10px black;
 }
 
 @media (min-width: 375px) {
@@ -116,9 +117,10 @@
 }
 @media (min-width: 900px) {
   .BlogView .banner img {
-    width: 90%;
-    height: 90%;
+    width: 550px;
+    height: 250px;
     border-radius: 15px;
+    box-shadow: 8px 8px 10px black;
   }
   .blogImg {
     margin-left: auto;

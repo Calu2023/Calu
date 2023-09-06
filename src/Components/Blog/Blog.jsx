@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState, useRef } from "react";
 import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
 import { auth, db, storage } from "../../firebase-config";
@@ -28,18 +27,18 @@ function Blog() {
 
   const deletePost = async (id, imageUrl) => {
     setIsLoading(true);
-  
+
     const postDoc = doc(db, "posts", id);
-  
+
     try {
       if (imageUrl) {
         const imageRef = ref(storage, imageUrl);
         await getDownloadURL(imageRef);
         await deleteObject(imageRef);
       }
-  
+
       await deleteDoc(postDoc);
-  
+
       // Remove the deleted post from the postList state without refreshing the page
       setPostList((prevPostList) =>
         prevPostList.filter((post) => post.id !== id)
@@ -50,8 +49,6 @@ function Blog() {
       setIsLoading(false);
     }
   };
-  
-  
 
   const editPost = (id) => {
     const postToEdit = postList.find((post) => post.id === id);
@@ -64,7 +61,6 @@ function Blog() {
       top: 0,
     });
   };
-
 
   useEffect(() => {
     const getPosts = async () => {
@@ -80,7 +76,6 @@ function Blog() {
     firstSection.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-
   return (
     <div className="blog">
       <button onClick={scrollToTop}>
@@ -94,22 +89,21 @@ function Blog() {
         <div className="blog-sidebar">
           <div className="postContainer">
             <div className="cardContainerblog">
-            {postList.map((post) => (
-  <div
-    className='card-blog'
-    key={post.id}
-    onClick={() => handlePostClick(post.id)
-    }
-  >
-                  <div className='blogImage'>
-
+              {postList.map((post) => (
+                <div
+                  className="card-blog"
+                  key={post.id}
+                  onClick={() => handlePostClick(post.id)}
+                >
+                  <div className="blogImage">
                     <CardNews
                       image={
                         <img
                           className="icons_novedades"
                           src={post.imageUrl}
                           alt={post.imageUrl}
-                          width="50%"
+                          width="120px"
+                          height="120px"
                         />
                       }
                       description={post.postText}
@@ -117,34 +111,32 @@ function Blog() {
                     />
                   </div>
 
-                  <div className='container-leermas'>
-                  </div>
-                  <div className='cardHeaderblog'>
-
+                  <div className="container-leermas"></div>
+                  <div className="cardHeaderblog">
                     <span>{post.time}</span>
                     <div className="deleteblog">
-      {isAuth && post.author && (
-        <>
-          <button
-            onClick={() => {
-              deletePost(post.id, post.imageUrl);
-            }}
-            className="deleteblogButton"
-            disabled={isLoading}
-          >
-            {isLoading ? "Deleting..." : "Delete"}
-          </button>
-          <button
-            onClick={() => {
-              editPost(post.id); // Aquí pasamos el id del post al editar
-            }}
-            className="editblogButton"
-          >
-            Edit
-          </button>
-        </>
-      )}
-    </div>
+                      {isAuth && post.author && (
+                        <>
+                          <button
+                            onClick={() => {
+                              deletePost(post.id, post.imageUrl);
+                            }}
+                            className="deleteblogButton"
+                            disabled={isLoading}
+                          >
+                            {isLoading ? "Deleting..." : "Delete"}
+                          </button>
+                          <button
+                            onClick={() => {
+                              editPost(post.id); // Aquí pasamos el id del post al editar
+                            }}
+                            className="editblogButton"
+                          >
+                            Edit
+                          </button>
+                        </>
+                      )}
+                    </div>
                   </div>
                   <div className="cardFooterblog"></div>
                 </div>

@@ -37,6 +37,7 @@
 }
 .card_slider_port img {
   width: 120px;
+  box-shadow: 8px 8px 10px black;
 }
 @media (max-width: 1024px) {
   .card_slider_port img {

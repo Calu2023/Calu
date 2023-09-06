@@ -57,7 +57,7 @@ function Cart({ close, cart, handleDelete, buy }) {
           <button onClick={buy}>Iniciar compra</button>
         </div>
 
-        <div class="modal-background"></div>
+        <div class="modal-background" onClick={close}></div>
       </div>
     </div>
   );

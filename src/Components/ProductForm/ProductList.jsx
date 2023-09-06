@@ -101,8 +101,8 @@ function ProductList() {
       <br />
 
       <div className="main-container">
-        <h1 className="products_title">Lista de Productos</h1>
-        <h2 className="our-products">Nuestro productos</h2>
+        <h1 className="products_title">Nuestro productos</h1>
+
         <div className="products">
           {products.map((product) => (
             <div className="main-product" key={product.id}>

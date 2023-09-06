@@ -15,6 +15,10 @@
     align-items: center;
     width: 100%;
     color: #3af6ff;
+    font-size: 38px;
+  }
+  .contact-title h1 {
+    font-size: 38px;
   }
   .contact-title h2 {
     color: #3af6ff;
@@ -119,9 +123,9 @@
 
   .contact .buttonContainer {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     width: 80%;
-    margin-left: 150px;
+    margin-left: 50px;
   }
   .footer_contact {
     display: flex;

@@ -44,17 +44,19 @@ const Onboarding = () => {
           <h2>{onboardinginfo.t4}</h2>
 
           <div className="contact-btn">
-            <Link to={"/contact"} onClick={() => {
-                      window.scroll({
-                        top: 0,
-                      });
-                    }}>¡Contáctanos!</Link>
+            <Link
+              to={"/contact"}
+              onClick={() => {
+                window.scroll({
+                  top: 0,
+                });
+              }}
+            >
+              ¡Contáctanos!
+            </Link>
           </div>
         </div>
-
-       
-          <img className="logoOnboard" src={logoCalu} alt="logo calu" />
-       
+        <img className="logoOnboard" src={logoCalu} alt="logo calu" />
       </div>
 
       <div className="contactFlex"></div>

@@ -1,20 +1,18 @@
 .footer_container {
   z-index: 2;
   width: 100%;
-  min-height: 320px;
   position: absolute;
-  bottom: 0px;
   background: linear-gradient(transparent, rgba(4, 25, 88, 1) 45%) top,
     linear-gradient(rgba(4, 25, 88, 1) 100%, transparent) bottom;
-  background-size: 100% 50%, 100% 51%;
+  background-size: 100% 50%, 100% 60%;
   background-repeat: no-repeat;
 }
 .footer_elements {
   display: flex;
   flex-direction: row;
   max-width: 90vw;
+  margin-top: 50px;
   justify-content: space-around;
-  margin-top: 40px;
 }
 
 .logo_calu {
@@ -22,12 +20,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: -20px;
+  margin-top: -5px;
   margin-left: 10px;
 }
 .logo_calu p {
   color: white;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: bold;
   margin-top: -8%;
 }
@@ -36,8 +34,8 @@
   font-size: 20px;
 }
 .servicios h1 {
-  margin: 50px 0 0 20px;
-  font-size: 26px;
+  margin: 33px 0 0 20px;
+  font-size: 24px;
 }
 .servicios_ {
   display: flex;
@@ -50,30 +48,47 @@
 
   display: flex;
   flex-direction: column;
-  margin: 20px 0 0 20px;
+  margin: 10px 0 10px 20px;
 }
 .redes h1 {
-  font-size: 26px;
+  font-size: 24px;
   margin-left: 5px;
+}
+.logo_calu img {
+  width: 220px;
 }
 
 .social_icons img {
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   margin: 0px 10px 0 0;
 }
 
 li {
-  font-size: 19px;
+  font-size: 17px;
   color: #eb39d9;
 }
 li span {
   color: white; /* text color */
 }
-
+@media (max-width: 1400px) {
+  .footer_container {
+    bottom: 0;
+  }
+}
+@media (max-width: 1178px) {
+  .footer_container li {
+    font-size: 16px;
+  }
+  .social_icons img {
+    width: 35px;
+    height: 35px;
+  }
+}
 @media (max-width: 1024px) {
   .footer_container {
     display: flex;
+    bottom: 0;
     flex-direction: column;
   }
   .logo_calu p {
@@ -87,8 +102,8 @@ li span {
     background-repeat: no-repeat;
   }
   .social_icons img {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
   }
   .footer_container li {
     font-size: 18px;
@@ -104,7 +119,7 @@ li span {
     flex-direction: column;
   }
   .logo_calu img {
-    width: 250px;
+    width: 220px;
   }
 
   .logo_calu p {
