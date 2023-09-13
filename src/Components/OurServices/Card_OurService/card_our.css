@@ -4,10 +4,7 @@
   border-radius: 30% 0% 30% 0%;
   width: 250px;
   height: 250px;
-  background: linear-gradient(
-    rgba(58, 246, 255, 0.2) 30%,
-    rgba(185, 4, 139, 0.2) 60%
-  );
+  background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
 }
 .card_our p {
   color: white;
@@ -28,8 +25,9 @@
   color: aliceblue;
   font-size: 12px;
   font-weight: bold;
-  margin: 5px 15px 0 15px;
+  margin: 5px 15px 0 10px;
   text-align: center;
+  text-transform: lowercase;
 }
 
 @media (max-width: 1024px) {

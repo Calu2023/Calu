@@ -17,11 +17,10 @@
   text-decoration: none;
 }
 .res_card {
+  width: 75%;
   display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  margin-right: 90px;
-  margin-left: 90px;
+  justify-content: space-around;
+  margin: 20px auto 0 auto;
 }
 .res_cart {
   cursor: pointer;

@@ -1,6 +1,6 @@
 import React from "react";
 import "./footer.css";
-import calu_logo from "./icons/calu_logo.svg";
+import calu_logo from "../../images/icono_calu.svg";
 import fb_logo from "./icons/Facebook.png";
 import insta_logo from "./icons/Instagram.png";
 import ld_logo from "./icons/Linkedin.png";
@@ -66,19 +66,34 @@ const Footer = () => {
           <div className="redes">
             <h1>REDES</h1>
             <div className="social_icons">
-              <a href="https://www.linkedin.com/company/calu-mktdigital/" target="_blank">
+              <a
+                href="https://www.linkedin.com/company/calu-mktdigital/"
+                target="_blank"
+              >
                 <img src={ld_logo} alt="linkedin" />
               </a>
-              <a href="https://www.facebook.com/profile.php?id=100090611090874" target="_blank">
+              <a
+                href="https://www.facebook.com/profile.php?id=100090611090874"
+                target="_blank"
+              >
                 <img src={fb_logo} alt="facebook" />
               </a>
-              <a href="https://www.instagram.com/calu.mktdigital/ " target="_blank">
+              <a
+                href="https://www.instagram.com/calu.mktdigital/ "
+                target="_blank"
+              >
                 <img src={insta_logo} alt="instagram" />
               </a>
-              <a href="https://www.tiktok.com/@calumktdigital?is_from_webapp=1&sender_device=pc" target="_blank">
+              <a
+                href="https://www.tiktok.com/@calumktdigital?is_from_webapp=1&sender_device=pc"
+                target="_blank"
+              >
                 <img src={tk_logo} alt="tiktok" />
               </a>
-              <a href="https://open.spotify.com/user/31qdqqxbhaph6tshdgkoidsug6ae " target="_blank">
+              <a
+                href="https://open.spotify.com/user/31qdqqxbhaph6tshdgkoidsug6ae "
+                target="_blank"
+              >
                 <img src={sp_logo} alt="spotify" />
               </a>
               <a href="https://youtube.com/@CaluMktdigital" target="_blank">
@@ -134,19 +149,31 @@ const Footer = () => {
         <div className="redes">
           <h1>REDES</h1>
           <div className="social_icons">
-            <a href="https://www.linkedin.com/company/calu-mktdigital/" target="_blank">
+            <a
+              href="https://www.linkedin.com/company/calu-mktdigital/"
+              target="_blank"
+            >
               <img src={ld_logo} alt="linkedin" />
             </a>
-            <a href="https://www.facebook.com/profile.php?id=100090611090874" target="_blank">
+            <a
+              href="https://www.facebook.com/profile.php?id=100090611090874"
+              target="_blank"
+            >
               <img src={fb_logo} alt="facebook" />
             </a>
             <a href="https://www.instagram.com/calu.mktdigital/">
               <img src={insta_logo} alt="instagram" />
             </a>
-            <a href="https://www.tiktok.com/@calumktdigital?is_from_webapp=1&sender_device=pc" target="_blank">
+            <a
+              href="https://www.tiktok.com/@calumktdigital?is_from_webapp=1&sender_device=pc"
+              target="_blank"
+            >
               <img src={tk_logo} alt="tiktok" />
             </a>
-            <a href="https://open.spotify.com/user/31qdqqxbhaph6tshdgkoidsug6ae" target="_blank">
+            <a
+              href="https://open.spotify.com/user/31qdqqxbhaph6tshdgkoidsug6ae"
+              target="_blank"
+            >
               <img src={sp_logo} alt="spotify" />
             </a>
             <a href="https://youtube.com/@CaluMktdigital" target="_blank">

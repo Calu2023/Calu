@@ -54,7 +54,9 @@ function Cart({ close, cart, handleDelete, buy }) {
               {!isNaN(total) ? (total ? `$${total}` : "Gratis") : "$0"}
             </span>
           </p>
-          <button onClick={buy}>Iniciar compra</button>
+          <div className="compra_btn">
+            <button onClick={buy}>Iniciar compra</button>
+          </div>
         </div>
 
         <div class="modal-background" onClick={close}></div>

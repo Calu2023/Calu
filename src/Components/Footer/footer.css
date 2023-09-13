@@ -35,7 +35,7 @@
 }
 .servicios h1 {
   margin: 33px 0 0 20px;
-  font-size: 24px;
+  font-size: 22px;
 }
 .servicios_ {
   display: flex;
@@ -51,11 +51,11 @@
   margin: 10px 0 10px 20px;
 }
 .redes h1 {
-  font-size: 24px;
+  font-size: 22px;
   margin-left: 5px;
 }
 .logo_calu img {
-  width: 220px;
+  width: 190px;
 }
 
 .social_icons img {
@@ -65,7 +65,7 @@
 }
 
 li {
-  font-size: 17px;
+  font-size: 16px;
   color: #eb39d9;
 }
 li span {
@@ -105,9 +105,6 @@ li span {
     width: 35px;
     height: 35px;
   }
-  .footer_container li {
-    font-size: 18px;
-  }
 }
 
 @media (max-width: 1024px) {
@@ -119,7 +116,7 @@ li span {
     flex-direction: column;
   }
   .logo_calu img {
-    width: 220px;
+    width: 200px;
   }
 
   .logo_calu p {

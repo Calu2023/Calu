@@ -15,7 +15,7 @@
 
 .icono-servicios {
   width: 70px;
-  margin-top: 20px;
+  margin: 15px 0px 5px 0px;
 }
 .ourServices {
   min-height: 100%;
@@ -39,6 +39,8 @@
   flex-direction: column;
   justify-content: center;
 
+  -webkit-transform: translateY(30%);
+
   transform: translateY(30%);
 }
 
@@ -50,6 +52,7 @@
 
 @media (max-width: 1024px) {
   .ourServices {
+    -webkit-transform: translateY(40%);
     transform: translateY(40%);
   }
 }
@@ -57,6 +60,7 @@
   .ourServices {
     flex-direction: column;
     justify-content: center;
+    -webkit-transform: translateY(55%);
     transform: translateY(55%);
   }
 }

@@ -1,4 +1,8 @@
+import { useEffect } from 'react';
+
 const EditService = ({ serviceId, closeModal, handleChange, handleSubmit }) => {
+  useEffect(() => {}, [serviceId]);
+
   return (
     <div className='modal'>
       <h2 onClick={closeModal}>X</h2>
@@ -41,7 +45,8 @@ const EditService = ({ serviceId, closeModal, handleChange, handleSubmit }) => {
           onChange={handleChange}
         ></textarea>
         <label htmlFor='img'>Imagen </label>
-        <input type='file' name='img' id='img' value={serviceId.img} />
+        <input type='file' name='img' id='img' onChange={handleChange} />
+        {/* <img src={serviceId.img} alt='IMAGEN' /> */}
         <button type='submit'>Editar Servicio</button>
         <button type='reset'>Reiniciar</button>
       </form>

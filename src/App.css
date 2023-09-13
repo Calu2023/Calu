@@ -1,12 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 
 @font-face {
-  font-family: "Archive";
-  src: url("./Archive-Regular.ttf");
+  font-family: 'Archive';
+  src: url('./Archive-Regular.ttf');
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 section {
@@ -14,12 +14,12 @@ section {
     linear-gradient(rgba(4, 25, 88, 0.6) 70%, transparent) bottom,
     linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) top,
     linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) bottom;
-  background-size: 100% 48%, 100% 52%, 100% calc(50% - 5px),
-    100% calc(50% - 5px), 100% 100%;
+  background-size: 100% 48%, 100% 52%, 100% calc(50% - 5px), 100% calc(50% - 5px), 100% 100%;
   background-repeat: no-repeat;
+  -webkit-backdrop-filter: blur(1px);
   backdrop-filter: blur(1px);
   min-height: 800px;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 iframe[src^="https://www.google.com/recaptcha/"]
@@ -40,7 +40,7 @@ iframe[src^="https://www.google.com/recaptcha/"]
 @media only screen and (max-width: 767px) {
   h1 {
     font-size: 24px;
-    font-family: "Archive", Arial, sans-serif;
+    font-family: 'Archive', Arial, sans-serif;
   }
   h2 {
     font-size: 18px;
@@ -56,7 +56,7 @@ iframe[src^="https://www.google.com/recaptcha/"]
 @media only screen and (max-width: 390px) {
   h1 {
     font-size: 24px;
-    font-family: "Archive", Arial, sans-serif;
+    font-family: 'Archive', Arial, sans-serif;
   }
   h2 {
     font-size: 18px;
@@ -69,7 +69,7 @@ iframe[src^="https://www.google.com/recaptcha/"]
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   h1 {
     font-size: 30px;
-    font-family: "Archive", Arial, sans-serif;
+    font-family: 'Archive', Arial, sans-serif;
   }
   h2 {
     font-size: 20px;
@@ -86,7 +86,7 @@ iframe[src^="https://www.google.com/recaptcha/"]
 @media only screen and (min-width: 1024px) {
   h1 {
     font-size: 32px;
-    font-family: "Archive", Arial, sans-serif;
+    font-family: 'Archive', Arial, sans-serif;
   }
   h2 {
     font-size: 22px;
@@ -115,7 +115,7 @@ iframe[src^="https://www.google.com/recaptcha/"]
 
 ::-webkit-scrollbar:vertical {
   width: 20px;
-  background-color: rgba(153, 0, 153, 0.116);
+  background-color: rgba(0, 47, 255, 0.644);
 }
 
 ::-webkit-scrollbar-button:increment,
@@ -128,6 +128,6 @@ iframe[src^="https://www.google.com/recaptcha/"]
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(10, 4, 88, 0.61);
+  background-color: rgba(5, 0, 75, 0.87);
   border-radius: 20px;
 }

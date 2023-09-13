@@ -102,8 +102,6 @@ function Blog() {
                           className="icons_novedades"
                           src={post.imageUrl}
                           alt={post.imageUrl}
-                          width="120px"
-                          height="120px"
                         />
                       }
                       description={post.postText}

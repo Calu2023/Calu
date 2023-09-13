@@ -3,8 +3,7 @@
   flex-direction: column;
   max-width: 320px;
   justify-content: center;
-  margin-left: 90px;
-  margin-right: 90px;
+
   cursor: pointer;
 }
 
@@ -47,7 +46,7 @@
   margin-top: 15px;
 }
 .image_ img {
-  box-shadow: 8px 8px 10px black;
+  box-shadow: 8px 8px 10px rgba(0, 22, 150, 0.7);
 }
 .title_news {
   color: white;

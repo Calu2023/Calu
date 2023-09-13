@@ -12,6 +12,7 @@ import EditService from './EditService';
 const AdminCrud = () => {
   const [servicesList, setServicesList] = useState([]);
   const [modal, setModal] = useState(false);
+  const [imageEdit, setImageEdit] = useState('');
   const [modalEdit, setModalEdit] = useState(false);
   const [blur, setBlur] = useState(false);
   const [formData, setFormData] = useState({
@@ -40,7 +41,7 @@ const AdminCrud = () => {
       setServicesList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
     getServices();
-  }, [servicesList]);
+  }, [servicesList, servicesCollectionRef]);
 
   const closeModal = () => {
     setModal(false);
@@ -104,13 +105,7 @@ const AdminCrud = () => {
   const handleEdit = async (serviceId) => {
     const servicioRef = doc(db, 'servicios', serviceId);
     const data = await getDoc(servicioRef);
-    /* if (data.exists()) {
-      const imgData = data.data();
-      const imgRef = ref(storage, 'images/' + imgData.img);
-      console.log('IMGREF ', imgRef.name);
 
-      const imgUrl = await getDownloadURL(imgRef);
-      console.log('IMGURL ', imgUrl); */
     setEditItemId({
       id: serviceId,
       title: data.data().title,
@@ -118,9 +113,8 @@ const AdminCrud = () => {
       des_1: data.data().des_1,
       des_2: data.data().des_2,
       des_3: data.data().des_3,
-      //img: imgRef.name,
+      img: data.data().img,
     });
-    //}
     setModalEdit(true);
     setBlur(true);
   };
@@ -129,20 +123,29 @@ const AdminCrud = () => {
     event.preventDefault();
     const serviceId = doc(db, 'servicios', editItemId.id);
     const imageFile = event.target.img.files[0];
-    const storageRef = ref(storage, 'images/' + imageFile.name);
-
-    await uploadBytes(storageRef, imageFile);
-    const imageUrl = await getDownloadURL(storageRef);
-
-    const newData = {
-      title: editItemId.title,
-      sub: editItemId.sub,
-      des_1: editItemId.des_1,
-      des_2: editItemId.des_2,
-      des_3: editItemId.des_3,
-      img: imageUrl,
-    };
-    await updateDoc(serviceId, newData);
+    if (imageFile) {
+      const storageRef = ref(storage, 'images/' + imageFile.name);
+      await uploadBytes(storageRef, imageFile);
+      const imageUrl = await getDownloadURL(storageRef);
+      const newData = {
+        title: editItemId.title,
+        sub: editItemId.sub,
+        des_1: editItemId.des_1,
+        des_2: editItemId.des_2,
+        des_3: editItemId.des_3,
+        img: imageUrl,
+      };
+      await updateDoc(serviceId, newData);
+    } else {
+      const newData = {
+        title: editItemId.title,
+        sub: editItemId.sub,
+        des_1: editItemId.des_1,
+        des_2: editItemId.des_2,
+        des_3: editItemId.des_3,
+      };
+      await updateDoc(serviceId, newData);
+    }
 
     setEditItemId({
       title: '',
@@ -151,6 +154,7 @@ const AdminCrud = () => {
       des_3: '',
       img: '',
     });
+    setImageEdit('');
     closeModal();
   };
   return (

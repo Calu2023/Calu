@@ -1,8 +1,6 @@
 .news_text {
   margin: 0 15% 0% 7%;
 }
-.novedades_items {
-}
 
 .btn_news {
   border: none;
@@ -25,12 +23,7 @@
 
   transform: translateY(30%);
 }
-.cards_novedades {
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-}
+
 .title_novedades {
   color: #3af6ff;
   text-align: left;
@@ -40,10 +33,11 @@
   margin: 0 0 0 0%;
 }
 .cards_novedades {
+  width: 75%;
   display: flex;
   flex-direction: row;
-  margin-top: 20px;
-  justify-content: center;
+  margin: 30px auto 0 auto;
+  justify-content: space-around;
   align-items: center;
 }
 .cards_novedades a {

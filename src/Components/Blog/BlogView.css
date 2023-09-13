@@ -4,6 +4,8 @@
 }
 .blogContainer {
   display: flex;
+  box-shadow: 5.5px 5px 10px rgb(61, 59, 59);
+  border-radius: 15px;
 }
 .blogView-sidebar {
   display: flex;

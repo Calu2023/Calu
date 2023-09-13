@@ -36,9 +36,9 @@
   backdrop-filter: blur(3px);
   border-radius: 50px;
   position: relative;
-  right: 220px;
-  bottom: 80px;
-  width: 210px;
+  right: 200px;
+  bottom: 70px;
+  width: 190px;
   height: 45px;
 }
 .text_hover {
@@ -61,7 +61,7 @@
   margin: 12px 0 10px 10px;
 }
 .arrow_up {
-  right: 50px;
+  right: 48px;
   margin-bottom: 110px;
   bottom: -20px;
   width: 28px;

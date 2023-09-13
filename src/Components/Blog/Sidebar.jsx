@@ -5,10 +5,7 @@ import { collection, getDocs, limitToLast, orderBy, query } from 'firebase/fires
 import { db } from '../../firebase-config';
 
 const Sidebar = () => {
-  const [postList, setPostList] = useState([]);
   const navigate = useNavigate();
-  const queryDocs = query(collection(db, 'posts'));
-
   ///////GET BLOGS
   const [posts, setPost] = useState([]);
 
@@ -27,14 +24,6 @@ const Sidebar = () => {
   };
 
   ///////////////////////////
-
-  useEffect(() => {
-    const getPosts = async () => {
-      const data = await getDocs(queryDocs);
-      setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    };
-    getPosts();
-  }, [queryDocs]);
   const handlePostClick = (id) => {
     navigate(`/blog/${id}`);
   };
@@ -43,10 +32,12 @@ const Sidebar = () => {
       <h2 className='lateralBarTitle'>Sugerencias</h2>
       <div className='lateralContainer'>
         {posts &&
-          posts.map((post) => (
-            <div className='sb_blog_title'>
+          posts.map((post, index) => (
+            <div className='sb_blog_title' key={index}>
               <p className='sb_blog_title' onClick={() => handlePostClick(post.id)}>
-                {post.data().title}
+                <div className='sb_blog_image'>
+                  <img src={post.data().imageUrl} alt={`Imagen ${post.data().title}`} />
+                </div>
                 {/* <Link className="sb_blog_title" to={post.id}>
                 </Link> */}
               </p>
