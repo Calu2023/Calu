@@ -1,21 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.72f9ac41.css",
-    "main.js": "/static/js/main.64ec2a0c.js",
+    "main.css": "/static/css/main.fc10a0a3.css",
+    "main.js": "/static/js/main.796712d0.js",
     "static/js/787.0b9e84b2.chunk.js": "/static/js/787.0b9e84b2.chunk.js",
     "static/media/backgroundClouds.mp4": "/static/media/backgroundClouds.ff9b153928eef03f8cc4.mp4",
     "static/media/icono_calu.svg": "/static/media/icono_calu.39d040f1ec1035ce873d633b874a77d7.svg",
     "static/media/logocalu.png": "/static/media/logocalu.5a2bcdb0ac25a7f97bb3.png",
     "static/media/cart.svg": "/static/media/cart.e4bcd540a42d70cef849bac263811e05.svg",
-    "static/media/modelo_negocio.png": "/static/media/modelo_negocio.d6c3333b2f56d7c96b54.png",
-    "static/media/desarrollo_web.png": "/static/media/desarrollo_web.6fda78a0ac4a0991fe68.png",
-    "static/media/email_marketing.png": "/static/media/email_marketing.48ddc8acedde35509b30.png",
-    "static/media/gestion_redes.png": "/static/media/gestion_redes.b64f2f3a95af177da696.png",
-    "static/media/consultoria_estrategica.png": "/static/media/consultoria_estrategica.471a6059fa247bab51d1.png",
-    "static/media/publicidad_digital.png": "/static/media/publicidad_digital.348a60d34c83c4524b08.png",
     "static/media/icono_contacto.png": "/static/media/icono_contacto.12ea51e2f78aac1481df.png",
-    "static/media/book_institucional.png": "/static/media/book_institucional.ad5db1ade90bdd4ec661.png",
-    "static/media/creación_contenido.png": "/static/media/creación_contenido.fa099e87c36bce924db6.png",
     "static/media/Archive-Regular.ttf": "/static/media/Archive-Regular.27d1e320dc412e1d01db.ttf",
     "static/media/Mercado-Pago-Logo.png": "/static/media/Mercado-Pago-Logo.691985687187510422b8.png",
     "static/media/2560px-Stripe_Logo,_revised_2016.svg.png": "/static/media/2560px-Stripe_Logo,_revised_2016.svg.8661c7318fadcf06339b.png",
@@ -34,12 +26,12 @@
     "static/media/elipse.svg": "/static/media/elipse.b1643da5028c81ee983f607cf4e98356.svg",
     "static/media/icon_arrow_right.svg": "/static/media/icon_arrow_right.a38b232691160512c9a645530d50b282.svg",
     "static/media/icon_arrow_left.svg": "/static/media/icon_arrow_left.ce04c17efbac313e8f9cf8fa4cdb140f.svg",
-    "main.72f9ac41.css.map": "/static/css/main.72f9ac41.css.map",
-    "main.64ec2a0c.js.map": "/static/js/main.64ec2a0c.js.map",
+    "main.fc10a0a3.css.map": "/static/css/main.fc10a0a3.css.map",
+    "main.796712d0.js.map": "/static/js/main.796712d0.js.map",
     "787.0b9e84b2.chunk.js.map": "/static/js/787.0b9e84b2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.72f9ac41.css",
-    "static/js/main.64ec2a0c.js"
+    "static/css/main.fc10a0a3.css",
+    "static/js/main.796712d0.js"
   ]
 }
