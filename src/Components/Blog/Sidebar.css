@@ -1,15 +1,14 @@
 .lateralBar {
-  background-color: rgba(0, 0, 255, 0.2);
+  /* background-color: rgba(2, 2, 73, 50%);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   width: 40%;
-  box-shadow: 5.5px 5px 10px rgb(61, 59, 59);
+  box-shadow: 5.5px 5px 10px rgb(61, 59, 59);*/
+
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  right: 0;
   overflow: scroll;
+  margin: auto;
+  margin: 0 auto 50px auto;
 }
 .lateralBar::-webkit-scrollbar {
   display: none;
@@ -38,32 +37,37 @@ hr {
   font-weight: bold;
   color: white;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
 }
 
 .sb_blog_title a {
   text-decoration: none;
   display: flex;
   justify-content: center;
-  margin: 0 10px 0 10px;
+  margin: 0 auto 0 auto;
 }
 .sb_blog_image {
   max-width: 250px;
   height: 140px;
 }
 .sb_blog_image img {
-  height: 170px;
-  width: 200px;
+  height: 120px;
+  width: 130px;
 }
 @media (min-width: 340px) {
   .lateralBar {
     position: initial;
-    width: 90%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-
-    border-radius: 15px;
-    margin-top: 50px;
+    border-top: 2px solid #c5c5c5;
+    display: flex;
+    overflow: scroll;
+    margin: auto;
+    margin: 150px 0 50px 0;
+  }
+  .sb_blog_image {
+    margin: 10px;
   }
 
   .lateralBar .blogTitle {
@@ -72,7 +76,7 @@ hr {
   .lateralBar .lateralContainer {
     margin-top: 10px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     padding: 10px;
   }
@@ -85,17 +89,23 @@ hr {
     position: initial;
   }
 }
-
+@media (min-width: 1025px) {
+  .lateralBar .lateralContainer {
+    flex-direction: column;
+  }
+  .lateralBar {
+    border-left: 2px solid #c5c5c5;
+    border-top: none;
+  }
+}
 @media (min-width: 900px) {
   .lateralBar .lateralContainer {
-    padding: 5px;
   }
   .lateralBar .lateralContainer .card_our {
     max-width: 250px;
     height: 250px;
   }
   .lateralBar {
-    width: 80%;
   }
 }
 

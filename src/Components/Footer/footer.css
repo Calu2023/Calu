@@ -1,11 +1,6 @@
 .footer_container {
   z-index: 2;
   width: 100%;
-  position: absolute;
-  background: linear-gradient(transparent, rgba(4, 25, 88, 1) 45%) top,
-    linear-gradient(rgba(4, 25, 88, 1) 100%, transparent) bottom;
-  background-size: 100% 50%, 100% 60%;
-  background-repeat: no-repeat;
 }
 .footer_elements {
   display: flex;
@@ -34,12 +29,20 @@
   font-size: 20px;
 }
 .servicios h1 {
-  margin: 33px 0 0 20px;
+  margin: 20px 0 0 20px;
   font-size: 22px;
 }
 .servicios_ {
   display: flex;
   flex-direction: row;
+}
+
+.servicios_ span::first-letter {
+  text-transform: uppercase;
+}
+.servicios_ li .verMasFooter {
+  cursor: pointer;
+  font-weight: bold;
 }
 
 .redes {
@@ -48,7 +51,7 @@
 
   display: flex;
   flex-direction: column;
-  margin: 10px 0 10px 20px;
+  margin: 0px 0 10px 20px;
 }
 .redes h1 {
   font-size: 22px;
@@ -56,6 +59,7 @@
 }
 .logo_calu img {
   width: 190px;
+  margin-top: -10px;
 }
 
 .social_icons img {
@@ -70,6 +74,15 @@ li {
 }
 li span {
   color: white; /* text color */
+}
+.terminos {
+  color: white;
+  cursor: pointer;
+}
+.terminos span {
+  font-size: 10px;
+  position: absolute;
+  width: 200px;
 }
 @media (max-width: 1400px) {
   .footer_container {
@@ -96,10 +109,10 @@ li span {
   }
 
   .footer_elements_mobile {
-    background: linear-gradient(transparent, rgba(4, 25, 88, 1) 50%) top,
-      linear-gradient(rgba(4, 25, 88, 1) 100%, transparent) bottom;
+    /* background: linear-gradient(transparent, rgb(4, 25, 120) 50%) top,
+      linear-gradient(rgb(4, 25, 120) 100%, transparent) bottom;
     background-size: 100% 80%, 100% 51%;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;*/
   }
   .social_icons img {
     width: 35px;

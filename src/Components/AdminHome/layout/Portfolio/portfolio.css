@@ -6,6 +6,7 @@
 .edit {
   display: flex;
   flex-direction: row;
+  width: fit-content;
 }
 .delete_btn {
   position: relative;

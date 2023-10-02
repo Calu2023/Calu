@@ -1,6 +1,6 @@
 .cartContainer {
   padding: 20px;
-  background-color: rgba(0, 0, 255, 0.5);
+  background-color: rgba(0, 0, 39, 50%);
   border-radius: 12px;
   color: white;
   display: flex;
@@ -70,10 +70,7 @@
 }
 
 .compra_btn {
-  background-image: linear-gradient(
-    rgba(58, 246, 255, 0.2) 30%,
-    rgba(185, 4, 139, 0.2) 60%
-  );
+  background-image: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
   border-radius: 50px;
   width: 220px;
   margin: auto;
@@ -81,7 +78,7 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  box-shadow: 5.5px 5px 10px rgb(61, 59, 59);
+  box-shadow: 10px 10px 10px rgb(26, 26, 26);
 }
 .compra_btn button {
   height: 50px;
@@ -105,27 +102,25 @@
 }
 .emailModal {
   margin: 250px auto 0 auto;
-  background: rgba(0, 0, 255, 0.5);
+  background: rgba(0, 0, 39, 0.5);
   max-width: 350px;
   position: fixed;
   padding: 20px;
   border-radius: 15px;
-  box-shadow: 10px 10px 10px rgb(49, 49, 49);
+  box-shadow: 10px 10px 10px rgb(26, 26, 26);
   z-index: 5;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
 
   left: 50%;
+  -webkit-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
 }
 .email_btn {
   color: white;
   width: 220px;
   height: 50px;
-  background: linear-gradient(
-    rgba(58, 246, 255, 0.2) 30%,
-    rgba(185, 4, 139, 0.2) 60%
-  );
+  background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
   border-radius: 3rem 0 3rem 0;
   text-decoration: none;
   border: none;
@@ -133,7 +128,7 @@
   margin-left: 50px;
 
   border-radius: 50px;
-  box-shadow: 5.5px 5px 10px rgb(61, 59, 59);
+  box-shadow: 10px 10px 10px rgb(26, 26, 26);
   font-weight: bold;
   font-size: 14px;
 }
@@ -181,11 +176,11 @@
 }
 .terms_link {
   text-decoration: none;
-  color: white;
+  color: #3af6ff;
+  font-weight: bold;
 }
 .terms .noCheck {
-  color: rgba(179, 0, 0, 0.952);
-  font-weight: bold;
+  color: white;
 }
 .terms p {
   font-size: 15px;

@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import "./contact.css";
 import { Header } from "../Header/header";
-import CTN from "../CTN/CTN";
-import Footer from "../Footer/Footer";
 import { db } from "../../firebase-config";
 import { collection, addDoc } from "firebase/firestore";
 import { useCustomContext } from "../../Hooks/Context/Context";
@@ -106,8 +104,8 @@ const Contact = () => {
 
   return (
     <div>
-      <Header cartItem={cart} handleDelete={removeFromCart} />
       <div className="contact">
+        <Header cartItem={cart} handleDelete={removeFromCart} />
         <div className="contact-title">
           <h1>Contáctanos</h1>
           <p>Te damos el servicio que nos gustaría recibir</p>

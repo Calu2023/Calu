@@ -20,8 +20,6 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-
-  transform: translateY(30%);
 }
 
 .title_novedades {
@@ -81,7 +79,6 @@
     margin: 0 7% 0% 7%;
   }
   .novedades_container {
-    transform: translateY(40%);
   }
 }
 @media (max-width: 767px) {
@@ -94,9 +91,6 @@
   }
   .btn_news {
     margin-top: -5px;
-  }
-  .novedades_items {
-    margin-top: 20px;
   }
 }
 

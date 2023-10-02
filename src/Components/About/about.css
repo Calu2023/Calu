@@ -2,9 +2,6 @@
   flex-direction: column;
   justify-content: center;
   margin: auto 15% auto 7%;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-55%);
 }
 .about_items {
   display: flex;
@@ -40,7 +37,7 @@
 
 @media (max-width: 900px) {
   .about_container {
-    margin: 0 7% 0% 7%;
+    margin: 0 7% 150px 7%;
   }
   .title_about {
     margin-bottom: -10px;

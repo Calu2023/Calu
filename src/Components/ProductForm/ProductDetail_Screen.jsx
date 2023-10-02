@@ -2,6 +2,7 @@ import React from "react";
 import Footer from "../Footer/Footer";
 import CTN from "../CTN/CTN";
 import ProductDetail from "./ProductDetail";
+import "./product-detail.css";
 
 const ProductDetail_Screen = () => {
   const [width, setWidth] = React.useState(window.innerWidth);
@@ -16,24 +17,22 @@ const ProductDetail_Screen = () => {
   }, []);
   if (width > breakpoint) {
     return (
-      <div>
+      <div className="pd_ctn">
         <ProductDetail />
-        <section>
-          <CTN />
-          <Footer />
-        </section>
+
+        <CTN />
+        <Footer />
       </div>
     );
   }
   return (
-    <div>
+    <div className="pd_ctn">
       <ProductDetail />
       <section>
         <CTN />
       </section>
-      <section>
-        <Footer />
-      </section>
+
+      <Footer />
     </div>
   );
 };

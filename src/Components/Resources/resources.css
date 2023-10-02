@@ -2,8 +2,6 @@
   display: flex;
   justify-content: center;
 
-  transform: translateY(30%);
-
   flex-direction: column;
 }
 .res_title {
@@ -53,16 +51,13 @@
     margin-right: 20px;
   }
   .res_ctn {
-    transform: translateY(45%);
   }
 }
 
 @media (max-width: 767px) {
   .res_items {
-    margin-top: 50px;
   }
   .res_ctn {
-    transform: translateY(25%);
   }
   .card_ctn {
     margin-top: 20px;

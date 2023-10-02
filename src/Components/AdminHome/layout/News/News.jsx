@@ -118,7 +118,13 @@ const News = () => {
             posts.map((post) => (
               <a href="">
                 <Card_news
-                  image={<img src={post.data().imageUrl} width="150px" />}
+                  image={
+                    <img
+                      src={post.data().imageUrl}
+                      width="130px"
+                      height="130px"
+                    />
+                  }
                   title={post.data().title}
                 ></Card_news>
               </a>
@@ -157,30 +163,21 @@ const News = () => {
         </div>
         <div className="cards_novedades"></div>
         <Slider>
-          <a href="">
-            <Card_news
-              image={
-                <img className="icons_novedades" src={""} alt="" width="50%" />
-              }
-              title={"TENDENCIAS 2023"}
-            ></Card_news>{" "}
-          </a>
-          <a href="">
-            <Card_news
-              image={
-                <img className="icons_novedades" src={""} alt="" width="50%" />
-              }
-              title={"TENDENCIAS 2023"}
-            ></Card_news>
-          </a>
-          <a href="">
-            <Card_news
-              image={
-                <img className="icons_novedades" src={""} alt="" width="50%" />
-              }
-              title={"TENDENCIAS 2023"}
-            ></Card_news>
-          </a>
+          {posts &&
+            posts.map((post) => (
+              <a href="">
+                <Card_news
+                  image={
+                    <img
+                      src={post.data().imageUrl}
+                      width="100px"
+                      height="100px"
+                    />
+                  }
+                  title={post.data().title}
+                ></Card_news>
+              </a>
+            ))}
         </Slider>
       </div>
       <div className="btn_cont">

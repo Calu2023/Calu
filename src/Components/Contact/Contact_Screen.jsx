@@ -17,21 +17,18 @@ const Contact_Screen = () => {
   }, []);
   if (width > breakpoint) {
     return (
-      <div>
+      <div className="cnct_screen_ctn">
         <Contact />
-        <div className="footer_contact">
-          <Footer />
-        </div>
+
+        <Footer />
       </div>
     );
   }
   return (
-    <div>
+    <div className="cnct_screen_ctn">
       <Contact />
 
-      <section>
-        <Footer />
-      </section>
+      <Footer />
     </div>
   );
 };

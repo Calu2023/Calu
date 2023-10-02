@@ -3,9 +3,9 @@ import { useState } from "react";
 import { doc, getDoc, updateDoc, setDoc } from "firebase/firestore";
 import { useEffect } from "react";
 import { db } from "../../../../firebase-config";
-import logoCalu from "../../../../images/logocalu.png";
+import "../../../../Components/Onboarding/Onboarding.css";
 import Modal from "../Modal/modal";
-
+import logoCalu from "../../../../images/icono_calu.svg";
 const Onboarding = () => {
   const [onboardinginfo, setOnboardinginfo] = useState([]);
   /* setDoc(doc(db, "home", "Onboarding"), {
@@ -76,76 +76,75 @@ const Onboarding = () => {
   return (
     <div>
       <div className="onboarding">
-        <div className="parrafo">
-          <div className="edit">
-            <h1>{onboardinginfo.title}</h1>
-            <Modal>
-              <input
-                style={{ width: "300px", height: "30px" }}
-                type="text"
-                placeholder="Ingrese titulo"
-                onChange={(e) => setTitle(e.target.value)}
-              />
-              <button onClick={() => updateTitle()}>GUARDAR</button>
-            </Modal>
-          </div>
-          <div className="edit">
-            <p>{onboardinginfo.t1}</p>
-            <Modal>
-              <input
-                style={{ width: "300px", height: "30px" }}
-                type="text"
-                placeholder="Ingrese texto 1"
-                onChange={(e) => setT1(e.target.value)}
-              />
-              <button onClick={() => updateT1()}>GUARDAR</button>
-            </Modal>
-          </div>
+        <div className="onb_items">
+          <div className="parrafo">
+            <div className="edit">
+              <h1>{onboardinginfo.title}</h1>
+              <Modal>
+                <input
+                  style={{ width: "300px", height: "30px" }}
+                  type="text"
+                  placeholder="Ingrese titulo"
+                  onChange={(e) => setTitle(e.target.value)}
+                />
+                <button onClick={() => updateTitle()}>GUARDAR</button>
+              </Modal>
+            </div>
+            <div className="edit">
+              <p>{onboardinginfo.t1}</p>
+              <Modal>
+                <input
+                  style={{ width: "300px", height: "30px" }}
+                  type="text"
+                  placeholder="Ingrese texto 1"
+                  onChange={(e) => setT1(e.target.value)}
+                />
+                <button onClick={() => updateT1()}>GUARDAR</button>
+              </Modal>
+            </div>
 
-          <div className="edit">
-            <p>{onboardinginfo.t2}</p>
-            <Modal>
-              <input
-                style={{ width: "300px", height: "30px" }}
-                type="text"
-                placeholder="Ingrese texto 2"
-                onChange={(e) => setT2(e.target.value)}
-              />
-              <button onClick={() => updateT2()}>GUARDAR</button>
-            </Modal>
-          </div>
+            <div className="edit">
+              <p>{onboardinginfo.t2}</p>
+              <Modal>
+                <input
+                  style={{ width: "300px", height: "30px" }}
+                  type="text"
+                  placeholder="Ingrese texto 2"
+                  onChange={(e) => setT2(e.target.value)}
+                />
+                <button onClick={() => updateT2()}>GUARDAR</button>
+              </Modal>
+            </div>
 
-          <div className="edit">
-            <p>{onboardinginfo.t3}</p>
-            <Modal>
-              <input
-                style={{ width: "300px", height: "30px" }}
-                type="text"
-                placeholder="Ingrese texto 2"
-                onChange={(e) => setT3(e.target.value)}
-              />
-              <button onClick={() => updateT3()}>GUARDAR</button>
-            </Modal>
-          </div>
-          <div className="edit">
-            <h2>{onboardinginfo.t4}</h2>
-            <Modal>
-              <input
-                style={{ width: "300px", height: "30px" }}
-                type="text"
-                placeholder="Ingrese texto 3"
-                onChange={(e) => setT4(e.target.value)}
-              />
-              <button onClick={() => updateT4()}>GUARDAR</button>
-            </Modal>
-          </div>
+            <div className="edit">
+              <p>{onboardinginfo.t3}</p>
+              <Modal>
+                <input
+                  style={{ width: "300px", height: "30px" }}
+                  type="text"
+                  placeholder="Ingrese texto 2"
+                  onChange={(e) => setT3(e.target.value)}
+                />
+                <button onClick={() => updateT3()}>GUARDAR</button>
+              </Modal>
+            </div>
+            <div className="edit">
+              <h2>{onboardinginfo.t4}</h2>
+              <Modal>
+                <input
+                  style={{ width: "300px", height: "30px" }}
+                  type="text"
+                  placeholder="Ingrese texto 3"
+                  onChange={(e) => setT4(e.target.value)}
+                />
+                <button onClick={() => updateT4()}>GUARDAR</button>
+              </Modal>
+            </div>
 
-          <div className="contact-btn">
-            <Link to={"/contact"}>¡Contáctanos!</Link>
+            <div className="contact-btn">
+              <Link to={"/contact"}>¡Contáctanos!</Link>
+            </div>
           </div>
-        </div>
-
-        <div className="logo_ctn">
           <img className="logoOnboard" src={logoCalu} alt="logo calu" />
         </div>
       </div>

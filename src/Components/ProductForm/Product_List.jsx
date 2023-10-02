@@ -2,6 +2,7 @@ import ProductList from "./ProductList";
 import React from "react";
 import Footer from "../Footer/Footer";
 import CTN from "../CTN/CTN";
+import "./product_list.css";
 const Product_List = () => {
   const [width, setWidth] = React.useState(window.innerWidth);
   const breakpoint = 1024;
@@ -15,7 +16,7 @@ const Product_List = () => {
   }, []);
   if (width > breakpoint) {
     return (
-      <div>
+      <div className="pl_ctn">
         <ProductList />
         <section>
           <CTN />
@@ -25,14 +26,13 @@ const Product_List = () => {
     );
   }
   return (
-    <div>
+    <div className="pl_ctn">
       <ProductList />
       <section>
         <CTN />
       </section>
-      <section>
-        <Footer />
-      </section>
+
+      <Footer />
     </div>
   );
 };

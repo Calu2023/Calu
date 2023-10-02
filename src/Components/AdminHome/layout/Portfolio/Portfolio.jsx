@@ -166,18 +166,9 @@ const Portfolio = () => {
               {card &&
                 card.map((card) => (
                   <Card
-                    image={<img src={card.data().imageUrl} width="150px" />}
+                    image={<img src={card.data().imageUrl} width="100px" />}
                     title={card.data().cardTitle}
-                    btn={
-                      <a
-                        target="_blank"
-                        className="
-                button_portfolio"
-                        href={card.data().link}
-                      >
-                        Ver más
-                      </a>
-                    }
+                    btn={""}
                     btn_delete={
                       <Card_delete>
                         <p>¿Esta seguro que desea eliminar esta tarjeta?</p>

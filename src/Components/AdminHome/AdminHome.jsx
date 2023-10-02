@@ -111,9 +111,8 @@ const AdminHome = () => {
       <section>
         <CTN />
       </section>
-      <section>
-        <Footer />
-      </section>
+
+      <Footer />
     </div>
   );
 };

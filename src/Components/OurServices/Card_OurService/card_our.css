@@ -29,6 +29,9 @@
   text-align: center;
   text-transform: lowercase;
 }
+.des::first-letter {
+  text-transform: uppercase;
+}
 
 @media (max-width: 1024px) {
   .card_our {
