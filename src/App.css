@@ -12,7 +12,7 @@ body {
 }
 
 section {
-  margin-top: 200px;
+  margin-top: 12%;
 }
 
 iframe[src^="https://www.google.com/recaptcha/"]
@@ -62,6 +62,23 @@ iframe[src^="https://www.google.com/recaptcha/"]
 /* Estilos para tablet */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   h1 {
+    font-size: 28px;
+    font-family: "Archive", Arial, sans-serif;
+  }
+  h2 {
+    font-size: 18px;
+  }
+  p {
+    font-size: 15px;
+  }
+  section {
+    margin-bottom: 150px;
+  }
+}
+
+/* Estilos para escritorio */
+@media only screen and (min-width: 1024px) {
+  h1 {
     font-size: 30px;
     font-family: "Archive", Arial, sans-serif;
   }
@@ -70,24 +87,6 @@ iframe[src^="https://www.google.com/recaptcha/"]
   }
   p {
     font-size: 16px;
-  }
-  section {
-    margin-top: 20px;
-    margin-bottom: 150px;
-  }
-}
-
-/* Estilos para escritorio */
-@media only screen and (min-width: 1024px) {
-  h1 {
-    font-size: 32px;
-    font-family: "Archive", Arial, sans-serif;
-  }
-  h2 {
-    font-size: 22px;
-  }
-  p {
-    font-size: 18px;
   }
 }
 .contenedor {
@@ -109,8 +108,8 @@ iframe[src^="https://www.google.com/recaptcha/"]
 }
 
 ::-webkit-scrollbar:vertical {
-  width: 20px;
-  background-color: rgb(95, 84, 255);
+  width: 10px;
+  background-color: rgba(95, 84, 255, 0.74);
 }
 
 ::-webkit-scrollbar-button:increment,

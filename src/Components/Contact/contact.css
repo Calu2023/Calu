@@ -20,9 +20,7 @@
     color: #3af6ff;
     font-size: 38px;
   }
-  .contact-title h1 {
-    font-size: 38px;
-  }
+
   .contact-title h2 {
     color: #3af6ff;
   }
@@ -37,9 +35,12 @@
     backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
-    background-color: rgba(2, 2, 73, 50%);
+    background: linear-gradient(
+      rgba(58, 246, 255, 0.2) 30%,
+      rgba(185, 4, 139, 0.2) 60%
+    );
     border-radius: 1rem;
-
+    box-shadow: 8px 8px 10px rgba(1, 13, 79, 58%);
     row-gap: 5px;
   }
   .contact-form label {
@@ -70,14 +71,17 @@
     color: white;
     width: 220px;
     height: 50px;
-    background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
+    background: linear-gradient(
+      rgba(58, 246, 255, 0.2) 30%,
+      rgba(185, 4, 139, 0.2) 60%
+    );
     border-radius: 3rem 0 3rem 0;
     text-decoration: none;
     border: none;
     cursor: pointer;
     margin: 30px 100px 25px 0;
     border-radius: 50px;
-    box-shadow: 5.5px 5px 10px rgb(61, 59, 59);
+    box-shadow: 8px 8px 10px rgba(1, 13, 79, 58%);
     font-weight: bold;
     font-size: 14px;
   }

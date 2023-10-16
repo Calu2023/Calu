@@ -1,7 +1,7 @@
 .about_container {
   flex-direction: column;
   justify-content: center;
-  margin: auto 15% auto 7%;
+  margin: auto 7% auto 7%;
 }
 .about_items {
   display: flex;

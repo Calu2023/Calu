@@ -76,8 +76,8 @@ const News = () => {
                     image={
                       <img
                         src={post.data().imageUrl}
-                        width="140px"
-                        height="140px"
+                        width="120px"
+                        height="120px"
                       />
                     }
                     title={post.data().title}

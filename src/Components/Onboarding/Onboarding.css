@@ -1,9 +1,8 @@
 .onboarding {
   align-items: center;
   overflow: hidden;
-  margin-left: 7%;
-  margin-top: -50px;
-  margin-bottom: -100px;
+
+  margin: -50px 0% -100px 7%;
 }
 
 .onb_items {
@@ -62,8 +61,8 @@
   .onboarding .logoOnboard {
     display: block;
     position: relative;
-    margin-left: 150px;
-    max-width: 600px;
+    margin-left: 250px;
+    max-width: 550px;
   }
 
   .onboarding .parrafo {
@@ -84,12 +83,15 @@
 }
 @media (max-width: 1550px) {
   .onboarding .logoOnboard {
-    margin-left: 0px;
+    margin-left: 50px;
   }
 }
 @media (max-width: 1250px) {
   .onboarding .logoOnboard {
     width: 550px;
+  }
+  .onboarding .logoOnboard {
+    max-width: 450px;
   }
 }
 @media (max-width: 900px) {
@@ -106,6 +108,7 @@
   .onboarding .logoOnboard {
     display: none;
   }
+
   .onboarding .parrafo {
     color: white;
     text-align: left;

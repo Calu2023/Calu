@@ -72,49 +72,43 @@ const Services = () => {
                   ref={serviceName === servicio.title ? scrollRef : null}
                 >
                   <div className="srv_content">
-                    <div>
-                      <div>
-                        <div
-                          className={
-                            index % 2 === 0
-                              ? "card_srv_cont"
-                              : "card_srv_cont_inv"
-                          }
-                        >
-                          <div
-                            className={
-                              index % 2 === 0
-                                ? "card_srv_info"
-                                : "card_srv_info_inv"
-                            }
-                          >
-                            <div className="title_srv">
-                              <h1>{servicio.title}</h1>
-                            </div>
-                            <div className="sub_d">
-                              <h2>{servicio.sub}</h2>
-                            </div>
-                            <div className="des_1d">
-                              <p>{servicio.des_1}</p>
-                            </div>
-                            <br />
-                            <div className="des_2d">
-                              <p>{servicio.des_2}</p>
-                            </div>
+                    <div
+                      className={
+                        index % 2 === 0 ? "card_srv_cont" : "card_srv_cont_inv"
+                      }
+                    >
+                      <div
+                        className={
+                          index % 2 === 0
+                            ? "card_srv_info"
+                            : "card_srv_info_inv"
+                        }
+                      >
+                        <div className="title_srv">
+                          <h1>{servicio.title}</h1>
+                        </div>
+                        <div className="sub_d">
+                          <h2>{servicio.sub}</h2>
+                        </div>
+                        <div className="des_1d">
+                          <p>{servicio.des_1}</p>
+                        </div>
+                        <br />
+                        <div className="des_2d">
+                          <p>{servicio.des_2}</p>
+                        </div>
 
-                            <div className="des_3d">
-                              <p>{servicio.des_3}</p>
-                            </div>
-                          </div>
-                          <div className="srv_icon">
-                            <div>
-                              <img
-                                src={servicio.img}
-                                alt={servicio.img}
-                                width="210px"
-                              />
-                            </div>
-                          </div>
+                        <div className="des_3d">
+                          <p>{servicio.des_3}</p>
+                        </div>
+                      </div>
+                      <div className="srv_icon">
+                        <div>
+                          <img
+                            src={servicio.img}
+                            alt={servicio.img}
+                            width="210px"
+                          />
                         </div>
                       </div>
                     </div>

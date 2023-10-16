@@ -2,12 +2,11 @@
   flex-direction: column;
   max-width: 320px;
   justify-content: center;
-  margin-right: 92px;
-  margin-left: 92px;
+
   cursor: pointer;
 }
 .res_cart {
-  margin: -120px 0 0 40px;
+  margin: -120px 0 0 -50px;
   display: flex;
   position: absolute;
   width: -webkit-fit-content;
@@ -72,8 +71,8 @@
   border-radius: 30% 0% 30% 0%;
   min-width: 150px;
 
-  width: 250px;
-  height: 250px;
+  width: 230px;
+  height: 230px;
   background: linear-gradient(
     rgba(58, 246, 255, 0.2) 30%,
     rgba(185, 4, 139, 0.2) 60%
@@ -88,9 +87,9 @@
 .res_img {
   display: flex;
   justify-content: center;
-  width: 140px;
-  height: 140px;
-  box-shadow: 8px 8px 10px rgba(0, 22, 150, 0.7);
+  width: 120px;
+  height: 120px;
+  box-shadow: 8px 8px 10px rgba(1, 13, 79, 58%);
 }
 
 .arrow_res {
@@ -101,7 +100,7 @@
 }
 .arrow_r {
   position: relative;
-  width: 25px;
+  width: 22px;
 }
 
 @media (max-width: 1300px) {

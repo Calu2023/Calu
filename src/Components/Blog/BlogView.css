@@ -17,16 +17,15 @@
 
 .mini-description,
 .aditional-content {
-  white-space: 'per-line';
+  white-space: "per-line";
 }
 .banner img {
   width: 450px;
   height: 200px;
-  box-shadow: 8px 8px 10px black;
+  box-shadow: 8px 8px 10px rgba(1, 13, 79, 58%);
 }
 
 .blogCard {
-
   color: white;
   padding: 2rem;
   row-gap: 20px;
@@ -57,13 +56,13 @@
   .banner img {
     width: 350px;
     height: 150px;
-    box-shadow: 8px 8px 10px black;
+    box-shadow: 8px 8px 10px rgba(1, 13, 79, 58%);
     display: flex;
     margin: 0 auto 0 auto;
   }
 
   .blogTitle {
-    margin-top: 200px;
+    margin-top: 175px;
     color: aqua;
     display: flex;
     justify-content: center;
@@ -118,6 +117,7 @@
     height: auto;
   }
   .lateralBar {
+    margin-top: 175px;
     display: flex;
     flex-direction: column;
     max-width: 390px;
@@ -143,17 +143,20 @@
     font-size: larger;
   }
   .banner img {
-    width: 450px;
-    height: 200px;
-    box-shadow: 8px 8px 10px black;
+    width: 650px;
+    height: 250px;
+    box-shadow: 8px 8px 10px rgba(1, 13, 79, 58%);
   }
 
   .blogCard .youtubePlayer {
+    display: flex;
+    justify-content: center;
     height: 300px;
+    width: 100%;
   }
   .youtubePlayer iframe {
-    width: 600px;
-    height: 250px;
+    width: 716px;
+    height: 300px;
   }
   .lateralBar {
     display: flex;
@@ -163,6 +166,18 @@
     height: -moz-fit-content;
     height: fit-content;
   }
-  .blogTitle {
+}
+
+@media (min-width: 1025px) {
+  .blogContainer {
+    width: 60%;
+  }
+  .banner img {
+    width: 600px;
+    height: 400px;
+  }
+  .youtube iframe {
+    width: 800px;
+    height: 300px;
   }
 }
