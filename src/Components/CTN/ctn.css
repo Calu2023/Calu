@@ -16,6 +16,7 @@
   margin-bottom: 40px;
 }
 .ctn_button {
+  box-shadow: 8px 8px 10px rgba(1, 13, 79, 58%);
   font-weight: bold;
   color: white;
   font-size: 22px;
@@ -58,13 +59,13 @@
 
 @media (max-width: 767px) {
   .CTN_title {
-    margin-bottom: 80px;
+    margin-bottom: 30px;
   }
   .CTN_ctn {
   }
 
   .CTN_ctn p {
-    margin-top: 65px;
+    margin-top: 25px;
   }
   .CTN_ctn2 {
     margin-top: 50px;
@@ -93,7 +94,7 @@
 }
 @media (max-width: 375px) {
   .CTN_title {
-    margin: 0 0% 80px 0%;
+    margin: 0 0% 30px 0%;
   }
   .CTN_ctn p {
     font-size: 18px;

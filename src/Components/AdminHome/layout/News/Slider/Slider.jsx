@@ -26,7 +26,7 @@ function Slider({ children }) {
         containerClass="carousel-container"
         swipeable={true}
         draggable={false}
-        removeArrowOnDeviceType={["mobile", "tablet"]}
+        /*removeArrowOnDeviceType={["mobile", "tablet"]}*/
         infinite={true}
         responsive={responsive}
         showDots={true}

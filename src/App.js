@@ -39,7 +39,7 @@ function App() {
   }, []);
 
   return (
-    <Provider>
+    <Provider >
       <Router>
         <div>
           <VideoBackgroundComponent />

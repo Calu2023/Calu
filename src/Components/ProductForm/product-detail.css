@@ -5,6 +5,9 @@
   width: 100%;
   color: white;
 }
+.main-detail-container h2 {
+  color: aqua;
+}
 .pd_ctn {
   background: rgba(4, 25, 88, 0.6) 100%;
   background-repeat: no-repeat;
@@ -31,7 +34,7 @@
   color: aqua;
 }
 .img-container img {
-  box-shadow: 8px 8px 10px black;
+  box-shadow: 8px 8px 10px rgba(1, 13, 79, 58%);
   width: 250px;
   height: 250px;
 }

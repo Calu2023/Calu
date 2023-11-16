@@ -7,16 +7,15 @@
 }
 .arrowL {
   position: absolute;
-  z-index: 10;
+
   left: -1px;
-  top: 100px;
+  top: 200px;
   width: 40px;
 }
 .arrowR {
   position: absolute;
-  z-index: 10;
   right: -1px;
-  top: 100px;
+  top: 200px;
   width: 40px;
 }
 
@@ -36,5 +35,8 @@
   }
   .arrowR {
     width: 40px;
+  }
+  .carousel-container {
+    width: 80%;
   }
 }

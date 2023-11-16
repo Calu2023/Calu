@@ -3,7 +3,7 @@
   height: 18%;
   position: fixed;
   top: 0;
-  z-index: 99;
+  z-index: 2;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
 }
@@ -13,8 +13,8 @@
 }
 
 .logoCalu {
-  height: 7rem;
-  margin: 10px 100px 0 0;
+  height: 6.5rem;
+  margin:0 100px 0 0;
 }
 
 .navBar nav {
@@ -122,13 +122,13 @@
 @media (max-width: 900px) {
   .links_ctn {
     margin-top: 10px;
-    border: solid 2px rgb(206, 206, 206);
     width: 90%;
     height: 90%;
     display: flex;
     margin: 8px 0 0 0;
     flex-direction: column;
     justify-content: space-around;
+    text-align: center;
   }
 
   .line {
@@ -141,6 +141,9 @@
   }
 
   .btn.bar {
+    position: absolute;
+    right: 75px;
+    top: 20px;
     display: flex;
     width: 100%;
     height: 5vh;
@@ -148,6 +151,28 @@
     cursor: pointer;
     transition: all 0.5s ease-in-out;
   }
+  .btn.cross .hamburguesa {
+    position: absolute;
+    top: 25px;
+    right: 70px;
+  }
+  .cart-2 {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+  }
+  .cart-2 .totalItems {
+    top: -25px;
+  }
+ /*.navBarBlur {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+  }*/
   .navBar nav {
     display: flex;
     justify-content: space-between;
@@ -196,14 +221,10 @@
     z-index: 99;
     overflow-y: auto;
     transition: opacity 0.3s ease-in;
-    background: linear-gradient(transparent, rgba(4, 25, 88, 0.8) 10%) top,
-      linear-gradient(rgba(4, 25, 88, 0.8) 95%, transparent) bottom,
-      linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) top,
-      linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) bottom;
-    background-size: 100% 50%, 100% 50%, 100% calc(50% - 5px), 100% calc(50% - 5px), 100% 100%;
+    background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
     background-repeat: no-repeat;
-    -webkit-backdrop-filter: blur(1px);
-    backdrop-filter: blur(1px);
+    border-radius: 50px;
+    box-shadow: 8px 8px 10px rgba(1, 13, 79, 58%);
   }
 
   .links {

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
-import "./Cart.css";
+import './Cart.css';
 
 function Cart({ close, cart, handleDelete, buy }) {
   const [total, setTotal] = useState(0);
@@ -19,47 +19,41 @@ function Cart({ close, cart, handleDelete, buy }) {
 
     calculateTotal();
   }, [cart]);
-
   return (
     <div>
-      <div className="cartPage">
-        <div className="cartContainer">
-          <p className="closeCart" onClick={close}>
+      <div className='cartPage'>
+        <div className='cartContainer'>
+          <p className='closeCart' onClick={close}>
             X
           </p>
           <h2>Carrito de compras</h2>
-          <div className="cartItems">
+          <div className='cartItems'>
             {cart &&
               cart.map((product, index) => (
-                <div className="cartItem" key={index}>
+                <div className='cartItem' key={index}>
                   <img src={product.thumbnail} alt={product.title} />
                   <p>
-                    <span className="product_title">{product.title}</span>
-                    <span className="product_price"> ${product.price}</span>
+                    <span className='product_title'>{product.title}</span>
+                    <span className='product_price'> ${product.price}</span>
                   </p>
                   <div>
-                    <button
-                      className="deleteItem"
-                      onClick={() => handleDelete(product.title)}
-                    >
+                    <button className='deleteItem' onClick={() => handleDelete(index)}>
                       X
                     </button>
                   </div>
                 </div>
               ))}
           </div>
-          <p className="total">
+          <p className='total'>
             <span>Total</span>
-            <span>
-              {!isNaN(total) ? (total ? `$${total}` : "Gratis") : "$0"}
-            </span>
+            <span>{!isNaN(total) ? (total ? `$${total}` : 'Gratis') : '$0'}</span>
           </p>
-          <div className="compra_btn">
+          <div className='compra_btn'>
             <button onClick={buy}>Iniciar compra</button>
           </div>
         </div>
 
-        <div class="modal-background" onClick={close}></div>
+        <div class='modal-background' onClick={close}></div>
       </div>
     </div>
   );

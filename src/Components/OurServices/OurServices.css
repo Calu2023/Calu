@@ -3,8 +3,6 @@
 }
 
 .text-description {
-  text-align: justify;
-
   color: white;
 }
 .title-first-nuestros-servicios {
@@ -47,6 +45,7 @@
   margin: -10px 5px 0px 5px;
 }
 .ctn-servicios .slider .card_our .button_portfolio {
+  margin-top: 10px;
 }
 .ourServices {
   flex-direction: column;

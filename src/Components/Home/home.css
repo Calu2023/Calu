@@ -4,9 +4,10 @@
 }
 .itemsHome {
 }
+
 .arrow_up {
   position: fixed;
-  z-index: 99;
+
   rotate: 90deg;
   bottom: 0;
   right: 55px;

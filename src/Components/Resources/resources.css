@@ -38,6 +38,17 @@
   justify-content: center;
   text-decoration: none;
   margin-top: 15px;
+  position: relative;
+}
+.btn_res_more .verMas {
+  display: flex;
+  justify-content: center;
+}
+.btn_res_more .verMas .arrow_up {
+  position: initial;
+  width: 20px;
+  margin-left: 10px;
+  rotate: 180deg;
 }
 @media (max-width: 1300px) {
   .card_ctn {

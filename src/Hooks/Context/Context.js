@@ -15,8 +15,11 @@ export function Provider({ children }) {
     setCart((prevCart) => [...prevCart, product]);
   };
 
-  const removeFromCart = (productTitle) => {
-    setCart((prevCart) => prevCart.filter((product) => product.title !== productTitle));
+  const removeFromCart = (position) => {
+    setCart((prevCart) => {
+      const updatedCart = prevCart.filter((_, index) => index !== position);
+      return updatedCart;
+    });
   };
 
   const loginGoogle = () => {
@@ -26,7 +29,6 @@ export function Provider({ children }) {
   const logoutGoogle = () => {
     setIsAuth(false);
   };
-
   return (
     <Context.Provider
       value={{

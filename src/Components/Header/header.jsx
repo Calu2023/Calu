@@ -13,7 +13,7 @@ import { collection, addDoc } from 'firebase/firestore';
 import { useCustomContext } from '../../Hooks/Context/Context';
 
 export const Header = ({ cartItem, handleDelete }) => {
-  const { isAuth, logoutGoogle, handleBlur } = useCustomContext();
+  const { isAuth, logoutGoogle, handleBlur, blur } = useCustomContext();
   const [showAdminMenu, setShowAdminMenu] = useState(false);
   const [showCart, setShowCart] = useState(false);
   const location = useLocation();
@@ -21,6 +21,7 @@ export const Header = ({ cartItem, handleDelete }) => {
   const [email, setEmail] = useState('');
   const checkRef = useRef(null);
   const [check, setCheck] = useState(true);
+  const [showLinks, setShowLinks] = useState(true);
 
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
   const navigate = useNavigate();
@@ -36,14 +37,13 @@ export const Header = ({ cartItem, handleDelete }) => {
     });
   };
 
-  const [showLinks, setShowLinks] = useState(true);
-
   const handleAdminMenu = () => {
     setShowAdminMenu(!showAdminMenu);
   };
 
   const handleLinks = () => {
     setShowLinks(!showLinks);
+    handleBlur();
   };
 
   const handleClose = () => {
@@ -95,7 +95,7 @@ export const Header = ({ cartItem, handleDelete }) => {
   };
   return (
     <div>
-      <header className='navBar'>
+      <header className={!blur ? 'navBar' : 'navBarBlur'}>
         <div className='header_items'>
           {isAuth && (
             <div className='admin-menu'>
@@ -124,7 +124,7 @@ export const Header = ({ cartItem, handleDelete }) => {
             <nav className={showLinks ? 'links ' : 'link show '}>
               <div className='links_ctn'>
                 <Link
-                  onClick={scroll_top}
+                  onClick={scroll_top && handleBlur}
                   className={location.pathname === '/' ? 'headerLinks' : ''}
                   to={'/'}
                 >
@@ -132,7 +132,7 @@ export const Header = ({ cartItem, handleDelete }) => {
                 </Link>
                 <div className='line'></div>
                 <Link
-                  onClick={scroll_top}
+                  onClick={scroll_top && handleBlur}
                   className={location.pathname === '/services' ? 'headerLinks' : ''}
                   to={'/services'}
                 >
@@ -140,7 +140,7 @@ export const Header = ({ cartItem, handleDelete }) => {
                 </Link>
                 <div className='line'></div>
                 <Link
-                  onClick={scroll_top}
+                  onClick={scroll_top && handleBlur}
                   className={location.pathname === '/product-list' ? 'headerLinks' : ''}
                   to={'/product-list'}
                 >
@@ -148,7 +148,7 @@ export const Header = ({ cartItem, handleDelete }) => {
                 </Link>
                 <div className='line'></div>
                 <Link
-                  onClick={scroll_top}
+                  onClick={scroll_top && handleBlur}
                   className={location.pathname === '/blog' ? 'headerLinks' : ''}
                   to={'/blog'}
                 >
@@ -157,7 +157,7 @@ export const Header = ({ cartItem, handleDelete }) => {
                 </Link>
                 <div className='line'></div>
                 <Link
-                  onClick={scroll_top}
+                  onClick={scroll_top && handleBlur}
                   className={location.pathname === '/Contact' ? 'headerLinks' : ''}
                   to={'/Contact'}
                 >

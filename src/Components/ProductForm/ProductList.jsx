@@ -1,37 +1,33 @@
-import { useEffect, useState, useRef } from "react";
-import {
-  collection,
-  getDocs,
-  deleteDoc,
-  doc,
-  getDoc,
-} from "firebase/firestore";
-import { db, storage, auth } from "../../firebase-config";
-import { Link, useNavigate } from "react-router-dom";
-import { ref, deleteObject } from "firebase/storage";
-import { Header } from "../Header/header";
-import "./product-list.css";
-import { useCustomContext } from "../../Hooks/Context/Context";
-import Contact_button from "../Home/Contact_button/Contact_button";
-import arrow_L from "../Home/icon_arrow_left.svg";
+import { useEffect, useState, useRef } from 'react';
+import { collection, getDocs, deleteDoc, doc, getDoc } from 'firebase/firestore';
+import { db, storage, auth } from '../../firebase-config';
+import { Link, useNavigate } from 'react-router-dom';
+import { ref, deleteObject } from 'firebase/storage';
+import { Header } from '../Header/header';
+import './product-list.css';
+import { useCustomContext } from '../../Hooks/Context/Context';
+import Contact_button from '../Home/Contact_button/Contact_button';
+import arrow_L from '../Home/icon_arrow_left.svg';
 
 function ProductList() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [flippedProductId, setFlippedProductId] = useState(null);
-  const [user, setUser] = useState(null); // Add user state
+  const [user, setUser] = useState(null);
+  const [initialProductsToShow, setInitialProductsToShow] = useState(6);
+  const [additionalProductsToShow, setAdditionalProductsToShow] = useState(3);
   const navigate = useNavigate();
   const { cart, addToCart, removeFromCart } = useCustomContext();
 
-  const productsCollectionRef = collection(db, "e-commerce");
+  const productsCollectionRef = collection(db, 'e-commerce');
   const firstSection = useRef(null);
 
   const scrollToTop = () => {
-    firstSection.current?.scrollIntoView({ behavior: "smooth" });
+    firstSection.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const deleteProduct = async (id, thumbnail) => {
-    const productDoc = doc(db, "e-commerce", id);
+    const productDoc = doc(db, 'e-commerce', id);
     await deleteDoc(productDoc);
 
     if (thumbnail) {
@@ -39,7 +35,6 @@ function ProductList() {
       await deleteObject(thumbnailRef);
     }
 
-    // Update the product list after deleting
     setProducts((prevList) => prevList.filter((product) => product.id !== id));
   };
 
@@ -59,7 +54,7 @@ function ProductList() {
         setProducts(productsData);
         setLoading(false);
       } catch (error) {
-        console.error("Error al obtener los productos:", error);
+        console.error('Error al obtener los productos:', error);
         setLoading(false);
       }
     };
@@ -80,7 +75,7 @@ function ProductList() {
   };
 
   const handleAddToCart = async (id) => {
-    const querySnapshot = doc(db, "e-commerce", id);
+    const querySnapshot = doc(db, 'e-commerce', id);
     const docSnapshot = await getDoc(querySnapshot);
     const productToAdd = docSnapshot.data();
     addToCart(productToAdd);
@@ -89,8 +84,8 @@ function ProductList() {
   return (
     <div>
       <Header cartItem={cart} handleDelete={removeFromCart} />
-      <button className="arrow_up12" onClick={scrollToTop}>
-        <img className="arrow_up" src={arrow_L} alt="Arrow Up" />
+      <button className='arrow_up12' onClick={scrollToTop}>
+        <img className='arrow_up' src={arrow_L} alt='Arrow Up' />
       </button>
       <Contact_button />
 
@@ -100,48 +95,30 @@ function ProductList() {
       <br />
       <br />
 
-      <div className="main-container">
-        <h1 className="products_title">Nuestro productos</h1>
+      <div className='main-container'>
+        <h1 className='products_title'>Nuestro productos</h1>
 
-        <div className="products">
+        <div className='products'>
           {products.map((product) => (
-            <div className="main-product" key={product.id}>
+            <div className='main-product' key={product.id}>
               <div
-                className={`product-inner ${
-                  flippedProductId === product.id ? "flipped" : ""
-                }`}
+                className={`product-inner ${flippedProductId === product.id ? 'flipped' : ''}`}
                 onClick={() => handleFlipCard(product.id)}
               >
-                <div
-                  className={`product-front ${
-                    flippedProductId === product.id ? "hidden" : ""
-                  }`}
-                >
-                  <img
-                    src={product.thumbnail}
-                    alt={product.title}
-                    width="140px"
-                    height="140px"
-                  />
+                <div className={`product-front ${flippedProductId === product.id ? 'hidden' : ''}`}>
+                  <img src={product.thumbnail} alt={product.title} width='140px' height='140px' />
                 </div>
-                <div
-                  className={`product-back ${
-                    flippedProductId === product.id ? "" : "hidden"
-                  }`}
-                >
+                <div className={`product-back ${flippedProductId === product.id ? '' : 'hidden'}`}>
                   <p>{product.detail}</p>
                 </div>
               </div>
-              <div className="product-price">
-                <p className="price">${product.price}</p>
-                <p
-                  className="carrito-price"
-                  onClick={() => handleAddToCart(product.id)}
-                >
+              <div className='product-price'>
+                <p className='price'>${product.price}</p>
+                <p className='carrito-price' onClick={() => handleAddToCart(product.id)}>
                   Agregar al carrito
                 </p>
                 <Link
-                  className="link_"
+                  className='link_'
                   to={`/product/${product.id}`}
                   onClick={() => {
                     window.scroll({
@@ -151,20 +128,14 @@ function ProductList() {
                 >
                   Ver Detalles
                 </Link>
-                {/* Botones de editar y eliminar */}
                 {user && (
                   <div>
-                    <button
-                      className="edit-button"
-                      onClick={() => handleEditProduct(product.id)}
-                    >
+                    <button className='edit-button' onClick={() => handleEditProduct(product.id)}>
                       Editar
                     </button>
                     <button
-                      className="delete-button"
-                      onClick={() =>
-                        deleteProduct(product.id, product.thumbnail)
-                      }
+                      className='delete-button'
+                      onClick={() => deleteProduct(product.id, product.thumbnail)}
                     >
                       Eliminar
                     </button>
@@ -174,6 +145,16 @@ function ProductList() {
             </div>
           ))}
         </div>
+        {products.length > initialProductsToShow && (
+          <button
+            className='more_products'
+            onClick={() =>
+              setInitialProductsToShow(initialProductsToShow + additionalProductsToShow)
+            }
+          >
+            Ver más
+          </button>
+        )}
       </div>
     </div>
   );

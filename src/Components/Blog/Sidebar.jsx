@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import "./Sidebar.css";
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import {
   collection,
   getDocs,
@@ -12,6 +13,7 @@ import { db } from "../../firebase-config";
 
 const Sidebar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   ///////GET BLOGS
   const [posts, setPost] = useState([]);
 
@@ -38,31 +40,28 @@ const Sidebar = () => {
       <h2 className="lateralBarTitle">Sugerencias</h2>
       <div className="lateralContainer">
         {posts &&
-          posts.map((post, index) => (
-            <div key={index}>
-              <p onClick={() => handlePostClick(post.id)}>
-                <div className="sb_blog_image">
-                  <img
-                    src={post.data().imageUrl}
-                    alt={`Imagen ${post.data().title}`}
-                  />
+          posts.map(
+            (post, index) =>
+              // Comprueba si la URL actual coincide con la del post
+              location.pathname !== `/blog/${post.id}` && (
+                <div key={index}>
+                  <p onClick={() => handlePostClick(post.id)}>
+                    <div className="sb_blog_image">
+                      <img
+                        src={post.data().imageUrl}
+                        alt={`Imagen ${post.data().title}`}
+                      />
+                    </div>
+                    <div className="sb_blog_title">{post.data().title}</div>
+                  </p>
+                  <hr />
                 </div>
-                <div className="sb_blog_title">{post.data().title}</div>
-              </p>
-              <hr />
-            </div>
-          ))}
+              )
+          )}
       </div>
 
       <div className="lateralContainer">
-        <div className="lastBlogs">
-          {/*  {postList.map((post, index) => (
-            <div className='last' onClick={() => handlePostClick(post.id)} key={index}>
-              <img src={post.imageUrl} alt={post.imageUrl} />
-              <p>{post.title}</p>
-            </div>
-          ))} */}
-        </div>
+        <div className="lastBlogs"></div>
       </div>
     </aside>
   );

@@ -65,6 +65,7 @@
   margin-bottom: 110px;
   bottom: -20px;
   width: 28px;
+  z-index: 1;
 }
 @media (max-width: 900px) {
   .contact_logo {

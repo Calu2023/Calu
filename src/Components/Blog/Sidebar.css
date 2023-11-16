@@ -79,6 +79,7 @@ hr {
     flex-direction: row;
     align-items: center;
     padding: 10px;
+    overflow-x: scroll;
   }
   .lateralBar .lateralContainer .card_our {
     max-width: 150px;
@@ -89,6 +90,7 @@ hr {
     position: initial;
   }
 }
+
 @media (min-width: 1025px) {
   .lateralBar .lateralContainer {
     flex-direction: column;

@@ -1,14 +1,11 @@
 .cartContainer {
   padding: 20px;
-  background: linear-gradient(
-    rgba(58, 246, 255, 0.2) 30%,
-    rgba(185, 4, 139, 0.2) 60%
-  );
+  background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
   border-radius: 12px;
   color: white;
   display: flex;
   flex-direction: column;
-  overflow: scroll;
+  overflow-y: scroll;
   position: fixed;
   right: 100px;
   top: 100px;
@@ -16,8 +13,7 @@
   height: 200px;
   box-shadow: 8px 8px 10px rgba(1, 13, 79, 58%);
   margin-right: 50px;
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
+
   z-index: 5;
 }
 /*SCROLLBAR*/
@@ -97,10 +93,7 @@
 }
 
 .compra_btn {
-  background-image: linear-gradient(
-    rgba(58, 246, 255, 0.2) 30%,
-    rgba(185, 4, 139, 0.2) 60%
-  );
+  background-image: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
   border-radius: 50px;
   width: 220px;
   margin: auto;
@@ -140,19 +133,19 @@
   position: absolute;
 }
 .emailModal {
-  margin: 250px auto 0 auto;
+
+  margin: 150px auto 0 auto;
   background: linear-gradient(
     rgba(58, 246, 255, 0.2) 30%,
     rgba(185, 4, 139, 0.2) 60%
   );
+
   max-width: 350px;
   position: fixed;
   padding: 20px;
   border-radius: 15px;
   box-shadow: 8px 8px 10px rgba(1, 13, 79, 58%);
   z-index: 5;
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
 
   left: 50%;
   -webkit-transform: translate(-50%, 0);
@@ -162,10 +155,7 @@
   color: white;
   width: 220px;
   height: 50px;
-  background: linear-gradient(
-    rgba(58, 246, 255, 0.2) 30%,
-    rgba(185, 4, 139, 0.2) 60%
-  );
+  background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
   border-radius: 3rem 0 3rem 0;
   text-decoration: none;
   border: none;
@@ -186,7 +176,7 @@
   height: 100vh;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
-  z-index: 1;
+  z-index: 2;
 }
 
 .emailModal form {
@@ -233,17 +223,21 @@
 @media (max-width: 767px) {
   .emailModal {
     width: 300px;
-    margin-top: 70px;
+    margin-top: 120px;
   }
   .email_btn {
     margin-left: 25px;
   }
   .cartContainer {
     margin-right: 15px;
-    margin-top: 35px;
   }
 }
-
+@media (max-width: 522px) {
+  .cartContainer {
+    margin-right: -55px;
+    max-width: 250px;
+  }
+}
 @media (min-width: 1024px) {
   .cartContainer {
     height: 400px;

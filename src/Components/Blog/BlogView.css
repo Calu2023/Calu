@@ -17,7 +17,8 @@
 
 .mini-description,
 .aditional-content {
-  white-space: "per-line";
+  white-space: pre-wrap;
+  font-weight: normal;
 }
 .banner img {
   width: 450px;
@@ -62,7 +63,7 @@
   }
 
   .blogTitle {
-    margin-top: 175px;
+    margin-top: 180px;
     color: aqua;
     display: flex;
     justify-content: center;
@@ -117,7 +118,6 @@
     height: auto;
   }
   .lateralBar {
-    margin-top: 175px;
     display: flex;
     flex-direction: column;
     max-width: 390px;
@@ -126,7 +126,11 @@
     height: fit-content;
   }
 }
-
+@media (min-width: 500px) {
+  .lateralBar {
+    max-width: initial;
+  }
+}
 @media (min-width: 900px) {
   .blogContainer {
     width: 40%;
@@ -143,8 +147,8 @@
     font-size: larger;
   }
   .banner img {
-    width: 650px;
-    height: 250px;
+    width: 710px;
+    height: 290px;
     box-shadow: 8px 8px 10px rgba(1, 13, 79, 58%);
   }
 
@@ -173,8 +177,6 @@
     width: 60%;
   }
   .banner img {
-    width: 600px;
-    height: 400px;
   }
   .youtube iframe {
     width: 800px;
