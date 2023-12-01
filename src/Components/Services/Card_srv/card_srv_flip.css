@@ -1,28 +1,36 @@
 .flip-card {
   display: flex;
+  justify-content: center;
   margin: 30px 10px 30px 10px;
-  width: 350px;
-  height: 360px;
+
+  width: 250px;
+  height: 300px;
   -webkit-perspective: 1000px;
-  perspective: 1000px; /* efecto 3d*/
+  perspective: 1000px; 
+
 }
 .filters__.rotate {
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
+  
 }
+
 .title_flip {
   font-weight: bold;
-  font-size: 16px;
+  font-size: 14px;
   margin-bottom: -8px;
 }
 .sub {
-  font-size: 16px;
+  font-size: 12px;
   font-weight: bold;
 }
 .des_3_flip {
   color: #3af6ff;
+
 }
 .flip-card-inner {
+  display: flex;
+  justify-content: center;
   width: 100%;
   height: 100%;
   text-align: center;
@@ -48,6 +56,7 @@
 .flip-card:hover .flip-card-inner {
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
+  
 }
 .front_items {
   margin-top: 30px;
@@ -59,6 +68,7 @@
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  
 }
 
 .flip-card-front {
@@ -66,38 +76,53 @@
   border-radius: 20px;
   -webkit-transform: rotateX(0deg);
   transform: rotateX(0deg); /* para bug firefox */
+  border-radius: 30% 0% 30% 0%;
+  width: 270px;
+  height: 270px;
+
+
 }
 .flip-card-front_items {
   margin: 20px 10px 30px 10px;
+  
 }
 
 .flip-card-back {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+
   background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
-  border-radius: 20px;
+  width: 290px;
+  height: 290px;
+
+
+
   color: white;
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
+  border-radius: 0% 30% 0% 30%;
+
 }
 .flip-card-back p {
   margin: 5px 15px;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: bold;
 }
 .des_3 {
   font-weight: bold;
+  
 }
 .sub {
   color: white;
   text-align: center;
-  margin: 5px 0px 0px 10px;
+  margin: 5px 10px 0px 10px;
 }
 
 @media (max-width: 830px) {
   .flip-card {
-    width: 320px;
+ 
   }
   .front_items img {
     margin-bottom: 10px;
@@ -106,14 +131,15 @@
 
 @media (max-width: 767px) {
   .flip-card {
-    width: 370px;
+ 
   }
   .des_3 {
     margin-top: 15px;
     font-size: 18px;
+    
   }
   .sub {
-    margin: 10px 0px 0px 10px;
+    margin: 10px 10px 0px 10px;
   }
 }
 
@@ -127,11 +153,13 @@
     font-weight: bold;
   }
   .flip-card-back p {
-    font-size: 15px;
+  
     font-weight: bold;
   }
   .front_items img {
-    width: 150px;
+ 
     margin-bottom: 10px;
   }
+
+
 }

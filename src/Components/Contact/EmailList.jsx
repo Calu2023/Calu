@@ -36,7 +36,7 @@ const EmailList = () => {
   }
 
   return (
-    <div>
+    <div className='email-list-ctn'>
       <Header />
       <br /><br /><br /><br /><br /><br />
       <h2>All Emails:</h2>

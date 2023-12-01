@@ -2,7 +2,7 @@ import React from "react";
 import Footer from "../Footer/Footer";
 import CTN from "../CTN/CTN";
 import Blog from "./Blog";
-import "./blogScreen.css";
+
 
 const Blog_Screen = () => {
   const [width, setWidth] = React.useState(window.innerWidth);

@@ -8,15 +8,7 @@ import { db } from "../../../../firebase-config";
 import Modal from "../Modal/modal";
 
 const About = () => {
-  /*setDoc(doc(db, "home", "About"), {
-    title: "¿QUIENES SOMOS?",
-    t1: "SOMOS UN EQUIPO",
-    t2: "APASIONADO POR LA TRANSFORMACION DIGITAL",
-    t3: " Compartimos la pasión por nuestro trabajo y la ilusión por cambiar el mundo emprendedor.",
-    t4: "   Potenciamos la identidad digital de tu marca acompañándote en el proceso, escuchándote y aconsejándote para que tu experiencia y la de tu público sea única.",
-    t5: "!DESDE EL MOMENTO CERO NOS COMPROMETEMOS CON TU PROPÓSITO!",
-  });*/
-  ///////////////////////////////////////////
+
   const [aboutinfo, setAboutinfo] = useState([]);
 
   /////////////////////////////////

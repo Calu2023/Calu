@@ -4,7 +4,7 @@ import { db, auth, storage } from '../../firebase-config';
 import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import './createPost.css';
-
+import { Header } from '../Header/header';
 function CreatePost() {
   const location = useLocation();
   const [title, setTitle] = useState('');
@@ -116,6 +116,11 @@ function CreatePost() {
   };
 
   return (
+    <div>
+
+
+      <Header/>
+     
     <div className='createPostPage'>
       <div className='cpContainer'>
         <h1>{editPost ? 'Edit Post' : 'Create A Post'}</h1>
@@ -173,6 +178,7 @@ function CreatePost() {
           <button onClick={handleSubmit}>{editPost ? 'Update Post' : 'Submit Post'}</button>
         </div>
       </div>
+    </div>
     </div>
   );
 }

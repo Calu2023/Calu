@@ -9,7 +9,7 @@
   display: flex;
   flex-direction: row;
 }
-.onboarding .logoOnboard {
+.onboarding img {
 }
 .onboarding .parrafo {
   color: white;
@@ -17,7 +17,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  z-index: 2;
+
 }
 .onboarding .parrafo p {
   text-align: justify;
@@ -58,7 +58,7 @@
   font-size: 18px;
 }
 @media (min-width: 900px) {
-  .onboarding .logoOnboard {
+  .onboarding img {
     position: relative;
     margin-left: 420px;
     max-width: 550px;
@@ -81,15 +81,15 @@
   }
 }
 @media (max-width: 1550px) {
-  .onboarding .logoOnboard {
+  .onboarding img {
     margin-left: 50px;
   }
 }
 @media (max-width: 1250px) {
-  .onboarding .logoOnboard {
+  .onboarding img {
     width: 550px;
   }
-  .onboarding .logoOnboard {
+  .onboarding img {
     max-width: 450px;
   }
 }
@@ -105,7 +105,7 @@
     display: flex;
     height: 420px;
   }
-  .onboarding .logoOnboard {
+  .onboarding img {
     display: none;
   }
 
@@ -115,7 +115,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    z-index: 2;
+
   }
   .onboarding .parrafo {
     margin-right: 7%;

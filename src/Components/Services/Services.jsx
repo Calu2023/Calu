@@ -1,7 +1,6 @@
 import './services.css';
 import { useEffect, useState, useRef } from 'react';
 import { Header } from '../Header/header';
-import Slider from '../Services/Card_srv/Slider/Slider';
 import CardSrvFlip from './Card_srv/Card_srv_flip';
 import Footer from '../Footer/Footer';
 import CTN from '../CTN/CTN';
@@ -11,7 +10,8 @@ import ContactButton from '../Home/Contact_button/Contact_button';
 import arrow_L from '../Home/icon_arrow_left.svg';
 import { useCustomContext } from '../../Hooks/Context/Context';
 import { useLocation } from 'react-router';
-import Slider2 from '../Portfolio/Slider/Slider';
+import Slider from '../Portfolio/Slider/Slider';
+
 
 const Services = () => {
   const { cart, removeFromCart } = useCustomContext();
@@ -38,7 +38,6 @@ const Services = () => {
         }
       }, 100);
     };
-
     getPosts();
     return () => {
       window.removeEventListener('resize', handleResizeWindow);
@@ -54,11 +53,9 @@ const Services = () => {
 
   if (width > breakpoint) {
     return (
-
       <div className="scroll_ctn" ref={firstSection}>
         <button className="arrow_up12" onClick={scrollToTop}>
           <img className="arrow_up" src={arrow_L} alt="Arrow Up" />
-
         </button>
         <ContactButton />
         <Header cartItem={cart} handleDelete={removeFromCart} />;
@@ -118,7 +115,7 @@ const Services = () => {
   return (
     <>
 
-      <div className="mobileCtn">
+      <div className="mobileCtn" ref={firstSection}>
         <button className="arrow_up12" onClick={scrollToTop}>
           <img className="arrow_up" src={arrow_L} alt="Arrow Up" />
 
@@ -126,14 +123,14 @@ const Services = () => {
         <ContactButton />
         <Header cartItem={cart} handleDelete={removeFromCart} />
         <div ref={firstSection}>
-          <div className='srv_cards'>
+          <div>
             <div className='srv_title'>
               <h1>Nuestros Servicios</h1>
             </div>
             <section>
-              <Slider2>
+              <Slider>
                 {servicios.map((servicios, index) => (
-                  <div className='slider_cards' key={index}>
+                  <div   key={index}>
                     <CardSrvFlip
                       image={servicios.img}
                       title={servicios.title}
@@ -144,7 +141,7 @@ const Services = () => {
                     ></CardSrvFlip>
                   </div>
                 ))}
-              </Slider2>
+              </Slider>
             </section>
           </div>
           <section>

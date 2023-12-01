@@ -12,6 +12,7 @@ import {
 import { db, storage } from "../../firebase-config";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import "./product-form.css";
+import { Header } from "../Header/header";
 
 function ProductForm({ productId }) {
   const [title, setTitle] = useState("");
@@ -135,7 +136,11 @@ function ProductForm({ productId }) {
   }, [location.state, productId]);
 
   return (
+    <div>
+      <Header></Header>
+      <div className="additional-div"></div>
     <div className="main-form-container">
+
       <h2>
         {location.state && location.state.productToEdit
           ? "Editar Producto"
@@ -214,6 +219,8 @@ function ProductForm({ productId }) {
           </button>
         </div>
       </form>
+      </div>
+      <div className="additional-div"></div>
     </div>
   );
 }

@@ -17,11 +17,11 @@ import ProductForm from './Components/ProductForm/ProductForm';
 import ProductDetail_Screen from './Components/ProductForm/ProductDetail_Screen';
 import Product_List from './Components/ProductForm/Product_List';
 import PaymentGateway from './Components/Payment/Payment';
-import Cart from './Components/Cart/Cart';
 import { auth } from './firebase-config';
 import EmailList from './Components/Contact/EmailList';
 import { Provider } from './Hooks/Context/Context';
 import Terms from './Components/Cart/Terms';
+import { Scrollbars } from 'react-custom-scrollbars-2';
 
 function App() {
   const [isAuth, setIsAuth] = useState(false);
@@ -39,10 +39,13 @@ function App() {
   }, []);
 
   return (
+    
     <Provider >
+   
       <Router>
-        <div>
-          <VideoBackgroundComponent />
+        <div className='container_'>
+      <VideoBackgroundComponent />
+
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/admin-home' element={<AdminHome />} />
@@ -52,7 +55,7 @@ function App() {
             <Route path='/product-form' element={<ProductForm />} />
             <Route path='/product-list' element={<Product_List />} />
             <Route path='/product/:id' element={<ProductDetail_Screen />} />
-            <Route path='/edit-post/:id' element={<CreatePost />} />
+            <Route path='/edit-post/:id' element={<CreatePost  />} />
             <Route path='/about' element={<About />} />
             <Route path='/blog' element={<Blog_Screen isAuth={isAuth} />} />
             <Route path='/blog/:id' element={<BlogView_Screen />} />
@@ -64,6 +67,7 @@ function App() {
           </Routes>
         </div>
       </Router>
+      
     </Provider>
   );
 }

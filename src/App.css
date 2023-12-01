@@ -5,14 +5,29 @@
   src: url('./Archive-Regular.ttf');
 }
 html {
-  scrollbar-color: rgb(95, 84, 255) rgba(5, 0, 75, 0);
-  
+  scrollbar-color:  rgba(5, 0, 75,1) rgba(5, 0, 75, 0);
+  font-family: 'Montserrat', sans-serif
 }
 body {
   font-family: 'Montserrat', sans-serif;
-  
+ 
 }
 
+.video-background video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  z-index: -1;
+}
+.container_{
+  background: rgba(4, 25, 88, 0.6) 100%;
+
+}
 section {
   margin-top: 12%;
   
@@ -102,11 +117,12 @@ iframe[src^="https://www.google.com/recaptcha/"]
 
 ::-webkit-scrollbar {
   -webkit-appearance: none;
+  background:  transparent;
 }
 
 ::-webkit-scrollbar:vertical {
-  width: 10px;
-  background-color: rgba(95, 84, 255, 0.74);
+
+ 
 }
 
 ::-webkit-scrollbar-button:increment,
@@ -116,9 +132,20 @@ iframe[src^="https://www.google.com/recaptcha/"]
 
 ::-webkit-scrollbar:horizontal {
   height: 10px;
+  
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(5, 0, 75, 0.87);
+  background-color: rgba(5, 0, 75,1);
   border-radius: 20px;
+  width: 10px;
+ 
 }
+.thumb-vertical {
+  width: 25px;
+  cursor: pointer;
+  border-radius: inherit;
+  background-color: rgba(5, 0, 75,1);
+  
+}
+

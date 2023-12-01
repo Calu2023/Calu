@@ -55,15 +55,15 @@
 
 @media (min-width: 360px) {
   .banner img {
-    width: 350px;
-    height: 150px;
+    width: 90vw;
+    height: 290px;
     box-shadow: 8px 8px 10px rgba(1, 13, 79, 58%);
     display: flex;
     margin: 0 auto 0 auto;
   }
 
   .blogTitle {
-    margin-top: 180px;
+    margin-top: 110px;
     color: aqua;
     display: flex;
     justify-content: center;
@@ -112,10 +112,14 @@
   }
   .blogCard .youtubePlayer {
     height: 200px;
+    margin: 70px auto 150px auto;
   }
   .youtubePlayer iframe {
     width: 90%;
-    height: auto;
+    height: 250px;
+    margin-left: 5%;
+
+  
   }
   .lateralBar {
     display: flex;
@@ -133,7 +137,7 @@
 }
 @media (min-width: 900px) {
   .blogContainer {
-    width: 40%;
+   
     justify-content: center;
     margin: 0 auto 0 auto;
   }
@@ -147,25 +151,27 @@
     font-size: larger;
   }
   .banner img {
-    width: 710px;
+   
     height: 290px;
     box-shadow: 8px 8px 10px rgba(1, 13, 79, 58%);
   }
 
   .blogCard .youtubePlayer {
-    display: flex;
+   margin-left: 5%;
     justify-content: center;
     height: 300px;
     width: 100%;
   }
   .youtubePlayer iframe {
-    width: 716px;
-    height: 300px;
+    width: 90%;
+    height: 380px;
+    margin-left: 0%;
   }
   .lateralBar {
+    margin-top: 90px;
     display: flex;
     flex-direction: column;
-    width: 350px;
+   
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
@@ -174,8 +180,32 @@
 
 @media (min-width: 1025px) {
   .blogContainer {
-    width: 60%;
+    width: 95%;
   }
+ 
+  .youtube iframe {
+    width: 800px;
+    height: 300px;
+  }
+}
+@media (min-width: 1174px) {
+  .BlogView .lateralContainer {
+  width: 350px;
+   flex-direction: column;
+   border-top: none;
+  }
+  .BlogView .lateralBar {
+  
+     border-top: none;
+     border-left:  2px solid #c5c5c5;
+    }
+ 
+
+    .blogContainer {
+      width: 60%;
+    }
+
+
   .banner img {
   }
   .youtube iframe {

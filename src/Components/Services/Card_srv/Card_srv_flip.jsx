@@ -7,9 +7,13 @@ const Card_srv_flip = ({ image, title, sub, des_1, des_2, des_3 }) => {
       <div class='flip-card-inner'>
         <div class='flip-card-front'>
           <div>
+
+
             <div className='front_items'>
               {' '}
-              <img src={image} alt={image} width='150px' />
+              <img src={image} alt={image} width='100px' />
+
+
             </div>
             <div className='title_flip'>{title}</div>
             <br />

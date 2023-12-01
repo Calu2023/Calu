@@ -28,7 +28,8 @@
   font-weight: bold;
   font-size: 16px;
   position: absolute;
-  bottom: 45px;
+
+  bottom: 40px;
   left: 50px;
   right: 50px;
 }

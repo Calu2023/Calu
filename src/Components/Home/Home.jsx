@@ -1,32 +1,28 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, lazy, Suspense } from 'react';
 import 'animate.css/animate.min.css';
 import './home.css';
 import { Header } from '../Header/header';
 import Footer from '../Footer/Footer';
-import Portfolio from '../Portfolio/Portfolio';
-import About from '../About/About';
-import News from '../News/News';
-import Onboarding from '../Onboarding/Onboarding';
-import OurServices from '../OurServices/OurServices';
-import CTN from '../CTN/CTN';
 import Contact_button from './Contact_button/Contact_button';
 import React from 'react';
 import arrow_L from './icon_arrow_left.svg';
-import Resources from '../Resources/Resources';
 import { useCustomContext } from '../../Hooks/Context/Context';
+
+// Lazy loading de componentes
+const Portfolio = lazy(() => import('../Portfolio/Portfolio'));
+const About = lazy(() => import('../About/About'));
+const News = lazy(() => import('../News/News'));
+const Onboarding = lazy(() => import('../Onboarding/Onboarding'));
+const OurServices = lazy(() => import('../OurServices/OurServices'));
+const CTN = lazy(() => import('../CTN/CTN'));
+const Resources = lazy(() => import('../Resources/Resources'));
+
 const Home = () => {
   const { cart, removeFromCart } = useCustomContext();
-  const numSections = 5;
-  const [currentSection, setCurrentSection] = useState(0);
 
   const sectionStyles = {
     transition: 'transform 0.5s ease-in-out',
   };
-
-  const getSectionClassName = (sectionNumber) =>
-    `section-${sectionNumber} ${
-      currentSection === sectionNumber ? 'animate__animated animate__fadeIn' : ''
-    }`;
 
   const [width, setWidth] = React.useState(window.innerWidth);
   const breakpoint = 1024;
@@ -38,79 +34,50 @@ const Home = () => {
       window.removeEventListener('resize', handleResizeWindow);
     };
   }, []);
-  //////////// Scroll to top
+
   const firstSection = useRef(null);
   const scrollToTop = () => {
     firstSection.current?.scrollIntoView({ behavior: 'smooth' });
   };
-  //////////////
-  if (width > breakpoint) {
-    return (
-      <div className='container'>
-        <Header cartItem={cart} handleDelete={removeFromCart} />
 
-        <button className="arrow_up12" onClick={scrollToTop}>
-          <img className="arrow_up" src={arrow_L} alt="Arrow Up" />
+  const renderContent = () => (
+    <Suspense fallback={<div>Cargando...</div>}>
+      <section style={sectionStyles} ref={firstSection}>
+        <Onboarding />
+      </section>
+      <section style={sectionStyles} >
+        <About />
+      </section>
+      <section style={sectionStyles} >
+        <OurServices />
+      </section>
+      <section style={sectionStyles} >
+        <Portfolio />
+      </section>
+      <section style={sectionStyles} >
+        <News />
+      </section>
+      <section style={sectionStyles} >
+        <Resources />
+      </section>
+      <section style={sectionStyles} >
+        <CTN />
+      </section>
+    </Suspense>
+  );
 
-        </button>
-        <Contact_button />
-
-        <section style={sectionStyles} className={getSectionClassName(0)} ref={firstSection}>
-          <Onboarding />
-        </section>
-        <section style={sectionStyles} className={getSectionClassName(1)}>
-          <About />
-        </section>
-        <section style={sectionStyles} className={getSectionClassName(2)}>
-          <OurServices />
-        </section>
-        <section style={sectionStyles} className={getSectionClassName(3)}>
-          <Portfolio />
-        </section>
-        <section style={sectionStyles} className={getSectionClassName(4)}>
-          <News />
-        </section>
-        <section style={sectionStyles} className={getSectionClassName(5)}>
-          <Resources />
-        </section>
-        <section style={sectionStyles} className={getSectionClassName(6)}>
-          <CTN />
-          <Footer />
-        </section>
-      </div>
-    );
-  }
   return (
     <div className='container'>
-      <Header cartItem={cart} />
+      <Header cartItem={cart} handleDelete={removeFromCart} />
 
       <button className="arrow_up12" onClick={scrollToTop}>
         <img className="arrow_up" src={arrow_L} alt="Arrow Up" />
-
       </button>
+
       <Contact_button />
-      <section ref={firstSection} style={sectionStyles} className={getSectionClassName(0)}>
-        <Onboarding />
-      </section>
-      <section style={sectionStyles} className={getSectionClassName(1)}>
-        <About />
-      </section>
-      <section style={sectionStyles} className={getSectionClassName(2)}>
-        <OurServices />
-      </section>
-      <section style={sectionStyles} className={getSectionClassName(3)}>
-        <Portfolio />
-      </section>
-      <section style={sectionStyles} className={getSectionClassName(4)}>
-        <News />
-      </section>
-      <section style={sectionStyles} className={getSectionClassName(5)}>
-        <Resources />
-      </section>
-      <section style={sectionStyles} className={getSectionClassName(5)}>
-        <CTN />
-      </section>
-      <section style={sectionStyles} className={getSectionClassName(6)}></section>
+
+      {renderContent()}
+
       <Footer />
     </div>
   );

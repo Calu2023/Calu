@@ -1,17 +1,28 @@
 .navBar {
   height: initial;
 }
+
 .scroll_ctn {
-  background: rgba(4, 25, 88, 0.6) 100%;
+
   background-repeat: no-repeat;
 }
 
+.mobileCtn  .carousel-container{
+width: 95%;
+}
 .services_container {
   margin-bottom: 300px;
-  margin-top: 9vh;
+  margin-top: 74px;
+}
+.mobileCtn .arrowR{ 
+  top:125px
+}
+.mobileCtn .arrowL{ 
+  top:125px
 }
 .srv_content {
   margin: auto 0 auto 0;
+  
 }
 .srv_section {
   margin-bottom: 150px;
@@ -21,8 +32,10 @@
   justify-content: center;
   color: #3af6ff;
   margin-bottom: -50px;
+  margin-top: 63px;
 }
 .srv_title h1 {
+  margin-top: 5px;
 }
 
 .srv_cards {
@@ -30,22 +43,22 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
+  
 }
 
 .card_srv_cont {
   display: flex;
-  justify-content: space-between; /* Distribuye los elementos horizontalmente */
-
-  /* Agrega márgenes horizontales iguales */
-  margin: 0 150px; /* Ajusta el valor según tus necesidades */
+  justify-content: space-between; 
+  margin: 0 150px; 
 }
 
 .card_srv_cont_inv {
   display: flex;
-  justify-content: space-between; /* Distribuye los elementos horizontalmente */
+  justify-content: space-between; 
   flex-direction: row-reverse;
-  /* Agrega márgenes horizontales iguales */
-  margin: 0 150px; /* Ajusta el valor según tus necesidades */
+ 
+  margin: 0 150px; 
 }
 .card_srv_info {
   margin: 0 50px 0 0;
@@ -99,6 +112,7 @@
 .sub_d h2 {
   font-size: 20px;
 }
+
 .des_1d {
   margin-bottom: -30px;
   font-size: 28px;
@@ -132,10 +146,10 @@
 @media (max-width: 1024px) {
   .srv_title {
     margin-bottom: -40px;
-    margin-top: 120px;
+    margin-top: 97px;
   }
   .mobileCtn {
-    background: rgba(4, 25, 88, 0.6) 100%;
+ 
     background-repeat: no-repeat;
   }
   .srv_cards {
@@ -144,20 +158,19 @@
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: -120px;
+    
   }
   .srv_cards .carousel-container {
     width: 100%;
   }
-  .slider_cards {
-    margin-top: 50px;
-  }
+
 }
 
 @media (max-width: 767px) {
   .srv_title h1 {
     display: flex;
     justify-content: center;
-
+margin-top: -2px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -167,8 +180,16 @@
   .srv_title {
     margin-bottom: -40px;
   }
+  .mobileCtn  .carousel-container{
+    width: 75%;
+    }
 }
+@media (max-width: 485px) {
 
+  .mobileCtn  .carousel-container{
+    width: 95%;
+    }
+}
 @media (max-height: 600px) {
   .card_srv_cont {
   }

@@ -45,7 +45,7 @@ const News = () => {
   };
 
   const [width, setWidth] = React.useState(window.innerWidth);
-  const breakpoint = 1024;
+  const breakpoint = 1280;
   React.useEffect(() => {
     const handleResizeWindow = () => setWidth(window.innerWidth);
 
@@ -122,8 +122,8 @@ const News = () => {
                   image={
                     <img
                       src={post.data().imageUrl}
-                      width="100px"
-                      height="100px"
+                      width="120px"
+                      height="120px"
                     />
                   }
                   title={post.data().title}

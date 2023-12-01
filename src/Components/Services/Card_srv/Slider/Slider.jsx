@@ -32,6 +32,7 @@ function Slider({ children }) {
         itemClass="carouselItem"
         autoplay={true}
         autoplaySpeed={"4500"}
+        
       >
         {children.map((children, index) => {
           return <div key={index}>{children}</div>;

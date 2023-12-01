@@ -1,16 +1,28 @@
 .services {
   display: flex;
   flex-direction: column;
-  margin-top: 100px;
+ 
   justify-content: center;
   align-items: center;
 }
+.crud-ctn{
+  min-height: 100vh;
+}
+.crud-ctn2{
+  display: flex;
+  flex-direction: column;
+ 
+  justify-content: center;
+  align-items: center;
+  margin: 100px auto;
 
+}
 .crudContainer {
   display: flex;
   flex-wrap: wrap;
   overflow: scroll;
-  height: 70vh;
+  height: 800px;
+  width: 80%;
   background: rgba(255, 255, 255, 0.6);
 }
 
@@ -29,6 +41,7 @@
 .crudItems {
   display: flex;
   flex-wrap: wrap;
+  
 }
 
 .crudDescription {
@@ -39,7 +52,14 @@
 .crudBlur {
   filter: blur(3px);
   background: rgba(0, 0, 0, 0.5);
-  overflow: hidden;
+
+
+}
+.crudBlur .crudItems {
+
+  overflow: scroll;
+
+
 }
 .crudTitle {
   text-align: center;
@@ -64,7 +84,7 @@
   width: 50%;
   background: rgba(255, 255, 255, 0.6);
   position: absolute;
-  top: 25%;
+ 
   right: 25%;
 }
 .modal h2 {
@@ -77,4 +97,11 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+}
+@media (max-width: 768px) {
+  .modal {
+   top: 15%;
+   left: 5%;
+   width: 90%;
+  }
 }

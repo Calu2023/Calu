@@ -91,18 +91,10 @@ hr {
   }
 }
 
-@media (min-width: 1025px) {
-  .lateralBar .lateralContainer {
-    flex-direction: column;
-  }
-  .lateralBar {
-    border-left: 2px solid #c5c5c5;
-    border-top: none;
-  }
-}
+
 @media (min-width: 900px) {
   .lateralBar .lateralContainer {
-    flex-direction: column;
+
   }
   .lateralBar .lateralContainer .card_our {
     max-width: 250px;

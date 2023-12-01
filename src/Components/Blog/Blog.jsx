@@ -38,8 +38,6 @@ function Blog() {
       }
 
       await deleteDoc(postDoc);
-
-      // Remove the deleted post from the postList state without refreshing the page
       setPostList((prevPostList) =>
         prevPostList.filter((post) => post.id !== id)
       );
@@ -79,20 +77,20 @@ function Blog() {
   const scrollToTop = () => {
     firstSection.current?.scrollIntoView({ behavior: "smooth" });
   };
-
   const sortedPostList = postList.sort((a, b) => b.time - a.time);
   return (
-    <div className="blog">
+    <div className="blog" ref={firstSection}>
       <button className="arrow_up12" onClick={scrollToTop}>
         <img className="arrow_up" src={arrow_L} alt="Arrow Up" />
       </button>
 
       <Header cartItem={cart} handleDelete={removeFromCart} />
       <Contact_button />
-      <div className="BlogPage" ref={firstSection}>
-        <h1 className="blogTitle_">NUESTRO BLOG</h1>
+      <div className="BlogPage" >
+  
         <div className="blog-sidebar">
           <div className="postContainer">
+          <h1 className="blogTitle_">NUESTRO BLOG</h1>
             <div className="cardContainerblog">
               {sortedPostList.slice(0, visibleCards).map((post) => (
                 <div className="card-blog" key={post.id}>
@@ -113,9 +111,9 @@ function Blog() {
                     />
                   </div>
 
-                  <div className="container-leermas"></div>
-                  <div className="cardHeaderblog">
+                  
                     <span>{post.date}</span>
+                  <div className="cardHeaderblog">
                     <div className="deleteblog">
                       {isAuth && post.author && (
                         <>

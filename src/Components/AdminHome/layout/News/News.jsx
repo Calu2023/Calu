@@ -16,11 +16,6 @@ import { useEffect } from "react";
 import { db } from "../../../../firebase-config";
 import Modal from "../Modal/modal";
 const News = () => {
-  /*setDoc(doc(db, "home", "News"), {
-    title: "NOVEDADES",
-    t1: "   No te pierdas los úlimos contenidos de nuestro blog.",
-    
-  });*/
 
   const [newsinfo, setNewsinfo] = useState([]);
 
@@ -73,7 +68,7 @@ const News = () => {
   }, []);
 
   const [width, setWidth] = React.useState(window.innerWidth);
-  const breakpoint = 1024;
+  const breakpoint = 1280;
   React.useEffect(() => {
     const handleResizeWindow = () => setWidth(window.innerWidth);
 

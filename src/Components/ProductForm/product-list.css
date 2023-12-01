@@ -1,11 +1,13 @@
 .main-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   text-align: center;
   position: relative;
-  margin-top: 1vh;
+  margin-top: 59px;
 }
+
 
 .main-container .products {
   width: 90%;
@@ -144,19 +146,29 @@
   font-weight: bold;
   cursor: pointer;
 }
-
+.products {
+  margin-left: 8%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 0;
+}
+@media (max-width: 991px) {
+  .products {
+    margin-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 0;
+  }
+}
 @media (min-width: 768px) {
   .main-product {
     width: 50%;
+
   }
 
-  .products {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: center;
-    margin-bottom: 0;
-  }
+ 
 
   .carrito-img {
     width: 60px;

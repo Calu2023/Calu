@@ -1,6 +1,6 @@
 /* Estilos para la tabla */
 .table-container {
-    margin: 20px auto;
+    margin: auto;
     border-collapse: collapse;
     width: 80%;
     background-color: aliceblue;
@@ -19,4 +19,7 @@
     font-weight: bold;
   }
 
-  
+.email-list-ctn h2{
+  text-align: center;
+  color: aqua;
+}

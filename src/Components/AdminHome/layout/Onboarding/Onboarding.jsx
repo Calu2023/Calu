@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { db } from "../../../../firebase-config";
 import "../../../../Components/Onboarding/Onboarding.css";
 import Modal from "../Modal/modal";
-import logoCalu from "../../../../images/icono_calu.svg";
+import logoCalu from "../../../../images/logocalu.webp";
 const Onboarding = () => {
   const [onboardinginfo, setOnboardinginfo] = useState([]);
   /* setDoc(doc(db, "home", "Onboarding"), {

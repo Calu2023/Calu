@@ -16,7 +16,7 @@ const BlogView_Screen = () => {
   }, []);
   if (width > breakpoint) {
     return (
-      <div className="bv_ctn">
+      <div>
         <BlogView />
         <section>
           <CTN />
@@ -26,7 +26,7 @@ const BlogView_Screen = () => {
     );
   }
   return (
-    <div className="bv_ctn">
+    <div >
       <BlogView />
       <section>
         <CTN />

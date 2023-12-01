@@ -31,7 +31,7 @@ const Resources = () => {
 
   ////////////////////////
   const [width, setWidth] = React.useState(window.innerWidth);
-  const breakpoint = 1024;
+  const breakpoint = 1280;
 
   React.useEffect(() => {
     const handleResizeWindow = () => setWidth(window.innerWidth);

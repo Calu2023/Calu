@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState, useRef } from "react";
 import { addDoc, collection, doc, getDoc, getDocs } from "firebase/firestore";
 import { db } from "../../firebase-config";
@@ -63,10 +62,11 @@ function ProductDetail() {
         id: doc.id,
         ...doc.data(),
       }));
-      const similars = products.filter((category) => category.category === fetched.category);
+      const similars = products.filter((category) => category.category === fetched.category && category.id !== fetched.id);
       setSimilarProducts(similars);
     }
   };
+
   if (loading) {
     return <p>Cargando producto...</p>;
   }
@@ -94,6 +94,7 @@ function ProductDetail() {
   const handleDescriptionToggle = () => {
     setDescriptionExpanded(!isDescriptionExpanded);
   };
+
   const handleAddToCart = async (id) => {
     const querySnapshot = doc(db, 'e-commerce', id);
     const docSnapshot = await getDoc(querySnapshot);
@@ -108,26 +109,27 @@ function ProductDetail() {
     handleBlur();
     //handleDownload();
   };
+
   const saveEmailToFirebase = async (email) => {
     try {
-      const emailsCollectionRef = collection(db, 'email'); // Change to the correct collection name
+      const emailsCollectionRef = collection(db, 'email'); // Cambiar al nombre correcto de la colección
       await addDoc(emailsCollectionRef, {
         email,
         timestamp: new Date(),
       });
-      console.log('Email saved to Firebase successfully');
+      console.log('Correo electrónico guardado en Firebase exitosamente');
     } catch (error) {
-      console.error('Error saving email to Firebase:', error);
+      console.error('Error al guardar el correo electrónico en Firebase:', error);
     }
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (email.match(emailRegex)) {
-      await saveEmailToFirebase(email); // Save the email to Firebase
+      await saveEmailToFirebase(email); // Guardar el correo electrónico en Firebase
       navigate('/payment');
     } else {
-      alert('Invalid email format. Please enter a valid email.');
+      alert('Formato de correo electrónico no válido. Por favor, ingresa un correo electrónico válido.');
     }
   };
 
@@ -152,7 +154,6 @@ function ProductDetail() {
           <div className="img-container">
             <div className="title-mobile">
               <h3 className="title-mobile>">{product.title}</h3>
-
             </div>
             <img src={product.thumbnail} alt={product.title} />
           </div>
@@ -209,57 +210,49 @@ function ProductDetail() {
           <div className='recomendation'>
             {similarProducts.length >= 1 ? (
               <>
-
                 <h3>Más de esta serie</h3>
                 <div className="book-recomendation">
-                  {similarProducts.map((product, index) => {
-                    const productPath = `/product/${product.id}`;
-                    if (location.pathname !== productPath) {
-                      return (
-                        <div className="book" key={index}>
-                          <Link
-                            className="link_"
-                            to={productPath}
-                            onClick={scrollToTop}
-                          >
-                            <div>
-                              <img
-                                src={product.thumbnail}
-                                alt=""
-                                width="150px"
-                                height="150px"
-                              />
-                            </div>
-                            <div className="title-autor">
-                              <h4>{product.title}</h4>
-                              <h6>Autor</h6>
-                            </div>
-                          </Link>
-                          <div className="type-price">
-                            <p>Tipo de libro</p>
-                            <p>${product.price}</p>
-                          </div>
-                          <div
-                            className="product_cart"
-                            onClick={() => handleAddToCart(product.id)}
-                          >
-                            <img
-                              src={elipse}
-                              alt=" "
-                              className="elipse_product"
-                            />
-                            <img
-                              src={cart_img}
-                              alt=" "
-                              className="cart_product"
-                            />
-                          </div>
+                  {similarProducts.map((similarProduct, index) => (
+                    <div className="book" key={index}>
+                      <Link
+                        className="link_"
+                        to={`/product/${similarProduct.id}`}
+                        onClick={scrollToTop}
+                      >
+                        <div>
+                          <img
+                            src={similarProduct.thumbnail}
+                            alt=""
+                            width="150px"
+                            height="150px"
+                          />
                         </div>
-                      );
-                    }
-                    return null; // No mostrar el producto actual
-                  })}
-
+                        <div className="title-autor">
+                          <h4>{similarProduct.title}</h4>
+                          <h6>Autor</h6>
+                        </div>
+                      </Link>
+                      <div className="type-price">
+                        <p>Tipo de libro</p>
+                        <p>${similarProduct.price}</p>
+                      </div>
+                      <div
+                        className="product_cart"
+                        onClick={() => handleAddToCart(similarProduct.id)}
+                      >
+                        <img
+                          src={elipse}
+                          alt=" "
+                          className="elipse_product"
+                        />
+                        <img
+                          src={cart_img}
+                          alt=" "
+                          className="cart_product"
+                        />
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </>
             ) : (
@@ -271,4 +264,5 @@ function ProductDetail() {
     </div>
   );
 }
+
 export default ProductDetail;

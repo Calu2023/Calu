@@ -7,7 +7,7 @@
   flex-direction: column;
   overflow-y: scroll;
   position: fixed;
-  right: 100px;
+  right: 8%;
   top: 100px;
   width: 300px;
   height: 200px;
@@ -134,7 +134,7 @@
 }
 .emailModal {
 
-  margin: 150px auto 0 auto;
+  margin: 120px auto 0 auto;
   background: linear-gradient(
     rgba(58, 246, 255, 0.2) 30%,
     rgba(185, 4, 139, 0.2) 60%
@@ -175,7 +175,7 @@
   left: 0;
   height: 100vh;
   -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(8px);
   z-index: 2;
 }
 
@@ -234,7 +234,7 @@
 }
 @media (max-width: 522px) {
   .cartContainer {
-    margin-right: -55px;
+    margin-right: 8%;
     max-width: 250px;
   }
 }

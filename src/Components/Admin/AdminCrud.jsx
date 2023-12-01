@@ -5,11 +5,24 @@ import { db, storage } from '../../firebase-config';
 import { collection, getDocs, deleteDoc, doc, addDoc, getDoc, updateDoc } from 'firebase/firestore';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import CreateService from './CreateService';
-import logoCalu from '../../images/logocalu.png'; //TODO: ajustar handleChange en img para poner una imagen por defecto
+import logoCalu from '../../images/logocalu.webp'; //TODO: ajustar handleChange en img para poner una imagen por defecto
 import EditService from './EditService';
 //import EditService from './EditService';
-
+import { useNavigate } from "react-router-dom";
+import { auth } from "../../firebase-config";
 const AdminCrud = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    const checkAuthentication = () => {
+      const user = auth.currentUser;
+      if (!user) {
+        navigate('/admin-login');
+      }
+    };
+
+    checkAuthentication();
+  }, []);
+  
   const [servicesList, setServicesList] = useState([]);
   const [modal, setModal] = useState(false);
   const [imageEdit, setImageEdit] = useState('');
@@ -158,10 +171,13 @@ const AdminCrud = () => {
     closeModal();
   };
   return (
-    <div>
+    <div className='crud-ctn'>
       <Header />
+
+     
       <div className='services'>
-        <div className={blur ? 'crudBlur' : 'crudContainer'}>
+      <div className='crud-ctn2'>
+      <div className={blur ? 'crudBlur' : 'crudContainer'} style={{ overflowY: 'scroll', maxHeight: '900px' }}>
           <ul className='crudTags'>
             <li>ID</li>
             <li>Titulo</li>
@@ -215,6 +231,7 @@ const AdminCrud = () => {
           handleSubmit={handleSubmitEdit}
         />
       )}
+        </div>
     </div>
   );
 };
