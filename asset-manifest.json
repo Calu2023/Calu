@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Calu/static/css/main.b99ae5a5.css",
-    "main.js": "/Calu/static/js/main.ac0c13dd.js",
+    "main.js": "/Calu/static/js/main.017a5650.js",
     "static/css/931.a1f8f5a1.chunk.css": "/Calu/static/css/931.a1f8f5a1.chunk.css",
     "static/js/931.d152ad1d.chunk.js": "/Calu/static/js/931.d152ad1d.chunk.js",
     "static/js/506.7cc67479.chunk.js": "/Calu/static/js/506.7cc67479.chunk.js",
@@ -32,7 +32,7 @@
     "static/media/icon_arrow_right.svg": "/Calu/static/media/icon_arrow_right.a38b232691160512c9a645530d50b282.svg",
     "static/media/icon_arrow_left.svg": "/Calu/static/media/icon_arrow_left.ce04c17efbac313e8f9cf8fa4cdb140f.svg",
     "main.b99ae5a5.css.map": "/Calu/static/css/main.b99ae5a5.css.map",
-    "main.ac0c13dd.js.map": "/Calu/static/js/main.ac0c13dd.js.map",
+    "main.017a5650.js.map": "/Calu/static/js/main.017a5650.js.map",
     "931.a1f8f5a1.chunk.css.map": "/Calu/static/css/931.a1f8f5a1.chunk.css.map",
     "931.d152ad1d.chunk.js.map": "/Calu/static/js/931.d152ad1d.chunk.js.map",
     "506.7cc67479.chunk.js.map": "/Calu/static/js/506.7cc67479.chunk.js.map",
@@ -45,6 +45,6 @@
   },
   "entrypoints": [
     "static/css/main.b99ae5a5.css",
-    "static/js/main.ac0c13dd.js"
+    "static/js/main.017a5650.js"
   ]
 }
