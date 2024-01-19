@@ -1,0 +1,118 @@
+.contact_button_ctn {
+  position: fixed;
+  width: 65px;
+  height: 65px;
+  justify-content: center;
+  bottom: 0;
+  right: 0;
+  margin: 0 30px 20px 0;
+  z-index: 1;
+  cursor: pointer;
+  border-radius: 20px;
+  background: linear-gradient(transparent, rgba(4, 25, 88, 0.6) 0%) top,
+    linear-gradient(rgba(4, 25, 88, 0.6) 100%, transparent) bottom,
+    linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) top,
+    linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) bottom;
+  background-size: 100% 49.05%, 100% 51%;
+  background-repeat: no-repeat;
+  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px);
+}
+ 
+.contact_ctn {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact_ctn button {
+  cursor: pointer;
+}
+.text_hover_ctn {
+  background: linear-gradient(transparent, rgba(4, 25, 88, 0.6) 0%) top,
+    linear-gradient(rgba(4, 25, 88, 0.6) 100%, transparent) bottom;
+
+  background-size: 100% 49.05%, 100% 51%;
+  background-repeat: no-repeat;
+  -webkit-backdrop-filter: blur (3px);
+  backdrop-filter: blur(3px);
+  border-radius: 50px;
+  position: relative;
+  right: 200px;
+  bottom: 70px;
+  width: 190px;
+  height: 45px;
+}
+
+.text_hover {
+  color: #eb39d9;
+  display: flex;
+  position: relative;
+  top: 10px;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+}
+
+.contact_button {
+  display: flex;
+  margin-right: 10px;
+  align-items: center;
+}
+.contact_logo {
+  width: 40px;
+  margin: 12px 0 10px 10px;
+}
+.arrow_up {
+  right: 48px;
+  margin-bottom: 110px;
+  bottom: -20px;
+  width: 28px;
+  z-index: 1;
+}
+@media (max-width: 900px) {
+  .contact_logo {
+    width: 40px;
+    margin: 10px 0 10px 7px;
+  }
+  .contact_button_ctn {
+    margin: 0 20px 20px 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 20px;
+  }
+  .arrow_up {
+    right: 40px;
+    margin-bottom: 110px;
+    bottom: -25px;
+
+    width: 22px;
+  }
+
+  .text_hover_ctn {
+    display: none;
+  }
+}
+
+@media (max-width: 484px) {
+  .contact_logo {
+    width: 30px;
+    margin: 5px 0 10px 3px;
+  }
+  .contact_button_ctn {
+    margin: 0 20px 20px 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+  .arrow_up {
+    right: 30px;
+    margin-bottom: 90px;
+    bottom: -25px;
+
+    width: 20px;
+  }
+
+  .text_hover_ctn {
+    display: none;
+  }
+}

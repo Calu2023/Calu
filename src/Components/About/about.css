@@ -1,0 +1,46 @@
+.about_container {
+  flex-direction: column;
+  justify-content: center;
+  margin: auto 7% auto 7%;
+}
+.about_items {
+  display: flex;
+  flex-direction: column;
+}
+.title_about {
+  color: #3af6ff;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.sub_1 {
+  color: #eb39d9;
+  text-align: left;
+  line-height: 15px;
+}
+
+.sub_2 {
+  color: white;
+  text-align: left;
+}
+
+.about_container p {
+  color: white;
+}
+.text_last {
+  color: white;
+  text-align: left;
+
+  font-weight: bold;
+}
+
+@media (max-width: 900px) {
+  .about_container {
+    margin: 0 7% 150px 7%;
+  }
+  .title_about {
+    margin-bottom: -10px;
+  }
+  .about_items {
+  }
+}

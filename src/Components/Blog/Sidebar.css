@@ -1,0 +1,124 @@
+.lateralBar {
+  /* background-color: rgba(2, 2, 73, 50%);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  width: 40%;
+  box-shadow: 5.5px 5px 10px rgb(61, 59, 59);*/
+
+  display: flex;
+  overflow: scroll;
+  margin: auto;
+  margin: 0 auto 50px auto;
+}
+.lateralBar::-webkit-scrollbar {
+  display: none;
+}
+.lateralBar .lateralContainer {
+  color: white;
+}
+
+.lateralBar .lateralContainer p {
+}
+hr {
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 5px;
+  max-width: 100px;
+}
+.lastBlogs {
+  display: flex;
+}
+.lastBlogs .last {
+  cursor: pointer;
+}
+.lastBlogs img {
+  width: 200px;
+}
+.sb_blog_title {
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+.sb_blog_title a {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 0 auto;
+}
+.sb_blog_image {
+  max-width: 250px;
+  height: 140px;
+}
+.sb_blog_image img {
+  height: 120px;
+  width: 130px;
+}
+.sidebarSlider .arrowL {
+  margin-top: -50px;
+  width: 30px;
+}
+
+.sidebarSlider .arrowR {
+  margin-top: -50px;
+  width: 30px;
+}
+
+@media (min-width: 340px) {
+  .lateralBar {
+    position: initial;
+    display: flex;
+    flex-direction: column;
+    border-top: 2px solid #c5c5c5;
+    display: flex;
+    overflow: scroll;
+    margin: auto;
+    margin: 150px 0 50px 0;
+  }
+  .sb_blog_image {
+    margin: 10px;
+  }
+
+  .lateralBar .blogTitle {
+    margin: 15px 0;
+  }
+  .lateralBar .lateralContainer {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    overflow-x: scroll;
+  }
+  .lateralBar .lateralContainer .card_our {
+    max-width: 150px;
+    height: 150px;
+  }
+
+  .lateralBar .lateralContainer .card_our .card_btn .button_portfolio {
+    position: initial;
+  }
+}
+
+
+@media (min-width: 900px) {
+  .lateralBar .lateralContainer {
+
+  }
+  .lateralBar .lateralContainer .card_our {
+    max-width: 250px;
+    height: 250px;
+  }
+  .lateralBar {
+  }
+}
+
+@media (min-width: 1920px) {
+  .lateralBar {
+    min-height: 800px;
+  }
+  .lateralBar {
+    top: 15%;
+  }
+}

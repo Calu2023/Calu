@@ -1,0 +1,111 @@
+.main-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 40%;
+  background-color: rgb(10, 9, 9);
+  row-gap: 30px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+ 
+}
+.additional-div {
+  height: 100px; 
+  background-color: transparent; 
+}
+.main-form-container h2 {
+  color: white;
+}
+
+.main-form-container label {
+  color: white;
+  font-size: 24px;
+}
+
+form {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+
+.container-form {
+  width: 100%;
+  row-gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.title-form input {
+  height: 32px;
+}
+
+.mini-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.mini-form p {
+  font-size: 16px;
+  color: white;
+}
+.mini-form input {
+  color: white;
+}
+
+.pdf-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.pdf-form p {
+  font-size: 16px;
+  color: white;
+}
+
+.pdf-form input {
+  color: white;
+}
+
+.price-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.price-form input {
+  height: 32px;
+}
+
+.detail-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-form textarea {
+  height: 150px;
+}
+@media (max-width: 1024px) {
+  .main-form-container {
+    width: 60%;
+  }
+}
+@media (max-width: 720px) {
+  .main-form-container {
+    width: 80%;
+  }
+}
+@media (max-width: 534px) {
+  .main-form-container {
+    width: 90%;
+  }
+}

@@ -1,0 +1,156 @@
+.onboarding {
+  align-items: center;
+  overflow: hidden;
+
+  margin: -60px 0% -100px 7%;
+}
+
+.onb_items {
+  display: flex;
+  flex-direction: row;
+}
+.onboarding img {
+}
+.onboarding .parrafo {
+  color: white;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+.onboarding .parrafo p {
+  text-align: justify;
+
+  margin-bottom: 0;
+}
+.onboarding h1 {
+  color: #eb39d9;
+  margin-bottom: 0;
+}
+.onboarding h2 {
+  color: #3af6ff;
+}
+.contactFlex {
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 5%;
+  position: relative;
+  bottom: 40vh;
+}
+.contact-btn {
+  box-shadow: 8px 8px 10px rgba(1, 13, 79, 58%);
+  background-image: linear-gradient(
+    rgba(58, 246, 255, 0.2) 30%,
+    rgba(185, 4, 139, 0.2) 60%
+  );
+  border-radius: 50px;
+  width: 15rem;
+  height: 6vh;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.contact-btn a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+@media (min-width: 900px) {
+  .onboarding img {
+    position: relative;
+    margin-left: 420px;
+    max-width: 550px;
+  }
+
+  .onboarding .parrafo {
+    position: static;
+    z-index: initial;
+  }
+  .onboarding .parrafo h1 {
+    margin-bottom: 0;
+  }
+  .onboarding .parrafo p {
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 360px) {
+  .onboarding .parrafo h1 {
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 1550px) {
+  .onboarding img {
+    margin-left: 50px;
+  }
+}
+@media (max-width: 1250px) {
+  .onboarding img {
+    width: 550px;
+  }
+  .onboarding img {
+    max-width: 450px;
+  }
+}
+@media (max-width: 900px) {
+  .onboarding {
+    align-items: center;
+    overflow: hidden;
+    margin-left: 7%;
+    margin-top: 100px;
+    margin-bottom: 150px;
+  }
+  .onb_items {
+    display: flex;
+    height: 420px;
+  }
+  .onboarding img {
+    display: none;
+  }
+
+  .onboarding .parrafo {
+    color: white;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+  }
+  .onboarding .parrafo {
+    margin-right: 7%;
+    margin-bottom: 0;
+  }
+  .onboarding h1 {
+    color: #eb39d9;
+    margin-bottom: 0;
+  }
+  .onboarding h2 {
+    color: #3af6ff;
+  }
+  .contactFlex {
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 5%;
+    position: relative;
+    bottom: 40vh;
+  }
+  .contact-btn {
+    background-image: linear-gradient(
+      rgba(58, 246, 255, 0.2) 30%,
+      rgba(185, 4, 139, 0.2) 60%
+    );
+    border-radius: 50px;
+    width: 15rem;
+    height: 40px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  .contact-btn a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+  }
+}

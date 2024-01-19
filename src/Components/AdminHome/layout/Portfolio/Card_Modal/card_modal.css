@@ -1,0 +1,66 @@
+.card-modal-modal {
+  z-index: 99;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  top: 15%;
+  bottom: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 450px;
+  height: 80%;
+  background-color: black;
+  border-radius: 12px;
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.3);
+}
+.create-card-modal {
+  z-index: 99;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  top: 45%;
+  bottom: 0;
+  right: 0;
+  left: 38%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 450px;
+  height: 30%;
+  background-color: black;
+  border-radius: 12px;
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.3);
+}
+.create-card-modal h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 120px;
+}
+.card-modal-modal p {
+  color: white;
+  margin: 0 25px 0 95px;
+  font-size: 22px;
+}
+.close_modal_btn {
+  display: flex;
+  position: relative;
+  top: -20px;
+  left: 320px;
+  border: none;
+  text-decoration: none;
+  width: fit-content;
+  cursor: pointer;
+}
+.close_modal_btn_2 {
+  color: white;
+  position: relative;
+  left: 210px;
+  top: 65px;
+  font-weight: bold;
+  cursor: pointer;
+}

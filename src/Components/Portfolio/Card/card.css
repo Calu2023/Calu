@@ -1,0 +1,44 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0px 30px 0px;
+  border-radius: 30% 0% 30% 0%;
+  min-width: 150px;
+  width: 230px;
+  height: 230px;
+  background: linear-gradient(
+    rgba(58, 246, 255, 0.2) 30%,
+    rgba(185, 4, 139, 0.2) 60%
+  );
+}
+.card p {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+.image {
+  text-align: center;
+  margin: 20px 0px 5px 0px;
+}
+.title {
+  color: white;
+  text-align: center;
+  margin: 10px 0px 0px 0px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.card_btn {
+  text-align: center;
+  margin-bottom: 50px;
+}
+@media (max-width: 1024px) {
+  .card {
+    max-width: 210px;
+    height: 210px;
+  }
+
+  .title {
+    margin: 0px;
+  }
+}

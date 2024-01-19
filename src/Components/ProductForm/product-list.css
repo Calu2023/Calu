@@ -1,0 +1,254 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  margin-top: 59px;
+}
+
+
+.main-container .products {
+  width: 90%;
+}
+
+.main-container h1 {
+  color: aqua;
+}
+.our-products {
+  color: #eb39d9;
+}
+
+.arrow_up12 {
+  background-color: transparent;
+  border: none;
+}
+.link_ {
+  color: rgba(185, 4, 139, 0.9154228855721394);
+  text-decoration: none;
+  font-weight: bold;
+}
+.main-product {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0px 30px 0px;
+  border-radius: 30% 0% 30% 0%;
+  width: 100%;
+  position: relative;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+
+.product-inner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+.products_title {
+  margin-bottom: 50px;
+}
+.product-inner img {
+  box-shadow: 8px 8px 10px rgba(1, 13, 79, 58%);
+}
+.flipped .product-inner {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  /* Rotar la tarjeta 180 grados en el eje Y cuando esté volteada */
+}
+
+.product-front {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  margin: 30px 0px 0 0px;
+  border-radius: 30% 0% 30% 0%;
+  width: 250px;
+  min-height: 250px;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
+}
+
+.carrito-img {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
+.product-back {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0px 30px 0px;
+  border-radius: 0% 30% 0% 30%;
+  width: 250px;
+  min-height: 250px;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
+  color: white;
+}
+
+.hidden {
+  -webkit-transform: rotateY(90deg);
+  transform: rotateY(90deg);
+  /* Oculta el contenido de la tarjeta que no está visible */
+}
+
+.product img {
+  border-radius: 10px;
+}
+
+.product-img {
+  height: 150px;
+  width: 150px;
+}
+
+.main-product.flipped {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  /* Gira toda la tarjeta cuando está volteada */
+}
+
+.product-price .price {
+  color: rgba(185, 4, 139, 0.9154228855721394);
+  font-weight: 700;
+  font-size: 21px;
+
+  margin-bottom: -5px;
+}
+
+.product-price .carrito-price {
+  color: #3af6ff;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.more_products {
+  border: none;
+  background: none;
+  text-decoration: none;
+  color: rgba(185, 4, 139, 0.9154228855721394);
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.products {
+  margin-left: 8%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 0;
+}
+@media (max-width: 991px) {
+  .products {
+    margin-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 768px) {
+  .main-product {
+    width: 50%;
+
+  }
+
+ 
+
+  .carrito-img {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    bottom: 0px;
+    left: 100px;
+  }
+}
+
+@media (min-width: 992px) {
+  .main-product {
+    width: 30%;
+    display: block;
+  }
+  .carrito-img {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    bottom: 0px;
+    left: 160px;
+  }
+}
+
+@-webkit-keyframes rotateFlip {
+  0% {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+
+  100% {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+}
+
+@keyframes rotateFlip {
+  0% {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+
+  100% {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+}
+
+@-webkit-keyframes rotateFlipReturn {
+  0% {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+
+  100% {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+}
+
+@keyframes rotateFlipReturn {
+  0% {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+
+  100% {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+}
+
+.product-inner.flipped {
+  -webkit-animation: rotateFlip 0.8s;
+  animation: rotateFlip 0.8s;
+  height: 280px;
+}
+
+.product-inner:not(.flipped) {
+  -webkit-animation: rotateFlipReturn 0.8s;
+  animation: rotateFlipReturn 0.8s;
+  height: 280px;
+}

@@ -1,0 +1,8 @@
+/* .terms en ModalBuy */
+.terms .terminosCondiciones {
+  height: 150px;
+}
+.terminosCondiciones {
+  overflow: scroll;
+  color: white;
+}

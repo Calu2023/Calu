@@ -1,0 +1,46 @@
+.carousel {
+  display: flex;
+  justify-content: center;
+}
+.carousel-container {
+  width: 75%;
+}
+.arrowL {
+  position: absolute;
+
+  left: -1px;
+
+
+  width: 40px;
+}
+.arrowR {
+  position: absolute;
+  right: -1px;
+
+
+
+
+  width: 40px;
+}
+
+.carouselItem {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .carousel-container {
+    width: 85%;
+  }
+}
+@media (max-width: 767px) {
+  .arrowL {
+    width: 40px;
+  }
+  .arrowR {
+    width: 40px;
+  }
+  .carousel-container {
+    width: 80%;
+  }
+}

@@ -1,0 +1,149 @@
+.card_ctn {
+  flex-direction: column;
+  max-width: 320px;
+  justify-content: center;
+
+  cursor: pointer;
+}
+.res_cart {
+  margin: -120px 0 0 -50px;
+  display: flex;
+  position: absolute;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+  background: none;
+  border: none;
+  text-decoration: none;
+}
+.price {
+  color: rgba(185, 4, 139, 0.9154228855721394);
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  margin-top: 15px;
+}
+.res_cart .detalles {
+  color: white;
+  margin-left: 10px;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.res_description {
+  margin-left: 30px;
+}
+.cart {
+  display: flex;
+  position: absolute;
+  width: 35px;
+  margin: 12px 20px 20px 22px;
+}
+.elipse {
+  width: 45px;
+  margin: 8px 20px 20px 18px;
+}
+.card_res_ctn {
+  display: flex;
+  justify-content: center;
+}
+.title_res {
+  position: relative;
+  color: white;
+  text-align: center;
+  margin: 25px auto 0 auto;
+
+  font-weight: bold;
+  max-width: 220px;
+  text-decoration: none;
+}
+.card_res {
+  display: flex;
+  flex-direction: column;
+  /*border-radius: 30% 0% 30% 0%;*/
+  border-radius: 30% 0% 30% 0%;
+  min-width: 150px;
+  margin-top: 30px;
+  width: 230px;
+  height: 230px;
+  background: linear-gradient(
+    rgba(58, 246, 255, 0.2) 30%,
+    rgba(185, 4, 139, 0.2) 60%
+  );
+}
+
+.res_description {
+  font-weight: bold;
+  color: white;
+  margin: 15px auto 0 auto;
+}
+.res_img {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  box-shadow: 8px 8px 10px rgba(1, 13, 79, 58%);
+}
+
+.arrow_res {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+.arrow_r {
+  position: relative;
+  width: 22px;
+}
+
+@media (max-width: 1300px) {
+  .res_cart {
+    margin: -115px 0 0 -30px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .res_cart {
+    margin: -125px 0 0 -30px;
+  }
+  .arrow_r {
+    width: 20px;
+  }
+  .card_res {
+    width: 210px;
+    height: 210px;
+  }
+  .res_img {
+    margin-top: 15px;
+    width: 110px;
+    height: 100px;
+  }
+  .res_description {
+    margin: 5px auto 0 auto;
+  }
+
+  .title_res {
+    margin: 35px auto 0 auto;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 450px) {
+  .title_res {
+    margin: 15px auto 0 auto;
+    font-size: 16px;
+  }
+
+  .res_description {
+    font-weight: bold;
+    color: white;
+    margin: 5px auto 0 auto;
+  }
+}

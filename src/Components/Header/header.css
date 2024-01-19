@@ -1,0 +1,290 @@
+.navBar {
+  width: 100%;
+  height: 18%;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+
+.header_items {
+  margin: 0 2% 0 5.5%;
+}
+
+.logoCalu {
+  height: 6.5rem;
+  margin:0 100px 0 0;
+}
+
+.navBar nav {
+  display: flex;
+  margin-right: 35px;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 0;
+  width: 90%;
+  height: 80px;
+}
+
+.links_ctn {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-right: 100px;
+  text-decoration: none;
+  
+}
+
+.links a {
+  text-decoration: none;
+  color: white;
+  height: 31px;
+  font-size: 1.1rem;
+  margin-right: 5%;
+}
+
+.links a:hover,
+.links .headerLinks {
+  font-size: 22px;
+  font-weight: bold;
+  color: #3af6ff;
+}
+
+.link {
+  display: none;
+}
+
+.bar {
+  display: none;
+}
+
+.admin-menu {
+  position: relative;
+  display: inline-block;
+  margin-left: 7%;
+}
+
+.admin-btn {
+  background-color: transparent;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  margin-left:20%;
+}
+
+.admin-dropdown {
+  position: absolute;
+  top: 100%;
+  right: -60px;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-dropdown a,
+.admin-dropdown button {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.admin-dropdown a:hover,
+.admin-dropdown button:hover {
+  background-color: #f1f1f1;
+}
+
+.links .cart-2 {
+  position: absolute;
+  right: 50px;
+}
+.carrito {
+  height: initial;
+  display: flex;
+  cursor: pointer;
+  width: 20px;
+  height: 50px;
+}
+
+.carrito .totalItems {
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  margin-left: 40px;
+  top: 0;
+  text-align: center;
+  font-size: 15px;
+  width: 20px;
+  color: white;
+}
+
+@media (max-width: 900px) {
+  .links_ctn {
+    margin-top: 10px;
+    width: 90%;
+    height: 90%;
+    display: flex;
+    margin: 8px 0 0 0;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+  }
+
+  .line {
+    border: solid 1px rgb(206, 206, 206);
+  }
+
+  hr {
+    color: white;
+    width: 100%;
+  }
+
+  .btn.bar {
+    position: absolute;
+    right: 75px;
+    top: 20px;
+    display: flex;
+    height: 5vh;
+    justify-content: flex-end;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+  }
+  .btn.cross .hamburguesa {
+    position: absolute;
+    top: 25px;
+    right: 70px;
+  }
+  .cart-2 {
+    position: absolute;
+
+    right: 50px;
+  }
+  .cart-2 .totalItems {
+    top: -25px;
+  }
+ /*.navBarBlur {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+  }*/
+  .navBar nav {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .btn i {
+    background-color: #fff;
+    width: 4vh;
+    height: 5px;
+    margin: 6px;
+    transition: all 0.2s ease-in;
+    display: block;
+    border-radius: 5px;
+  }
+
+  .btn.cross i:nth-child(1) {
+    -webkit-transform: translateY(200%) rotate(-135deg);
+    transform: translateY(200%) rotate(-135deg);
+  }
+
+  .btn.cross i:nth-child(2) {
+    opacity: 0;
+  }
+
+  .btn.cross i:nth-child(3) {
+    -webkit-transform: translateY(-200%) rotate(135deg);
+    transform: translateY(-200%) rotate(135deg);
+    position: relative;
+    bottom: 2px;
+  }
+.modal-link .modal{
+   position: fixed;
+  top: 0px;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5px;
+  height: 250px;
+  -webkit-transform: translateY(40%);
+  transform: translateY(40%);
+  opacity: 0.9;
+  z-index: 99;
+  overflow-y: auto;
+  transition: opacity 0.3s ease-in;
+  background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
+  background-repeat: no-repeat;
+  border-radius: 50px;
+  box-shadow: 8px 8px 10px rgba(1, 13, 79, 58%);
+  
+}
+
+.modal-content a{
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: white;
+  font-size: 1.1rem;
+  margin: 12px 10px;
+
+}
+.modal-content{
+display: flex;
+flex-direction: column;
+justify-content: center;
+text-align: center;
+width: 90%;
+ 
+}
+  
+
+  .links {
+    -webkit-transform: translateY(-200%);
+    transform: translateY(-200%);
+  }
+
+  .link.show a,
+  .links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    margin: 12px 10px;
+  }
+  .carrito {
+    display: flex;
+    justify-content: flex-end;
+    width: initial;
+  }
+  .carrito img {
+    width: 50px;
+    height: 50px;
+    margin-right: -30px;
+
+    cursor: pointer;
+  }
+  .carrito .totalItems {
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    margin-right: -35px;
+    width: 20px;
+    text-align: center;
+    font-size: 15px;
+  }
+  .logoCalu {
+    height: 7rem;
+  }
+  .admin-dropdown {
+    right: -120px;
+  }
+}

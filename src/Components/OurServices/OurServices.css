@@ -1,0 +1,93 @@
+.ourServices_text {
+  margin: 0 7% 0% 7%;
+}
+
+.text-description {
+  color: white;
+}
+.title-first-nuestros-servicios {
+  color: #3af6ff;
+  text-align: left;
+  margin: 3% 0 10px 0;
+
+}
+
+.icono-servicios {
+  width: 70px;
+  margin: 0px 0px 5px 0px;
+}
+.ourServices {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.react-multi-carousel-dot-list {
+  display: none;
+}
+.text-icono-servicios {
+  font-weight: bold;
+}
+
+.ctn-servicios {
+  overflow: hidden;
+  justify-content: flex-start;
+}
+.ctn-servicios .slider {
+  margin: 0;
+}
+.ctn-servicios .slider .card_our {
+  width: 230px;
+  height: 230px;
+}
+.ctn-servicios .slider .card_our .title_our {
+  margin: -10px 5px 0px 5px;
+}
+.ctn-servicios .slider .card_our .button_portfolio {
+  margin-top: 10px;
+}
+.ourServices {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ctn-servicios .nuestros-servicios {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .ctn-servicios .slider .card_our {
+    width: 210px;
+    height: 210px;
+  }
+}
+@media (max-width: 767px) {
+  .ourServices {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 360px) {
+  .ctn-servicios {
+    overflow: hidden;
+    justify-content: flex-start;
+  }
+  .ourServices {
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  .ourServices_text {
+    margin: 50px 7% 0% 7%;
+  }
+
+  .ctn-servicios .nuestros-servicios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

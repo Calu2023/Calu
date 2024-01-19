@@ -1,0 +1,47 @@
+.container {
+
+  background-repeat: no-repeat;
+}
+.itemsHome {
+}
+
+.arrow_up {
+  position: fixed;
+
+  rotate: 90deg;
+  bottom: 0;
+  right: 55px;
+  margin-bottom: 120px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.sub-first {
+  color: #eb39d9;
+  text-align: center;
+  line-height: 15px;
+}
+
+.sub-second {
+  color: white;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.text-first {
+  text-align: center;
+  margin-top: 40px; /* Ajusta el valor de margin-top según sea necesario */
+}
+
+.text-second {
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 40px; /* Ajusta el valor de margin-top según sea necesario */
+}
+
+.title-first-portafolio {
+  color: #3af6ff;
+  text-align: center;
+  padding: 0;
+  margin-top: 40px; /* Ajusta el valor de margin-top según sea necesario */
+}
