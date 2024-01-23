@@ -20,7 +20,7 @@ export const Header = ({ handleDelete }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [email, setEmail] = useState('');
   const checkRef = useRef(null);
-  const [check, setCheck] = useState(true);
+  const [check, setCheck] = useState(false);
   const [showLinks, setShowLinks] = useState(true);
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
   const navigate = useNavigate();

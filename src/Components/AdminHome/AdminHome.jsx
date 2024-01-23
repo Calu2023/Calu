@@ -9,7 +9,7 @@ import { Header } from "../Header/header";
 import Footer from "../Footer/Footer";
 import Contact_button from "../Home/Contact_button/Contact_button";
 import { useRef, useEffect } from "react";
-import arrow_L from "../Home/icon_arrow_left.svg";
+import arrow_L from "../Home/icon_arrow_left.webp";
 import { auth } from "../../firebase-config";
 import { useNavigate } from "react-router-dom";
 import Resources from "./layout/Resources/Resources";

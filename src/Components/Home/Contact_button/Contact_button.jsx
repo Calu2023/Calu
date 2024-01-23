@@ -1,4 +1,4 @@
-import icono_contacto from "./icono_contacto.png";
+import icono_contacto from "../../../images/Contactanos.webp";
 import "./contact_button.css";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";

@@ -6,10 +6,10 @@ import './resources.css';
 import { useState, useEffect } from 'react';
 import Slider from '../Portfolio/Slider/Slider';
 import { Link, useNavigate } from 'react-router-dom';
-import elipse from './Card_resources/elipse.svg';
-import cart_ from './Card_resources/cart.svg';
+import elipse from './Card_resources/elipse.webp';
+import cart_ from './Card_resources/carrito.webp';
 import { useCustomContext } from '../../Hooks/Context/Context';
-import arrow_L from '../Home/icon_arrow_left.svg';
+import arrow_L from '../Home/icon_arrow_left.webp';
 
 const Resources = () => {
   const { cart, addToCart } = useCustomContext();

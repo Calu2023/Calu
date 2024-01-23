@@ -9,7 +9,7 @@ import Sidebar from "./Sidebar";
 import Contact_button from "../Home/Contact_button/Contact_button";
 import "../Home/Contact_button/contact_button.css";
 import CardNews from "../News/Card_news/Card_news";
-import arrow_L from "../Home/icon_arrow_left.svg";
+import arrow_L from "../Home/icon_arrow_left.webp";
 import { useCustomContext } from "../../Hooks/Context/Context";
 
 function Blog() {

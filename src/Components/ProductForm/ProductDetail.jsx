@@ -4,12 +4,12 @@ import { db } from '../../firebase-config';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Header } from '../Header/header';
 import './product-detail.css';
-import cart_img from '../Resources/Card_resources/cart.svg';
-import elipse from '../Resources/Card_resources/elipse.svg';
+import cart_img from '../Resources/Card_resources/carrito.webp';
+import elipse from '../Resources/Card_resources/elipse.webp';
 import { useCustomContext } from '../../Hooks/Context/Context';
 import { Link } from 'react-router-dom';
 import Contact_button from '../Home/Contact_button/Contact_button';
-import arrow_L from '../Home/icon_arrow_left.svg';
+import arrow_L from '../Home/icon_arrow_left.webp';
 import { useLocation } from 'react-router-dom';
 import Slider from '../Portfolio/Slider/Slider';
 

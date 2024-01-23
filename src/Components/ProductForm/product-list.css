@@ -8,7 +8,20 @@
   margin-top: 59px;
 }
 
-
+/* Slider */
+.main-container section {
+  width: 100%;
+}
+.main-container section .react-multi-carousel-dot-list {
+  display: none;
+}
+.main-container section .front_items img {
+  width: 60%;
+}
+.main-container section .carousel-container {
+  width: 100%;
+}
+/* Slider */
 .main-container .products {
   width: 90%;
 }
@@ -165,10 +178,7 @@
 @media (min-width: 768px) {
   .main-product {
     width: 50%;
-
   }
-
- 
 
   .carrito-img {
     width: 60px;

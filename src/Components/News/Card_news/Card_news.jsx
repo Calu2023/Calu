@@ -1,5 +1,5 @@
 import React from "react";
-import arrow_R from "./icon_arrow_right.svg";
+import arrow_R from "./icon_arrow_right.webp";
 import "./card_news.css";
 
 const Card_news = ({ image, title, description, btn }) => {

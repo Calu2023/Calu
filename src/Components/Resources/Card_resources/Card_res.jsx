@@ -1,12 +1,9 @@
 import React from "react";
-import arrow_R from "./icon_arrow_right.svg";
+import arrow_R from "./icon_arrow_right.webp";
 import "./card_res.css";
-import elipse from "./elipse.svg";
-import cart from "./cart.svg";
 import { getDocs, collection, query } from "firebase/firestore";
 import { db } from "../../../firebase-config";
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
 
 const Card_res = ({ title, description, button, price, more }) => {
   const [cards, setCard] = useState([]);

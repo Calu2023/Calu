@@ -17,7 +17,7 @@ const ModalBuy = ({
     setModal(!modal);
   };
   const handleNavigate = () => {
-    navigate('/payment');
+    !check ? alert('Debes aceptar las políticas de privacidad') : navigate('/payment');
   };
   return (
     <div className='ctn_modal'>
@@ -35,15 +35,15 @@ const ModalBuy = ({
           </div>
           <div className='terms'>
             <div className='check'>
-              <p>Acepto los términos y condiciones</p>
+              <p>Acepto las políticas de privacidad</p>
               <input type='checkbox' name='' id='' ref={checkRef} onClick={handleCheck} />
             </div>
             {!check && (
               <div className='noCheck'>
-                Debes aceptar los{' '}
+                Debes aceptar las
                 {
                   <Link className='terms_link' onClick={handleModal}>
-                    términos y condiciones
+                    políticas de privacidad
                   </Link>
                 }
               </div>

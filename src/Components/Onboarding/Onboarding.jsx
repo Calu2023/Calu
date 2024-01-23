@@ -2,7 +2,7 @@ import React, { useState, useEffect, useLayoutEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase-config";
-import logoCalu from "../../images/icono_calu.svg";
+import logoCalu from "../../images/logocalu.webp";
 
 const Onboarding = () => {
   const [onboardingInfo, setOnboardingInfo] = useState(null);

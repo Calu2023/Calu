@@ -1,22 +1,21 @@
 .footer_container {
   z-index: 2;
   width: 100%;
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   display: flex;
   justify-content: flex-start;
-  
 }
 .footer_elements {
   margin-left: 25px;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  width:80%;
+  width: 80%;
   margin-top: 20px;
   margin-bottom: 10px;
 }
 .footer_container li {
- 
   font-size: 14px;
 }
 .logo_calu {
@@ -25,7 +24,6 @@
   flex-direction: column;
   align-items: center;
   margin-top: -5px;
- 
 }
 .logo_calu p {
   color: white;
@@ -36,7 +34,6 @@
 .servicios {
   color: white;
   font-size: 20px;
- 
 }
 .servicios h1 {
   margin: 20px 0 0 32px;
@@ -45,7 +42,6 @@
 .servicios_ {
   display: flex;
   flex-direction: row;
-
 }
 
 .servicios_ span::first-letter {
@@ -54,24 +50,21 @@
 .verMasFooter {
   display: flex;
   justify-content: center;
-  margin-top:-15px;
+  margin-top: -15px;
   cursor: pointer;
   font-size: 14px;
   font-weight: bold;
-  
 }
 
 .redes {
   font-size: 20px;
   color: rgb(250, 249, 249);
- 
+
   display: flex;
   flex-direction: column;
- 
 }
 .redes h1 {
   font-size: 22px;
-
 }
 .logo_calu img {
   width: 190px;
@@ -94,30 +87,33 @@ li span {
 .terminos {
   color: white;
   cursor: pointer;
- 
 }
- 
+
 .terminos span {
   font-size: 10px;
   position: absolute;
   width: 300px;
- 
 }
 
-.filter-ctn  .terms-content{
+.terminos .negrita {
+  color: #3af6ff;
+}
+
+.filter-ctn .terms-content {
   width: 90%;
 }
-.filter-ctn-mbl  .terms-content{
+.filter-ctn-mbl .terms-content {
   width: 90%;
+  position: fixed;
+  top: 50px;
 }
-.filter-ctn .terms-modal{
+.filter-ctn .terms-modal {
   position: absolute;
-margin: -750px auto;
+  margin: -750px auto;
 }
-.filter-ctn-mbl .terms-modal{
+.filter-ctn-mbl .terms-modal {
   position: absolute;
-margin: -620px auto;
- 
+  margin: -620px auto;
 }
 @media (max-width: 1400px) {
   .footer_container {
@@ -133,7 +129,7 @@ margin: -620px auto;
     width: 35px;
     height: 35px;
   }
- 
+
   .logo_calu p {
     margin: -20px 0 0 20px;
   }
@@ -142,9 +138,7 @@ margin: -620px auto;
   .verMasFooter {
     display: flex;
     justify-content: center;
-    margin:0 auto;
-  
- 
+    margin: 0 auto;
   }
   .servicios h1 {
     margin: 20px auto;
@@ -156,7 +150,7 @@ margin: -620px auto;
     flex-direction: column;
   }
   .logo_calu p {
-    margin:  auto;
+    margin: auto;
   }
   .servicios_ {
     display: flex;
@@ -202,9 +196,8 @@ margin: -620px auto;
     margin-bottom: 40px;
     font-size: 20px;
   }
- 
+
   .redes {
-    
     font-size: 20px;
     color: rgb(250, 249, 249);
     display: flex;
@@ -216,13 +209,10 @@ margin: -620px auto;
     font-weight: 100;
     font-size: 20px;
   }
- 
 }
 
 @media (max-width: 464px) {
   .footer_container li {
- 
     font-size: 12px;
   }
 }
- 

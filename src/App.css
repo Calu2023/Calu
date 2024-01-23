@@ -5,12 +5,11 @@
   src: url('./Archive-Regular.ttf');
 }
 html {
-  scrollbar-color:  rgba(5, 0, 75,1) rgba(5, 0, 75, 0);
-  font-family: 'Montserrat', sans-serif
+  scrollbar-color: rgba(5, 0, 75, 1) rgba(5, 0, 75, 0);
+  font-family: 'Montserrat', sans-serif;
 }
 body {
   font-family: 'Montserrat', sans-serif;
- 
 }
 
 .video-background video {
@@ -24,13 +23,11 @@ body {
   object-fit: cover;
   z-index: -1;
 }
-.container_{
+.container_ {
   background: rgba(4, 25, 88, 0.6) 100%;
-
 }
 section {
   margin-top: 12%;
-  
 }
 
 iframe[src^="https://www.google.com/recaptcha/"]
@@ -115,38 +112,18 @@ iframe[src^="https://www.google.com/recaptcha/"]
 
 /* Estilos para motores Webkit y blink (Chrome, Safari, Opera... )*/
 
-::-webkit-scrollbar {
-   
- 
-}
-
-::-webkit-scrollbar:vertical {
- background-color:transparent;
- background:  transparent;
-}
-
-::-webkit-scrollbar-button:increment,
-::-webkit-scrollbar-button {
-  display: none;
-}
-
 ::-webkit-scrollbar:horizontal {
   height: 10px;
-  
-  
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(5, 0, 75,1);
+  background-color: rgba(5, 0, 75, 1);
   border-radius: 20px;
   width: 10px;
- 
 }
 .thumb-vertical {
   width: 25px;
   cursor: pointer;
   border-radius: inherit;
-  background-color: rgba(5, 0, 75,1);
-  
+  background-color: rgba(5, 0, 75, 1);
 }
-

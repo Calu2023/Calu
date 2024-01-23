@@ -7,7 +7,7 @@ import CTN from '../CTN/CTN';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../firebase-config';
 import ContactButton from '../Home/Contact_button/Contact_button';
-import arrow_L from '../Home/icon_arrow_left.svg';
+import arrow_L from '../Home/icon_arrow_left.webp';
 import { useCustomContext } from '../../Hooks/Context/Context';
 import { useLocation } from 'react-router';
 import Slider from '../Portfolio/Slider/Slider';

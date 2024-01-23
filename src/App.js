@@ -21,6 +21,7 @@ import { auth } from './firebase-config';
 import EmailList from './Components/Contact/EmailList';
 import { Provider } from './Hooks/Context/Context';
 import Terms from './Components/Cart/Terms';
+import { Scrollbars } from 'react-custom-scrollbars-2';
 
 function App() {
   const [isAuth, setIsAuth] = useState(false);
@@ -38,35 +39,151 @@ function App() {
   }, []);
 
   return (
-    
-    <Provider >
-   
+    <Provider>
       <Router>
         <div className='container_'>
-      <VideoBackgroundComponent />
+          <VideoBackgroundComponent />
 
           <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/admin-home' element={<AdminHome />} />
-            <Route path='/admin-login' element={<AdminLogin />} />
-            <Route path='/admin-crud' element={<AdminCrud />} />
-            <Route path='/create-post' element={<CreatePost />} />
-            <Route path='/product-form' element={<ProductForm />} />
-            <Route path='/product-list' element={<Product_List />} />
-            <Route path='/product/:id' element={<ProductDetail_Screen />} />
-            <Route path='/edit-post/:id' element={<CreatePost  />} />
-            <Route path='/about' element={<About />} />
-            <Route path='/blog' element={<Blog_Screen isAuth={isAuth} />} />
-            <Route path='/blog/:id' element={<BlogView_Screen />} />
-            <Route path='/contact' element={<Contact_Screen />} />
-            <Route path='/services' element={<Services />} />
-            <Route path='/payment' element={<PaymentGateway />} />
-            <Route path='/email-list' element={<EmailList />} />
-            <Route path='/terms' element={<Terms />} />
+            <Route
+              path='/'
+              element={
+                <Scrollbars style={{ height: '100vh' }}>
+                  <Home />
+                </Scrollbars>
+              }
+            />
+            <Route
+              path='/admin-home'
+              element={
+                <Scrollbars style={{ height: '100vh' }}>
+                  <AdminHome />
+                </Scrollbars>
+              }
+            />
+            <Route
+              path='/admin-login'
+              element={
+                <Scrollbars style={{ height: '100vh' }}>
+                  <AdminLogin />
+                </Scrollbars>
+              }
+            />
+            <Route
+              path='/admin-crud'
+              element={
+                <Scrollbars style={{ height: '100vh' }}>
+                  <AdminCrud />
+                </Scrollbars>
+              }
+            />
+            <Route
+              path='/create-post'
+              element={
+                <Scrollbars style={{ height: '100vh' }}>
+                  <CreatePost />
+                </Scrollbars>
+              }
+            />
+            <Route
+              path='/product-form'
+              element={
+                <Scrollbars style={{ height: '100vh' }}>
+                  <ProductForm />
+                </Scrollbars>
+              }
+            />
+            <Route
+              path='/product-list'
+              element={
+                <Scrollbars style={{ height: '100vh' }}>
+                  <Product_List />
+                </Scrollbars>
+              }
+            />
+            <Route
+              path='/product/:id'
+              element={
+                <Scrollbars style={{ height: '100vh' }}>
+                  <ProductDetail_Screen />
+                </Scrollbars>
+              }
+            />
+            <Route
+              path='/edit-post/:id'
+              element={
+                <Scrollbars style={{ height: '100vh' }}>
+                  <CreatePost />
+                </Scrollbars>
+              }
+            />
+            <Route
+              path='/about'
+              element={
+                <Scrollbars style={{ height: '100vh' }}>
+                  <About />
+                </Scrollbars>
+              }
+            />
+            <Route
+              path='/blog'
+              element={
+                <Scrollbars style={{ height: '100vh' }}>
+                  <Blog_Screen isAuth={isAuth} />
+                </Scrollbars>
+              }
+            />
+            <Route
+              path='/blog/:id'
+              element={
+                <Scrollbars style={{ height: '100vh' }}>
+                  <BlogView_Screen />
+                </Scrollbars>
+              }
+            />
+            <Route
+              path='/contact'
+              element={
+                <Scrollbars style={{ height: '100vh' }}>
+                  <Contact_Screen />
+                </Scrollbars>
+              }
+            />
+            <Route
+              path='/services'
+              element={
+                <Scrollbars style={{ height: '100vh' }}>
+                  <Services />
+                </Scrollbars>
+              }
+            />
+            <Route
+              path='/payment'
+              element={
+                <Scrollbars style={{ height: '100vh' }}>
+                  <PaymentGateway />
+                </Scrollbars>
+              }
+            />
+            <Route
+              path='/email-list'
+              element={
+                <Scrollbars style={{ height: '100vh' }}>
+                  <EmailList />
+                </Scrollbars>
+              }
+            />
+            <Route
+              path='/terms'
+              element={
+                <Scrollbars style={{ height: '100vh' }}>
+                  <Terms />
+                </Scrollbars>
+              }
+            />
           </Routes>
         </div>
       </Router>
-      
     </Provider>
   );
 }
