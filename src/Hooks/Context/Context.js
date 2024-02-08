@@ -42,6 +42,12 @@ export function Provider({ children }) {
     }
   };
 
+  const scroll_top = () => {
+    window.scroll({
+      top: 0,
+    });
+  };
+
   return (
     <Context.Provider
       value={{
@@ -54,6 +60,7 @@ export function Provider({ children }) {
         handleBlur,
         blur,
         handleDownload,
+        scroll_top,
       }}
     >
       {children}

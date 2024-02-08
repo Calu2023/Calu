@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import videoBackground from '../../images/backgroundClouds.mp4';
+import videoBackground from '../../images/backgroundClouds.webm';
 
 const VideoBackgroundComponent = () => {
   const [videoLoaded, setVideoLoaded] = useState(false);
@@ -13,7 +13,7 @@ const VideoBackgroundComponent = () => {
   }, []);
 
   return (
-    <div className="video-background">
+    <div className='video-background'>
       {videoLoaded && (
         <video
           src={videoBackground}

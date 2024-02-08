@@ -2,10 +2,10 @@ import { useNavigate } from 'react-router-dom';
 import './Sidebar.css';
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { collection, getDocs, limitToLast, orderBy, query } from 'firebase/firestore';
+import { collection, getDocs, query } from 'firebase/firestore';
 import { db } from '../../firebase-config';
 
-import Slider from '../Portfolio/Slider/Slider';
+import Slider from '../Slider/Slider';
 const Sidebar = () => {
   const navigate = useNavigate();
   const location = useLocation();

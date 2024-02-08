@@ -1,5 +1,5 @@
 import './product-list.css';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, Suspense } from 'react';
 import { collection, getDocs, deleteDoc, doc, getDoc } from 'firebase/firestore';
 import { db, storage, auth } from '../../firebase-config';
 import { Link, useNavigate } from 'react-router-dom';
@@ -8,7 +8,7 @@ import { Header } from '../Header/header';
 import { useCustomContext } from '../../Hooks/Context/Context';
 import Contact_button from '../Home/Contact_button/Contact_button';
 import arrow_L from '../Home/icon_arrow_left.webp';
-import Slider from '../Portfolio/Slider/Slider';
+import Slider from '../Slider/Slider';
 import CardSrvFlip from '../Services/Card_srv/Card_srv_flip';
 
 function ProductList() {
@@ -23,7 +23,6 @@ function ProductList() {
   const productsCollectionRef = collection(db, 'e-commerce');
   const firstSection = useRef(null);
   const [width, setWidth] = useState(window.innerWidth);
-  const breakpoint = 1024;
 
   const scrollToTop = () => {
     firstSection.current?.scrollIntoView({ behavior: 'smooth' });
@@ -89,7 +88,7 @@ function ProductList() {
   };
 
   return (
-    <div>
+    <Suspense>
       <Header cartItem={cart} handleDelete={removeFromCart} ref={firstSection} />
       <button className='arrow_up12' onClick={scrollToTop}>
         <img className='arrow_up' src={arrow_L} alt='Arrow Up' />
@@ -198,7 +197,7 @@ function ProductList() {
           </button>
         )}
       </div>
-    </div>
+    </Suspense>
   );
 }
 

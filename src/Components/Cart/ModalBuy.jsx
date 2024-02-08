@@ -52,7 +52,7 @@ const ModalBuy = ({
           </div>
         </form>
       </div>
-      <div onClick={() => setIsModalOpen(false)} class='modal-background' />
+      <div onClick={() => setIsModalOpen(false)} className='modal-background' />
     </div>
   );
 };

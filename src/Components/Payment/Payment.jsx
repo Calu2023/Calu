@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import './payment.css';
 import Paypal from '../../images/payments/paypal.png';
@@ -54,9 +54,6 @@ function PaymentGateway() {
   const onApprove = (data, actions) => {
     return actions.order.capture(handlePay());
   };
-  const handlehandle = () => {
-    console.log(carrito);
-  };
   const handlePay = () => {
     handleDownload(carrito);
     localStorage.clear('carrito');
@@ -77,49 +74,29 @@ function PaymentGateway() {
   }, []);
   if (width > breakpoint) {
     return (
-      <div className='paymentCtn'>
-        <Header cartItem={localStorage.getItem('carrito')} handleDelete={removeFromCart} />
-        <div className='payment-content'>
-          <h1 className='title-payment'>Pasarela de Pagos</h1>
-          {/* <button onClick={handlehandle}>descargar</button> */}
-          <div className='payment-options'>
-            {/* PayPal */}
-            <div className='payment-option' onClick={() => handlePayment('paypal')}>
-              <img src={Paypal} alt='PayPal' />
-            </div>
-            <div className='paypalButton'>
-              <PayPalButton
-                createOrder={(data, actions) => createOrder(data, actions)}
-                onApprove={(data, actions) => onApprove(data, actions)}
-              />
+      <Suspense>
+        <div className='paymentCtn'>
+          <Header cartItem={localStorage.getItem('carrito')} handleDelete={removeFromCart} />
+          <div className='payment-content'>
+            <h1 className='title-payment'>Pasarela de Pagos</h1>
+            {/* <button onClick={handlehandle}>descargar</button> */}
+            <div className={width > breakpoint ? 'payment-options' : 'paymentSlider'}>
+              {/* PayPal */}
+              <div className='payment-option' onClick={() => handlePayment('paypal')}>
+                <img src={Paypal} alt='PayPal' />
+              </div>
+              <div className='paypalButton'>
+                <PayPalButton
+                  createOrder={(data, actions) => createOrder(data, actions)}
+                  onApprove={(data, actions) => onApprove(data, actions)}
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </Suspense>
     );
   }
-
-  return (
-    <div className='paymentCtn'>
-      <Header cartItem={localStorage.getItem('carrito')} handleDelete={removeFromCart} />
-      <div className='payment-content'>
-        <h1 className='title-payment'>Pasarela de Pagos</h1>
-        {/* <button onClick={handlehandle}>descargar</button> */}
-        <div className='paymentSlider'>
-          {/* PayPal */}
-          <div className='payment-option' onClick={() => handlePayment('paypal')}>
-            <img src={Paypal} alt='PayPal' />
-          </div>
-          <div className='paypalButton'>
-            <PayPalButton
-              createOrder={(data, actions) => createOrder(data, actions)}
-              onApprove={(data, actions) => onApprove(data, actions)}
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
 }
 
 export default PaymentGateway;

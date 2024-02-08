@@ -1,6 +1,10 @@
 import { initializeApp } from 'firebase/app';
-import { getAnalytics } from 'firebase/analytics';
-import { getAuth, GoogleAuthProvider, setPersistence, browserLocalPersistence } from 'firebase/auth';
+import {
+  getAuth,
+  GoogleAuthProvider,
+  setPersistence,
+  browserLocalPersistence,
+} from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 
@@ -10,7 +14,6 @@ import { getStorage } from 'firebase/storage';
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-
   apiKey: 'AIzaSyApKU1ShV8BSmIiT80A5R0j-nD9Uy1zosQ',
   authDomain: 'calu-f1f83.firebaseapp.com',
   projectId: 'calu-f1f83',
@@ -18,12 +21,10 @@ const firebaseConfig = {
   messagingSenderId: '438340692271',
   appId: '1:438340692271:web:2c2ac73c9ac1b57c3559da',
   measurementId: 'G-DQE7303QW7',
-
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 const auth = getAuth(app);
 
 // Configura la persistencia de autenticación a 'LOCAL'

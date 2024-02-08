@@ -101,6 +101,8 @@ li span {
 
 .filter-ctn .terms-content {
   width: 90%;
+  position: fixed;
+  top: 50px;
 }
 .filter-ctn-mbl .terms-content {
   width: 90%;

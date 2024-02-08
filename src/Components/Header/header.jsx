@@ -4,7 +4,7 @@ import miImagen from '../../images/logocalu.webp';
 import { Link, useLocation } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import { auth } from '../../firebase-config';
-import cart from '../../images/carrito.png';
+import cart from '../../images/carrito.webp';
 import Cart from '../Cart/Cart';
 import ModalBuy from '../Cart/ModalBuy';
 import { useNavigate } from 'react-router-dom';
@@ -13,7 +13,7 @@ import { collection, addDoc } from 'firebase/firestore';
 import { useCustomContext } from '../../Hooks/Context/Context';
 import LinksModal from './LinksModal';
 export const Header = ({ handleDelete }) => {
-  const { isAuth, logoutGoogle, handleBlur } = useCustomContext();
+  const { isAuth, logoutGoogle, handleBlur, scroll_top } = useCustomContext();
   const [showAdminMenu, setShowAdminMenu] = useState(false);
   const [showCart, setShowCart] = useState(false);
   const location = useLocation();
@@ -21,7 +21,7 @@ export const Header = ({ handleDelete }) => {
   const [email, setEmail] = useState('');
   const checkRef = useRef(null);
   const [check, setCheck] = useState(false);
-  const [showLinks, setShowLinks] = useState(true);
+  const showLinks = true;
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
   const navigate = useNavigate();
   const [showLinksModal, setShowLinksModal] = useState(false);
@@ -78,12 +78,6 @@ export const Header = ({ handleDelete }) => {
     setIsModalOpen(true);
     setShowCart(false);
     handleBlur();
-  };
-
-  const scroll_top = () => {
-    window.scroll({
-      top: 0,
-    });
   };
 
   return (
@@ -199,8 +193,6 @@ export const Header = ({ handleDelete }) => {
         )}
 
         {showLinksModal && <LinksModal closeModal={() => setShowLinksModal(false)} />}
-
-        {/* Resto del contenido de tu aplicación */}
       </div>
     </div>
   );

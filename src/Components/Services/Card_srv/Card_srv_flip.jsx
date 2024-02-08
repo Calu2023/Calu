@@ -3,17 +3,13 @@ import './card_srv_flip.css';
 
 const Card_srv_flip = ({ image, title, sub, des_1, des_2, des_3 }) => {
   return (
-    <div class='flip-card'>
-      <div class='flip-card-inner'>
-        <div class='flip-card-front'>
+    <div className='flip-card'>
+      <div className='flip-card-inner'>
+        <div className='flip-card-front'>
           <div>
-
-
             <div className='front_items'>
               {' '}
               <img src={image} alt={image} width='100px' />
-
-
             </div>
             <div className='title_flip'>{title}</div>
             <br />
@@ -21,7 +17,7 @@ const Card_srv_flip = ({ image, title, sub, des_1, des_2, des_3 }) => {
           </div>
         </div>
 
-        <div class='flip-card-back'>
+        <div className='flip-card-back'>
           <div>
             <p>{des_1}</p>
           </div>

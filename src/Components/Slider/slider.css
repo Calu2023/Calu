@@ -1,0 +1,44 @@
+.carousel {
+  justify-content: center;
+}
+.carousel-container {
+  width: 75%;
+}
+.carousel {
+  display: flex;
+  justify-content: center;
+}
+.arrowL {
+  position: absolute;
+  left: 0;
+  top: 100px;
+  width: 50px;
+}
+.arrowR {
+  position: absolute;
+  right: 0;
+  top: 100px;
+  width: 50px;
+}
+
+.carouselItem {
+  justify-content: center;
+}
+
+.carousel-container .react-multi-carousel-track .react-multi-carousel-item {
+  display: flex;
+}
+
+@media (max-width: 1024px) {
+  .carousel-container {
+    width: 85%;
+  }
+}
+@media (max-width: 767px) {
+  .arrowL {
+    width: 40px;
+  }
+  .arrowR {
+    width: 40px;
+  }
+}

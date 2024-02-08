@@ -47,12 +47,22 @@ function Cart({ close, cart, handleDelete, buy }) {
               ))}
           </div>
           <p className='total'>
-            <span>Total</span>
-            <span>{!isNaN(total) ? (total ? `$${total}` : 'Gratis') : '$0'}</span>
+            {total ? (
+              <>
+                <span>Total</span>
+                <span>{!isNaN(total) ? (total ? `$${total}` : 'Gratis') : '$0'}</span>
+              </>
+            ) : (
+              ''
+            )}
           </p>
-          <div className='compra_btn'>
-            <button onClick={buy}>Iniciar compra</button>
-          </div>
+          {total ? (
+            <div className='compra_btn'>
+              <button onClick={buy}>Iniciar compra</button>
+            </div>
+          ) : (
+            <h3>Carrito vacío</h3>
+          )}
         </div>
 
         <div className='modal-background' onClick={close}></div>

@@ -5,11 +5,10 @@ import { db, storage } from '../../firebase-config';
 import { collection, getDocs, deleteDoc, doc, addDoc, getDoc, updateDoc } from 'firebase/firestore';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import CreateService from './CreateService';
-import logoCalu from '../../images/logocalu.webp'; //TODO: ajustar handleChange en img para poner una imagen por defecto
 import EditService from './EditService';
 //import EditService from './EditService';
-import { useNavigate } from "react-router-dom";
-import { auth } from "../../firebase-config";
+import { useNavigate } from 'react-router-dom';
+import { auth } from '../../firebase-config';
 const AdminCrud = () => {
   const navigate = useNavigate();
   useEffect(() => {
@@ -22,10 +21,9 @@ const AdminCrud = () => {
 
     checkAuthentication();
   }, []);
-  
+
   const [servicesList, setServicesList] = useState([]);
   const [modal, setModal] = useState(false);
-  const [imageEdit, setImageEdit] = useState('');
   const [modalEdit, setModalEdit] = useState(false);
   const [blur, setBlur] = useState(false);
   const [formData, setFormData] = useState({
@@ -167,71 +165,72 @@ const AdminCrud = () => {
       des_3: '',
       img: '',
     });
-    setImageEdit('');
     closeModal();
   };
   return (
     <div className='crud-ctn'>
       <Header />
 
-     
       <div className='services'>
-      <div className='crud-ctn2'>
-      <div className={blur ? 'crudBlur' : 'crudContainer'} style={{ overflowY: 'scroll', maxHeight: '900px' }}>
-          <ul className='crudTags'>
-            <li>ID</li>
-            <li>Titulo</li>
-            <li>Descripcion</li>
-            <li>Imagen</li>
-          </ul>
-          <ul className='crudItems'>
-            {servicesList.map((servicio, index) => {
-              const fullDescription = `${servicio.des_1} ${servicio.des_2} ${servicio.des_3}`;
-              const words = fullDescription.split(' ');
-              const truncatedWords = words.slice(0, 7);
-              const truncatedDescription = truncatedWords.join(' ');
-              const description =
-                words.length > 7 ? `${truncatedDescription}...` : truncatedDescription;
-              return (
-                <li key={index}>
-                  <div className='crudDescription'>
-                    <div> {index + 1}</div>
-                    <div className='crudTitle'>{servicio.title}</div>
-                    <div className='crudText'>{description}</div>
-                    <div className='crudImage'>
-                      <img src={servicio.img} width='210px' alt={servicio.img} />
+        <div className='crud-ctn2'>
+          <div
+            className={blur ? 'crudBlur' : 'crudContainer'}
+            style={{ overflowY: 'scroll', maxHeight: '900px' }}
+          >
+            <ul className='crudTags'>
+              <li>ID</li>
+              <li>Titulo</li>
+              <li>Descripcion</li>
+              <li>Imagen</li>
+            </ul>
+            <ul className='crudItems'>
+              {servicesList.map((servicio, index) => {
+                const fullDescription = `${servicio.des_1} ${servicio.des_2} ${servicio.des_3}`;
+                const words = fullDescription.split(' ');
+                const truncatedWords = words.slice(0, 7);
+                const truncatedDescription = truncatedWords.join(' ');
+                const description =
+                  words.length > 7 ? `${truncatedDescription}...` : truncatedDescription;
+                return (
+                  <li key={index}>
+                    <div className='crudDescription'>
+                      <div> {index + 1}</div>
+                      <div className='crudTitle'>{servicio.title}</div>
+                      <div className='crudText'>{description}</div>
+                      <div className='crudImage'>
+                        <img src={servicio.img} width='210px' alt={servicio.img} />
+                      </div>
+                      <div>
+                        <button onClick={() => handleEdit(servicio.id)}>Editar</button>
+                        <button onClick={() => handleDelete(servicio.id)}>Borrar</button>
+                      </div>
                     </div>
-                    <div>
-                      <button onClick={() => handleEdit(servicio.id)}>Editar</button>
-                      <button onClick={() => handleDelete(servicio.id)}>Borrar</button>
-                    </div>
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+          <button onClick={handleAddService}>Agregar</button>
         </div>
-        <button onClick={handleAddService}>Agregar</button>
+        {/* MODAL AGREGAR */}
+        {modal && (
+          <CreateService
+            closeModal={closeModal}
+            handleSubmit={handleSubmit}
+            formData={formData}
+            handleChange={handleChange}
+          />
+        )}
+        {/* MODAL Editar */}
+        {modalEdit && (
+          <EditService
+            serviceId={editItemId}
+            closeModal={closeModal}
+            handleChange={handleChangeEdit}
+            handleSubmit={handleSubmitEdit}
+          />
+        )}
       </div>
-      {/* MODAL AGREGAR */}
-      {modal && (
-        <CreateService
-          closeModal={closeModal}
-          handleSubmit={handleSubmit}
-          formData={formData}
-          handleChange={handleChange}
-        />
-      )}
-      {/* MODAL Editar */}
-      {modalEdit && (
-        <EditService
-          serviceId={editItemId}
-          closeModal={closeModal}
-          handleChange={handleChangeEdit}
-          handleSubmit={handleSubmitEdit}
-        />
-      )}
-        </div>
     </div>
   );
 };

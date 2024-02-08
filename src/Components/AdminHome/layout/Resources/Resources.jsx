@@ -1,22 +1,17 @@
-import React from "react";
-import Card_res from "../../../Resources/Card_resources/Card_res";
+import React from 'react';
+import Card_res from '../../../Resources/Card_resources/Card_res';
 
-import { getDocs, collection, query } from "firebase/firestore";
+import { getDocs, collection, query } from 'firebase/firestore';
 
-import { db, storage, auth } from "../../../../firebase-config";
-import "./resources.css";
-import { useState, useEffect } from "react";
-import Slider from "../Portfolio/Slider/Slider";
+import { db } from '../../../../firebase-config';
+import './resources.css';
+import { useState, useEffect } from 'react';
+import Slider from '../../../Slider/Slider';
 const Resources = () => {
-  const [products, setProducts] = useState([]);
-  const productsCollectionRef = collection(db, "e-commerce");
-  const [cardTitle, setCardTitle] = useState("");
-  const [cardDescription, setCardDescription] = useState("");
-
   const [cards, setCard] = useState([]);
 
   const getCard = async () => {
-    const results = await getDocs(query(collection(db, "e-commerce")));
+    const results = await getDocs(query(collection(db, 'e-commerce')));
     return results;
   };
   useEffect(() => {
@@ -34,17 +29,17 @@ const Resources = () => {
   React.useEffect(() => {
     const handleResizeWindow = () => setWidth(window.innerWidth);
 
-    window.addEventListener("resize", handleResizeWindow);
+    window.addEventListener('resize', handleResizeWindow);
     return () => {
-      window.removeEventListener("resize", handleResizeWindow);
+      window.removeEventListener('resize', handleResizeWindow);
     };
   }, []);
   if (width > breakpoint) {
     return (
-      <div className="res_ctn">
-        <h1 className="res_title_adm">RECURSOS PARA TU NEGOCIO</h1>
+      <div className='res_ctn'>
+        <h1 className='res_title_adm'>RECURSOS PARA TU NEGOCIO</h1>
 
-        <div className="res_card">
+        <div className='res_card'>
           {cards &&
             cards.map((product) => (
               <Card_res
@@ -52,9 +47,9 @@ const Resources = () => {
                 title={product.data().title}
                 btn={
                   <a
-                    target="_blank"
-                    className="
-                button_portfolio"
+                    target='_blank'
+                    className='
+                button_portfolio'
                   >
                     Ver más
                   </a>
@@ -66,8 +61,8 @@ const Resources = () => {
     );
   }
   return (
-    <div className="res_ctn">
-      <h1 className="res_title_adm">RECUSOS PARA TU NEGOCIO</h1>
+    <div className='res_ctn'>
+      <h1 className='res_title_adm'>RECUSOS PARA TU NEGOCIO</h1>
 
       <Slider>
         {cards &&
@@ -77,9 +72,9 @@ const Resources = () => {
               title={product.data().title}
               btn={
                 <a
-                  target="_blank"
-                  className="
-          button_portfolio"
+                  target='_blank'
+                  className='
+          button_portfolio'
                 >
                   Ver más
                 </a>
