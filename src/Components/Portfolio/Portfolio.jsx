@@ -1,5 +1,7 @@
 import { doc, getDoc, getDocs, collection, query } from 'firebase/firestore';
+
 import { db } from '../../firebase-config';
+
 import React, { Suspense } from 'react';
 import Card from './Card/Card';
 import Slider from '../Slider/Slider';

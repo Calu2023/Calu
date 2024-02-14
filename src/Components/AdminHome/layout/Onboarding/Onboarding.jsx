@@ -135,7 +135,7 @@ const Onboarding = () => {
               <Link to={'/contact'}>¡Contáctanos!</Link>
             </div>
           </div>
-          
+          <img className='logoOnboard' src={logoCalu} alt='logo calu' />
         </div>
       </div>
 

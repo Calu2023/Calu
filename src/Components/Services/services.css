@@ -3,26 +3,23 @@
 }
 
 .scroll_ctn {
-
   background-repeat: no-repeat;
 }
 
-.mobileCtn  .carousel-container{
-width: 95%;
+.mobileCtn .carousel-container {
+  width: 95%;
 }
 .services_container {
-  margin-bottom: 300px;
   margin-top: 74px;
 }
-.mobileCtn .arrowR{ 
-  top:125px
+.mobileCtn .arrowR {
+  top: 125px;
 }
-.mobileCtn .arrowL{ 
-  top:125px
+.mobileCtn .arrowL {
+  top: 125px;
 }
 .srv_content {
   margin: auto 0 auto 0;
-  
 }
 .srv_section {
   margin-bottom: 150px;
@@ -43,22 +40,20 @@ width: 95%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
-  
 }
 
 .card_srv_cont {
   display: flex;
-  justify-content: space-between; 
-  margin: 0 150px; 
+  justify-content: space-between;
+  margin: 0 150px;
 }
 
 .card_srv_cont_inv {
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   flex-direction: row-reverse;
- 
-  margin: 0 150px; 
+
+  margin: 0 150px;
 }
 .card_srv_info {
   margin: 0 50px 0 0;
@@ -131,9 +126,8 @@ width: 95%;
   font-weight: bold;
   margin-top: 10px;
 }
-.srv-slider{
-  margin : 15% 0;
- 
+.srv-slider {
+  margin: 15% 0;
 }
 @media (max-width: 1300px) {
   .card_srv_info {
@@ -152,7 +146,6 @@ width: 95%;
     margin-top: 150px;
   }
   .mobileCtn {
- 
     background-repeat: no-repeat;
   }
   .srv_cards {
@@ -161,19 +154,17 @@ width: 95%;
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: -120px;
-    
   }
   .srv_cards .carousel-container {
     width: 100%;
   }
-
 }
 
 @media (max-width: 767px) {
   .srv_title h1 {
     display: flex;
     justify-content: center;
-margin-top: -2px;
+    margin-top: -2px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -183,15 +174,14 @@ margin-top: -2px;
   .srv_title {
     margin-bottom: -40px;
   }
-  .mobileCtn  .carousel-container{
+  .mobileCtn .carousel-container {
     width: 75%;
-    }
+  }
 }
 @media (max-width: 485px) {
-
-  .mobileCtn  .carousel-container{
+  .mobileCtn .carousel-container {
     width: 95%;
-    }
+  }
 }
 @media (max-height: 600px) {
   .card_srv_cont {

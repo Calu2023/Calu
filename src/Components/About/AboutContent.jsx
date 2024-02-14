@@ -1,4 +1,4 @@
-const AboutContent = (info) => {
+const AboutContent = ({ info }) => {
   return (
     <div className='about_container'>
       <div className='about_items'>

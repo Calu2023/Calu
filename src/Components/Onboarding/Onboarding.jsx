@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLayoutEffect, useMemo } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useMemo, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../firebase-config';
@@ -66,7 +66,9 @@ const Onboarding = () => {
       <div className='onb_items'>
         <OnboardingContent info={onboardingInfo} />
         {onboardingInfo && (
-          <img className='logoOnboard' src={onboardingInfo.Onimage} alt='logo calu' />
+          <Suspense>
+            <img className='logoOnboard' src={onboardingInfo.Onimage} alt='logo calu' />
+          </Suspense>
         )}
       </div>
       <div className='contactFlex'></div>
