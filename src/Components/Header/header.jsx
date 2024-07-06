@@ -104,7 +104,7 @@ export const Header = ({ handleDelete }) => {
                   className={location.pathname === '/services' ? 'headerLinks' : ''}
                   to={'/services'}
                 >
-                  SERVICIOS
+                  SERVICIO
                 </Link>
                 <div className='line'></div>
                 <Link

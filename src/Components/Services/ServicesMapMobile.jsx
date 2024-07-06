@@ -31,7 +31,7 @@ const ServicesMapMobile = () => {
     <div ref={firstSection}>
       <div>
         <div className='srv_title'>
-          <h1>Nuestros Servicios</h1>
+          <h1>Nuestro Servicio</h1>
         </div>
         <div className='srv-slider'>
           <section>
