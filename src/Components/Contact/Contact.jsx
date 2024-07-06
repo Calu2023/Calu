@@ -60,7 +60,7 @@ const Contact = () => {
         .then((token) => {
           // Enviar datos al endpoint de Getform
           const endpoint =
-            "https://getform.io/f/2e4cb533-dbbc-46a2-9c5a-b13199d1dedb ";
+            "https://getform.io/f/bwnggrka";
           const formData = new FormData();
           formData.append("nombre", nombre);
           formData.append("email", email);
