@@ -19,7 +19,7 @@ const Terms = () => {
       Nos reservamos el derecho de modificar estos términos y condiciones en cualquier momento sin
       previo aviso. Las modificaciones entrarán en vigencia inmediatamente después de su publicación
       en este sitio. Al usar este sitio, aceptas estar sujeto a estos términos y condiciones. Si
-      tienes alguna pregunta o inquietud, contáctanos. Última actualización: 30/09/2023
+      tienes alguna pregunta o inquietud, contactanos. Última actualización: 30/09/2023
     </p>
   );
 };

@@ -70,7 +70,7 @@ const Footer = () => {
             <div className='servicios_'>
               <ul>
                 <li>
-                  <span>Consultoría Estratégica</span>
+                  <span>Asesoramiento continuo </span>
                 </li>
                 <li>
                   <span>Gestión de Redes Sociales</span>
@@ -79,18 +79,18 @@ const Footer = () => {
                   <span>Publicidad Digital</span>
                 </li>
                 <li>
-                  <span>Book Institucional</span>
+                  <span>Actividades de comunicación y promoción </span>
                 </li>
               </ul>
               <ul>
                 <li>
-                  <span>Creación de Contenido</span>
+                  <span>Diseño de imagen de marca y desarrollo creativo </span>
                 </li>
                 <li>
-                  <span>Desarrollo web</span>
+                  <span>Diseño del Plan de Marketing Anual </span>
                 </li>
                 <li>
-                  <span>Modelo de Negocio</span>
+                  <span>Análisis de Influencers </span>
                 </li>
                 <li>
                   <span>E-mail marketing</span>

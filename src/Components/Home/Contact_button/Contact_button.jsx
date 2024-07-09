@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 const Hover = () => {
   return (
     <div className="text_hover_ctn">
-      <h2 className="text_hover">¡Contáctanos!</h2>
+      <h2 className="text_hover">¡Contactanos!</h2>
     </div>
   );
 };

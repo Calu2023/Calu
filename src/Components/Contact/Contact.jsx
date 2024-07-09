@@ -107,7 +107,7 @@ const Contact = () => {
       <div className="contact">
         <Header cartItem={cart} handleDelete={removeFromCart} />
         <div className="contact-title">
-          <h1>Contáctanos</h1>
+          <h1>Contactanos</h1>
           <p>Te damos el servicio que nos gustaría recibir</p>
         </div>
 

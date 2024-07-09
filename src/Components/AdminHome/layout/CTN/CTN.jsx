@@ -55,7 +55,7 @@ const CTN = () => {
             <button onClick={() => updateTitle()}>GUARDAR</button>
           </Modal>
         </div>
-        <button className='ctn_button'> ¡Contáctanos! </button>
+        <button className='ctn_button'> ¡Contactanos! </button>
         <div className='edit'>
           <div className='ctn_p'>
             <p>{ctninfo.t1}</p>

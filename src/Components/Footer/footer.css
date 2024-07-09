@@ -99,24 +99,15 @@ li span {
   color: #3af6ff;
 }
 
-.filter-ctn .terms-content {
-  width: 90%;
-  position: fixed;
-  top: 50px;
-}
+.filter-ctn .terms-content,
 .filter-ctn-mbl .terms-content {
   width: 90%;
   position: fixed;
-  top: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-.filter-ctn .terms-modal {
-  position: absolute;
-  margin: -750px auto;
-}
-.filter-ctn-mbl .terms-modal {
-  position: absolute;
-  margin: -620px auto;
-}
+
 @media (max-width: 1400px) {
   .footer_container {
     bottom: 0;

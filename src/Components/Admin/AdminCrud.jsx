@@ -6,11 +6,12 @@ import { collection, getDocs, deleteDoc, doc, addDoc, getDoc, updateDoc } from '
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import CreateService from './CreateService';
 import EditService from './EditService';
-//import EditService from './EditService';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../../firebase-config';
+
 const AdminCrud = () => {
   const navigate = useNavigate();
+  
   useEffect(() => {
     const checkAuthentication = () => {
       const user = auth.currentUser;
@@ -167,6 +168,18 @@ const AdminCrud = () => {
     });
     closeModal();
   };
+
+  const handleKeyDown = (event, field) => {
+    // Verificar si se presionó la tecla "Enter"
+    if (event.keyCode === 13) {
+      // Agregar un salto de línea al campo correspondiente
+      setFormData({
+        ...formData,
+        [field]: formData[field] + '\n',
+      });
+    }
+  };
+
   return (
     <div className='crud-ctn'>
       <Header />
@@ -196,7 +209,7 @@ const AdminCrud = () => {
                     <div className='crudDescription'>
                       <div> {index + 1}</div>
                       <div className='crudTitle'>{servicio.title}</div>
-                      <div className='crudText'>{description}</div>
+                      <div className='crudText' dangerouslySetInnerHTML={{ __html: description.replace(/\n/g, '<br>') }}></div>
                       <div className='crudImage'>
                         <img src={servicio.img} width='210px' alt={servicio.img} />
                       </div>
@@ -219,6 +232,7 @@ const AdminCrud = () => {
             handleSubmit={handleSubmit}
             formData={formData}
             handleChange={handleChange}
+            handleKeyDown={(e) => handleKeyDown(e, 'des_1')} // Pasar el evento y el campo correspondiente
           />
         )}
         {/* MODAL Editar */}
@@ -228,10 +242,12 @@ const AdminCrud = () => {
             closeModal={closeModal}
             handleChange={handleChangeEdit}
             handleSubmit={handleSubmitEdit}
+            handleKeyDown={(e) => handleKeyDown(e, 'des_1')} // Pasar el evento y el campo correspondiente
           />
         )}
       </div>
     </div>
   );
 };
+
 export default AdminCrud;
