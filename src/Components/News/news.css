@@ -31,17 +31,14 @@
   margin: 0 0 0 0%;
 }
 .cards_novedades {
-  width: 75%;
+  width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   margin: 30px auto 0 auto;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: space-between; /* Cambiado a space-between para mayor separación */
+  padding: 0 17%;
 }
-.cards_novedades a {
-  margin-right: 100px;
-  margin-left: 100px;
-}
+
 .novedades_container p {
   /* text-align: justify;*/
   color: white;

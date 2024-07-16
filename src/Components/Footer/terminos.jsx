@@ -8,7 +8,7 @@ const Terminos = () => {
       <p>
         Este documento de Recolección de Datos Personales y Políticas de
         Privacidad compone las políticas de uso de www.calu-mkt.com y sus redes
-        sociales vinculadas: @calu.mktdigital -Instagram-, CALU–MKT Digital
+        sociales vinculadas: @calu_mkt -Instagram-, CALU–MKT Digital
         -Facebook-, @calumktdigital -Tiktok-, calu-mktdigital -Linkedin-, Calu
         -Spotify- y @CaluMktdigital -Youtube-. Configura un contrato entre
         usuario y titular de la base de datos y un compromiso a cumplir las

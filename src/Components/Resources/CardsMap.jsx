@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { db } from '../../firebase-config';
 import CardRes from './Card_resources/Card_res';
 import elipse from './Card_resources/elipse.webp';
-import cart_ from './Card_resources/carrito.webp';
+import cart_ from '../../images/carrito.webp';
 import { useCustomContext } from '../../Hooks/Context/Context';
 
 const CardsMap = () => {

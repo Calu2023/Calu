@@ -26,7 +26,8 @@ const PostNews = () => {
     navigate(`/blog/${id}`);
   };
   return (
-    <>
+    <div className='novedades_container'>
+      <div className='cards_novedades'>
       {posts &&
         posts.map((post) => (
           <div onClick={() => handlePostClick(post.id)}>
@@ -38,23 +39,22 @@ const PostNews = () => {
             ></CardNews>
           </div>
         ))}
+        </div>
 
       <div className='btn_cont'>
-        <button className='btn_news' onClick={() => ''}>
+        <button className='btn_news'>
           <Link
             className='btn_news'
             to={'/blog'}
             onClick={() => {
-              window.scroll({
-                top: 0,
-              });
+              window.scrollTo(0, 0);
             }}
           >
             Ver Más
           </Link>
         </button>
       </div>
-    </>
+    </div>
   );
 };
 export default PostNews;
