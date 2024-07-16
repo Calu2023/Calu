@@ -20,6 +20,7 @@ function Slider({ children }) {
       items: 1,
     },
   };
+
   const CustomLeftArrow = ({ onClick }) => (
     <div onClick={onClick}>
       <img src={arrow_L} alt=" <= " className="arrowL" />
@@ -38,7 +39,6 @@ function Slider({ children }) {
         containerClass="carousel-container"
         swipeable={true}
         draggable={false}
-        /*   removeArrowOnDeviceType={["mobile"]}*/
         infinite={true}
         responsive={responsive}
         showDots={true}
@@ -46,11 +46,11 @@ function Slider({ children }) {
         customRightArrow={<CustomRightArrow />}
         itemClass="carouselItem"
         autoPlay={true}
-        autoPlaySpeed={"4500"}
+        autoPlaySpeed={4500}
       >
-        {children.map((children, index) => {
-          return <div key={index}>{children}</div>;
-        })}
+        {React.Children.map(children, (child, index) => (
+          <div key={index}>{child}</div>
+        ))}
       </Carousel>
     </div>
   );

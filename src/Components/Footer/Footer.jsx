@@ -61,11 +61,11 @@ const Footer = () => {
         <div className={width > breakpoint ? 'footer_elements' : 'footer_elements_mobile'}>
           <div className='logo_calu'>
             <img src={calu_logo} alt='calu' />
-            <p>TU AGENCIA DE MARKETING DIGITAL</p>
+            <p>TU AGENCIA DE MARKETING Y COMUNICACIÓN</p>
           </div>
 
           <div className='servicios'>
-            <h1>SERVICIOS</h1>
+            <h1>SERVICIO</h1>
 
             <div className='servicios_'>
               <ul>
@@ -111,7 +111,7 @@ const Footer = () => {
               <a href='https://www.facebook.com/profile.php?id=100090611090874' target='_blank'>
                 <img src={fb_logo} alt='facebook' />
               </a>
-              <a href='https://www.instagram.com/calu.mktdigital/ ' target='_blank'>
+              <a href='https://www.instagram.com/calu_mkt/ ' target='_blank'>
                 <img src={insta_logo} alt='instagram' />
               </a>
               <a
