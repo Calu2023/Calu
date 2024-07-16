@@ -55,11 +55,17 @@ function PaymentGateway() {
     return actions.order.capture(handlePay());
   };
   const handlePay = () => {
-    handleDownload(carrito);
     localStorage.clear('carrito');
     setContadorCarrito(!contadorCarrito);
-    console.log('El pago ha sido exitoso! vuelva prontos :)');
+    console.log('El pago ha sido exitoso! Vuelva pronto :)');
+  
+    if (carrito.length > 0) {
+      handleDownload(carrito[0]);
+    } else {
+      alert('No hay productos en el carrito para descargar.');
+    }
   };
+  
 
   const [width, setWidth] = React.useState(window.innerWidth);
   const breakpoint = 1024;

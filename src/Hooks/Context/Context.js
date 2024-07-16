@@ -1,4 +1,6 @@
 import { createContext, useContext, useState } from 'react';
+import { storage } from "../../firebase-config";
+import { ref, getDownloadURL } from "firebase/storage";
 
 const Context = createContext();
 
@@ -12,10 +14,13 @@ export function Provider({ children }) {
   };
 
   const addToCart = (product) => {
-    setCart((prevCart) => [...prevCart, product]);
-    localStorage.setItem('carrito', JSON.stringify([...cart, product]));
+    setCart((prevCart) => {
+      const updatedCart = [...prevCart, product];
+      localStorage.setItem('carrito', JSON.stringify(updatedCart));
+      return updatedCart;
+    });
   };
-
+  
   const removeFromCart = (position) => {
     setCart((prevCart) => {
       const updatedCart = prevCart.filter((_, index) => index !== position);
@@ -33,13 +38,21 @@ export function Provider({ children }) {
   };
 
   const handleDownload = (products) => {
-    if (products.compressed !== 0 && products.compressed !== null) {
-      const a = document.createElement('a');
-      a.href = products.compressed;
-      a.download = `productoCalu.rar`;
-      a.target = '_blank'; // Agregar esta línea para abrir en nueva pestaña
-      a.click();
+    if (products.compressed && products.compressed !== null) {
+      console.log("Intentando descargar archivo:", products.compressed);
+  
+      window.location.href = products.compressed;
+    } else {
+      alert("No hay archivo comprimido disponible para descargar.");
     }
+  };
+  
+  
+  
+  
+
+  const getFileExtension = (filename) => {
+    return filename.split('.').pop().toLowerCase();
   };
 
   const scroll_top = () => {

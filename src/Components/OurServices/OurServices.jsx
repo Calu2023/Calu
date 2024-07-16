@@ -1,15 +1,15 @@
 import Slider from '../Slider/Slider';
 import './OurServices.css';
 import CardOur from './Card_OurService/Card_our';
-import { Suspense, useState } from 'react';
+import React, { Suspense, useState, useEffect } from 'react';
 import { doc, getDoc, collection, getDocs, query } from 'firebase/firestore';
-import { useEffect } from 'react';
 import { db } from '../../firebase-config';
 import { Link } from 'react-router-dom';
 
 const OurServices = () => {
-  const [ourServicesinfo, setOurServicesinfo] = useState([]);
-  /// TEXTOS
+  const [ourServicesinfo, setOurServicesinfo] = useState({});
+  const [services, setServices] = useState([]);
+
   useEffect(() => {
     const getOurServices = async () => {
       const OurDoc = doc(db, 'home', 'OurServices');
@@ -20,23 +20,32 @@ const OurServices = () => {
     };
     getOurServices();
   }, []);
-  ///// GET SERVICIOS
-  const [services, setServices] = useState([]);
 
   const getServices = async () => {
     const results = await getDocs(query(collection(db, 'servicios')));
     return results;
   };
+
   useEffect(() => {
+    const getServicesData = async () => {
+      const service = await getServices();
+      setServices(service.docs);
+    };
     getServicesData();
   }, []);
 
-  const getServicesData = async () => {
-    const service = await getServices();
-
-    setServices(service.docs);
+  const renderTextWithLineBreaks = (text) => {
+    if (!text) return null; // Manejar el caso donde text es undefined o null
+  
+    return text.split('\n').map((line, index) => (
+      <React.Fragment key={index}>
+        {line}
+        <br />
+      </React.Fragment>
+    ));
   };
-  ////////////////////////
+  
+
   return (
     <Suspense>
       <div className='ourServices'>
@@ -46,25 +55,25 @@ const OurServices = () => {
           </div>
 
           <div className='edit'>
-            <p className='text-description'>{ourServicesinfo.t1}</p>
+            <p className='text-description'>{renderTextWithLineBreaks(ourServicesinfo.t1)}</p>
           </div>
         </div>
         <div className='ctn-servicios'>
           <div className='slider'>
             <Slider>
               {services &&
-                services.map((services, index) => (
+                services.map((service, index) => (
                   <CardOur
                     key={index}
                     image={
                       <img
                         className='icono-servicios'
-                        src={services.data().img}
+                        src={service.data().img}
                         alt='icono llave'
                       />
                     }
-                    title={services.data().title}
-                    des={services.data().sub}
+                    title={service.data().title}
+                    des={service.data().sub}
                     btn={
                       <Link
                         onClick={() => {
@@ -73,7 +82,7 @@ const OurServices = () => {
                           });
                         }}
                         className='button_portfolio'
-                        to={`/services?serviceName=${services.data().title}`}
+                        to={`/services?serviceName=${service.data().title}`}
                       >
                         Ver más
                       </Link>
@@ -87,4 +96,5 @@ const OurServices = () => {
     </Suspense>
   );
 };
+
 export default OurServices;

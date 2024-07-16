@@ -30,24 +30,24 @@ function ProductForm({ productId }) {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-
+    
     try {
       setUploading(true);
-
+  
       let thumbnailURL = "";
       if (thumbnailFile) {
         const thumbnailRef = ref(storage, `thumbnails/${thumbnailFile.name}`);
         await uploadBytes(thumbnailRef, thumbnailFile);
         thumbnailURL = await getDownloadURL(thumbnailRef);
       }
-
+  
       let compressedURL = "";
       if (compressedFile) {
         const compressedRef = ref(storage, `compressed/${compressedFile.name}`);
         await uploadBytes(compressedRef, compressedFile);
         compressedURL = await getDownloadURL(compressedRef);
       }
-
+  
       const productData = {
         title,
         thumbnail: thumbnailURL,
@@ -57,16 +57,16 @@ function ProductForm({ productId }) {
         category,
         createdAt: serverTimestamp(),
       };
-
+  
       if (productId) {
-        const productDoc = setDoc(doc(db, "e-commerce", productId));
-        await updateDoc(productDoc, productData);
+        const productDocRef = doc(db, "e-commerce", productId);
+        await updateDoc(productDocRef, productData);
         console.log("Producto actualizado con ID:", productId);
       } else {
         const docRef = await addDoc(collection(db, "e-commerce"), productData);
         console.log("Producto agregado con ID:", docRef.id);
       }
-
+  
       setTitle("");
       setThumbnailFile(null);
       setThumbnailName("");
@@ -76,7 +76,7 @@ function ProductForm({ productId }) {
       setDetail("");
       setCategory("");
       setUploading(false);
-
+  
       history("/product-list"); // Navegar de vuelta a la lista de productos después de agregar/editar
     } catch (error) {
       console.error("Error al agregar o editar el producto:", error);
@@ -95,17 +95,52 @@ function ProductForm({ productId }) {
   const handleCompressedChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      if (
-        file.type === "application/x-rar-compressed" ||
-        file.type === "application/zip"
-      ) {
+      console.log("Tipo MIME del archivo:", file.type);
+
+      // Validar tipo MIME y permitir .zip y .rar
+      if (file.type === "application/zip" || file.type === "application/x-rar-compressed" || file.name.toLowerCase().endsWith('.rar')) {
         setCompressedFileName(file.name);
         setCompressedFile(file);
+
+        // Subir archivo a Firebase Storage
+        const storageRef = ref(storage, `compressed/${file.name}`);
+        const uploadTask = uploadBytes(storageRef, file);
+
+        uploadTask.then(async (snapshot) => {
+          console.log("Archivo subido con éxito:", snapshot);
+          const downloadURL = await getDownloadURL(storageRef);
+          console.log("URL de descarga:", downloadURL);
+
+          // Actualizar la interfaz para mostrar el nombre del archivo
+          const fileNameElement = document.getElementById('compressed-file-name');
+          if (fileNameElement) {
+            fileNameElement.textContent = file.name;
+          }
+
+          // Si es un archivo ZIP, mostrar una miniatura genérica
+          if (file.type === "application/zip") {
+            const imgElement = document.getElementById('compressed-thumbnail');
+            if (imgElement) {
+              imgElement.src = '/path/to/zip-icon.png'; // Asegúrate de tener esta imagen
+            }
+          } else {
+            // Si es un archivo RAR, mostrar una miniatura genérica para RAR
+            const imgElement = document.getElementById('compressed-thumbnail');
+            if (imgElement) {
+              imgElement.src = '/path/to/rar-icon.png'; // Asegúrate de tener esta imagen
+            }
+          }
+        }).catch((error) => {
+          console.error("Error al subir el archivo:", error);
+          alert("Error al subir el archivo. Por favor, intenta de nuevo.");
+        });
       } else {
-        alert("Solo se permiten archivos .rar o .zip.");
+        alert("Solo se permiten archivos .zip y .rar.");
       }
     }
   };
+  
+  
 
   useEffect(() => {
     if (location.state && location.state.productToEdit) {
@@ -171,16 +206,19 @@ function ProductForm({ productId }) {
           </div>
 
           <div className="compressed-form">
-            <label htmlFor="compressed">Archivo Comprimido:</label>
-            <input
-              type="file"
-              id="compressed"
-              onChange={handleCompressedChange}
-            />
-            {compressedFileName && (
-              <p>Archivo seleccionado: {compressedFileName}</p>
-            )}
-          </div>
+  <label htmlFor="compressed">Archivo Comprimido:</label>
+  <input
+    type="file"
+    id="compressed"
+    onChange={handleCompressedChange}
+  />
+  {compressedFileName && (
+    <div>
+      <p>Archivo seleccionado: {compressedFileName}</p>
+      <img id="compressed-thumbnail" alt="Miniatura del archivo comprimido" />
+    </div>
+  )}
+</div>
 
           <div className="category-form">
             <label htmlFor="category">Categoría:</label>
