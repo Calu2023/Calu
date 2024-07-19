@@ -1,0 +1,2 @@
+.carousel-container{width:75%}.carousel{display:flex;justify-content:center}.arrowL{left:0;width:50px}.arrowL,.arrowR{position:absolute;top:100px}.arrowR{right:0}.carouselItem{justify-content:center}@media (max-width:1024px){.carousel-container{width:85%}}@media (max-width:767px){.arrowL,.arrowR{width:40px}}
+/*# sourceMappingURL=466.6bece9cc.chunk.css.map*/
