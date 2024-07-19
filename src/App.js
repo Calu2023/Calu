@@ -22,6 +22,7 @@ import EmailList from './Components/Contact/EmailList';
 import { Provider } from './Hooks/Context/Context';
 import Terms from './Components/Cart/Terms';
 import { Scrollbars } from 'react-custom-scrollbars-2';
+import PrivacyPolicy from './Components/politicasPrivacidad/privacyPolicy';
 
 function App() {
   const [isAuth, setIsAuth] = useState(false);
@@ -178,6 +179,14 @@ function App() {
               element={
                 <Scrollbars style={{ height: '100vh' }}>
                   <Terms />
+                </Scrollbars>
+              }
+            />
+              <Route
+              path='/politicas-de-privacidad'
+              element={
+                <Scrollbars style={{ height: '100vh' }}>
+                  <PrivacyPolicy />
                 </Scrollbars>
               }
             />
