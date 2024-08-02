@@ -52,7 +52,7 @@ function ProductForm({ productId }) {
         title,
         thumbnail: thumbnailURL,
         compressed: compressedURL,
-        price: price || "Gratis",
+        price: price ? `$${price}` : "Gratis", // Agrega $ solo si price tiene un valor
         detail,
         category,
         createdAt: serverTimestamp(),
