@@ -140,33 +140,34 @@ function ProductDetail() {
           </div>
 
           <div className='detail-content'>
-            <div className='title-tablet'>
-              <h3>{product.title}</h3>
-            </div>
+  <div className='title-tablet'>
+    <h3>{product.title}</h3>
+  </div>
 
-            <p className='price-detail'>{product.detail}</p>
-            <p className='e-book'>E-book</p>
-            {product.price !== 'Gratis' && product.price !== null ? (
-              <div className='buying'>
-                <p className='price-p'>Precio: ${product.price}</p>
-                <button
-                  className='download-button'
-                  onClick={() => handleDownloadAndBuy(product.id)}
-                >
-                  Agregar al carrito
-                </button>
-              </div>
-            ) : (
-              <>
-                <button
-                  className='download-button'
-                  onClick={() => handleDownloadAndBuy(product.id)}
-                >
-                  Agregar al carrito
-                </button>
-              </>
-            )}
-          </div>
+  <p className='price-detail'>{product.detail}</p>
+  <p className='e-book'>E-book</p>
+  {product.price !== null ? (
+    <div className='buying'>
+      <p className='price-p'>Precio: {isNaN(product.price) ? 'Gratis' : `$${product.price}`}</p>
+      <button
+        className='download-button'
+        onClick={() => handleDownloadAndBuy(product.id)}
+      >
+        Agregar al carrito
+      </button>
+    </div>
+  ) : (
+    <>
+      <button
+        className='download-button'
+        onClick={() => handleDownloadAndBuy(product.id)}
+      >
+        Agregar al carrito
+      </button>
+    </>
+  )}
+</div>
+
 
           <div className='extra'></div>
           <div className='book-description'>
@@ -209,9 +210,9 @@ function ProductDetail() {
                         </div>
                       </Link>
                       <div className='type-price'>
-                        <p>Tipo de libro</p>
-                        <p>${similarProduct.price}</p>
-                      </div>
+  <p>Tipo de libro</p>
+  <p>{!isNaN(similarProduct.price) ? `$${similarProduct.price}` : similarProduct.price}</p>
+</div>
                       <div
                         className='product_cart'
                         onClick={() => handleAddToCart(similarProduct.id)}
@@ -243,9 +244,9 @@ function ProductDetail() {
                         </div>
                       </Link>
                       <div className='type-price'>
-                        <p>Tipo de libro</p>
-                        <p>${similarProduct.price}</p>
-                      </div>
+  <p>Tipo de libro</p>
+  <p>{!isNaN(similarProduct.price) ? `$${similarProduct.price}` : similarProduct.price}</p>
+</div>
                       <div
                         className='product_cart'
                         onClick={() => handleAddToCart(similarProduct.id)}

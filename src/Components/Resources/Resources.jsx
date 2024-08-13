@@ -45,11 +45,16 @@ const Resources = () => {
       {cards.map((product, index) => (
         <div key={index}>
           <div onClick={() => handleProductClick(product.id)}>
-            <CardRes
-              description={product.data().thumbnail}
-              title={product.data().title}
-              price={<p className='price'>${product.data().price}</p>}
-            />
+          <CardRes
+  description={product.data().thumbnail}
+  title={product.data().title}
+  price={
+    <p className='price'>
+      {!isNaN(product.data().price) ? `$${product.data().price}` : product.data().price}
+    </p>
+  }
+/>
+
           </div>
           <div className='res_cart' onClick={() => handleAddToCart(product.id)}>
             <img src={elipse} alt=' ' className='elipse' />
@@ -72,12 +77,21 @@ const Resources = () => {
           <Slider>
             {cards.map((product, index) => (
               <div onClick={() => handleProductClick(product.id)} key={index}>
-                <CardRes
-                  description={product.data().thumbnail}
-                  title={product.data().title}
-                  price={<p className='price'>${product.data().price}</p>}
-                />
+<CardRes
+  description={product.data().thumbnail}
+  title={product.data().title}
+  price={
+    <p className='price'>
+      {!isNaN(product.data().price) ? `$${product.data().price}` : product.data().price}
+    </p>
+  }
+/>
+<div className='res_cart' onClick={() => handleAddToCart(product.id)}>
+            <img src={elipse} alt=' ' className='elipse' />
+            <img src={cart_} alt=' ' className='cart' />
+          </div>
               </div>
+              
             ))}
           </Slider>
         )}

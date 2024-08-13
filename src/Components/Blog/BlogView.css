@@ -20,11 +20,7 @@
   white-space: pre-wrap;
   font-weight: normal;
 }
-.banner img {
-  width: 450px;
-  height: 200px;
-  box-shadow: 8px 8px 10px rgba(1, 13, 79, 58%);
-}
+
 
 .blogCard {
   color: white;
@@ -47,7 +43,7 @@
   font-size: 16px;
 }
 
-.BlogView .banner {
+.BlogView {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -55,8 +51,8 @@
 
 @media (min-width: 360px) {
   .banner img {
-    width: 90vw;
-    height: 290px;
+    width: 100;
+    height: auto;
     box-shadow: 8px 8px 10px rgba(1, 13, 79, 58%);
     display: flex;
     margin: 0 auto 0 auto;
@@ -205,11 +201,44 @@
       width: 60%;
     }
 
-
-  .banner img {
-  }
   .youtube iframe {
     width: 800px;
     height: 300px;
+  }
+}
+
+
+.banner img {
+  max-width: 100%; /* Ajusta el ancho máximo de la imagen al contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+  object-fit: cover; /* Asegura que la imagen cubra el contenedor sin estirarse */
+  display: block; /* Elimina el espacio debajo de la imagen */
+}
+
+.banner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+@media (min-width: 360px) and (max-width: 900px) {
+  .banner img {
+    width: 90vw; /* Ajusta el ancho para pantallas medianas */
+    height: auto;
+  }
+}
+
+@media (min-width: 900px) {
+  .banner img {
+    width: 100%; /* Asegura que la imagen ocupe el ancho completo del contenedor en pantallas grandes */
+    height: auto;
+  }
+}
+
+@media (min-width: 1025px) {
+  .banner img {
+    width: auto; /* Ajusta el ancho de la imagen para pantallas extra grandes */
+    height: 290px; /* Establece una altura fija si es necesario */
   }
 }

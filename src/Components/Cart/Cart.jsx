@@ -5,6 +5,7 @@ function Cart({ close, cart, handleDelete, buy }) {
   const [total, setTotal] = useState(0);
   const [carrito, setCarrito] = useState([]);
   const getCarrito = JSON.parse(localStorage.getItem('carrito'));
+
   useEffect(() => {
     const calculateTotal = async () => {
       setCarrito(getCarrito);
@@ -20,6 +21,7 @@ function Cart({ close, cart, handleDelete, buy }) {
 
     calculateTotal();
   }, [cart]);
+
   return (
     <div>
       <div className='cartPage'>
@@ -36,7 +38,9 @@ function Cart({ close, cart, handleDelete, buy }) {
                   <img src={product.thumbnail} alt={product.title} />
                   <p>
                     <span className='product_title'>{product.title}</span>
-                    <span className='product_price'> ${product.price}</span>
+                    <span className='product_price'>
+                      {!isNaN(product.price) ? `$${product.price}` : 'Gratis'}
+                    </span>
                   </p>
                   <div>
                     <button className='deleteItem' onClick={() => handleDelete(index)}>
@@ -50,7 +54,7 @@ function Cart({ close, cart, handleDelete, buy }) {
             {total ? (
               <>
                 <span>Total</span>
-                <span>{!isNaN(total) ? (total ? `$${total}` : 'Gratis') : '$0'}</span>
+                <span>{!isNaN(total) ? `$${total}` : 'Gratis'}</span>
               </>
             ) : (
               ''

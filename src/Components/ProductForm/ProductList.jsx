@@ -117,10 +117,11 @@ function ProductList() {
                   </div>
                 </div>
                 <div className='product-price'>
-                  <p className='price'>${product.price}</p>
-                  <p className='carrito-price' onClick={() => handleAddToCart(product.id)}>
-                    Agregar al carrito
-                  </p>
+                <p className='price'>{!isNaN(product.price) ? `$${product.price}` : product.price}</p>
+<p className='carrito-price' onClick={() => handleAddToCart(product.id)}>
+  Agregar al carrito
+</p>
+
                   <Link
                     className='link_'
                     to={`/product/${product.id}`}
@@ -157,7 +158,7 @@ function ProductList() {
                   <CardSrvFlip
                     image={product.thumbnail}
                     title={product.title}
-                    sub={`$${product.price}`}
+                    sub={!isNaN(product.price) ? `$${product.price}` : product.price}
                     des_1={
                       <Link
                         className='link_'

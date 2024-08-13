@@ -3,6 +3,9 @@ import './card_srv_flip.css';
 
 const Card_srv_flip = ({ image, title, sub, des_1, des_2, des_3 }) => {
   const renderDescription = (text) => {
+    if (typeof text !== 'string') {
+      return [];
+    }
     return text.split('\n').map((line, index) => {
       return (
         <React.Fragment key={index}>
@@ -12,6 +15,7 @@ const Card_srv_flip = ({ image, title, sub, des_1, des_2, des_3 }) => {
       );
     });
   };
+
 
   return (
     <div className='flip-card'>

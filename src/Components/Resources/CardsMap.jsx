@@ -45,12 +45,16 @@ const CardsMap = () => {
                 });
               }}
             >
-              <CardRes
-                key={index}
-                description={product.data().thumbnail} // Pass the thumbnail URL as the description
-                title={product.data().title}
-                price={<p className='price'>${product.data().price}</p>}
-              ></CardRes>
+             <CardRes
+  key={index}
+  description={product.data().thumbnail} // Pass the thumbnail URL as the description
+  title={product.data().title}
+  price={
+    <p className='price'>
+      {!isNaN(product.data().price) ? `$${product.data().price}` : product.data().price}
+    </p>
+  }
+/>
             </div>
             <div className='res_cart' onClick={() => handleAddToCart(product.id)}>
               <img src={elipse} alt=' ' className='elipse' />

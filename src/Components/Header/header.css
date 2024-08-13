@@ -1,6 +1,6 @@
 .navBar {
   width: 100%;
-  height: 18%;
+  height: 10%;
   position: fixed;
   top: 0;
   z-index: 2;
@@ -166,19 +166,6 @@
   .cart-2 .totalItems {
     top: -25px;
   }
- /*.navBarBlur {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 99;
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
-  }*/
-  .navBar nav {
-    display: flex;
-    justify-content: space-between;
-  }
 
   .btn i {
     background-color: #fff;
@@ -255,10 +242,7 @@ width: 90%;
 
   .link.show a,
   .links a {
-    text-decoration: none;
-    color: white;
-    font-size: 1.1rem;
-    margin: 12px 10px;
+    display:none
   }
   .carrito {
     display: flex;

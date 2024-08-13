@@ -36,7 +36,7 @@ const Card_res = ({ title, description, button, price, more }) => {
       </div>
 
       <div className="title_res">{title}</div>
-      <div>{price}</div>
+      <div>{!isNaN(price) ? `$${price}` : price}</div>
       <div>{more}</div>
     </div>
   );

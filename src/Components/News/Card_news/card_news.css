@@ -1,7 +1,6 @@
 .card_news {
   display: flex;
   flex-direction: column;
- 
   justify-content: center;
   margin-top: 30px;
   cursor: pointer;
@@ -45,14 +44,17 @@
   text-align: center;
   margin-top: 15px;
 }
+
 .image_ img {
   box-shadow: 8px 8px 10px rgba(1, 13, 79, 58%);
+  max-width: 100%; /* Asegura que la imagen no se salga del contenedor */
+  height: auto; /* Mantiene la relación de aspecto */
 }
+
 .title_news {
   color: white;
   text-align: center;
   margin: 20px 0;
-
   font-weight: bold;
 }
 
@@ -70,10 +72,11 @@
     font-size: 16px;
   }
   .image_ img {
-   width: 110px;
-   height: 100px;
+    width: 140px; /* Aumenta el tamaño de la imagen */
+    height: auto; /* Mantiene la relación de aspecto */
   }
 }
+
 @media (max-width: 1300px) {
   .card_news {
     margin-left: 20px;

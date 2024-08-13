@@ -12,7 +12,6 @@ const Card_news = ({ image, title, description, btn }) => {
             <img src={arrow_R} alt=" " className="arrow_r" />
           </div>
           <div className="image_">{image}</div>
-          <p className="description">{description}</p>
         </div>
       </div>
       <div className="title_news">{title}</div>

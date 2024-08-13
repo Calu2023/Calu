@@ -148,8 +148,6 @@ const Contact = () => {
           <textarea
             name="message"
             id="message"
-            cols="30"
-            rows="10"
             value={mensaje}
             onChange={(event) => setMensaje(event.target.value)}
             required
