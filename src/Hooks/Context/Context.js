@@ -12,15 +12,46 @@ export function Provider({ children }) {
   const handleBlur = () => {
     setBlur(!blur);
   };
+ 
 
   const addToCart = (product) => {
     setCart((prevCart) => {
-      const updatedCart = [...prevCart, product];
+      // Lee el carrito actual desde localStorage
+      const storedCart = JSON.parse(localStorage.getItem('carrito')) || [];
+      
+      // Log para verificar el carrito almacenado
+      console.log('Carrito almacenado:', storedCart);
+  
+      // Verifica si el producto ya está en el carrito usando ID
+      const productIndex = storedCart.findIndex(p => p.id === product.id);
+  
+      console.log('ID del producto a agregar:', product.id);
+      console.log('Índice del producto en el carrito:', productIndex);
+  
+      // Si el producto ya existe en el carrito, no lo agregues de nuevo
+      if (productIndex !== -1) {
+        console.log('El producto ya está en el carrito:', storedCart[productIndex]);
+        return prevCart;
+      } 
+  
+      // Si el producto no existe, agrégalo con cantidad 1
+      console.log('Nuevo producto agregado:', product);
+      const updatedCart = [...storedCart, { ...product, quantity: 1 }];
+      
+      // Log para verificar el carrito actualizado
+      console.log('Carrito actualizado:', updatedCart);
+  
+      // Actualiza localStorage
       localStorage.setItem('carrito', JSON.stringify(updatedCart));
+  
       return updatedCart;
     });
   };
   
+  
+
+
+
   const removeFromCart = (position) => {
     setCart((prevCart) => {
       const updatedCart = prevCart.filter((_, index) => index !== position);

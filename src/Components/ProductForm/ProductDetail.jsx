@@ -88,11 +88,26 @@ function ProductDetail() {
   };
 
   const handleAddToCart = async (id) => {
-    const querySnapshot = doc(db, 'e-commerce', id);
-    const docSnapshot = await getDoc(querySnapshot);
-    const productToAdd = docSnapshot.data();
-    addToCart(productToAdd);
+    try {
+      const querySnapshot = doc(db, 'e-commerce', id);
+      const docSnapshot = await getDoc(querySnapshot);
+  
+      if (docSnapshot.exists()) {
+        const productData = docSnapshot.data();
+        const productToAdd = { ...productData, id }; // Añade el ID manualmente
+  
+        // Log para verificar el producto con ID
+        console.log('Producto con ID:', productToAdd);
+  
+        addToCart(productToAdd);
+      } else {
+        console.error('El producto no existe.');
+      }
+    } catch (error) {
+      console.error('Error al agregar el producto al carrito:', error);
+    }
   };
+
 
   const handleDownloadAndBuy = (id) => {
     handleAddToCart(id);

@@ -26,7 +26,7 @@ export const Header = ({ handleDelete }) => {
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
   const navigate = useNavigate();
   const [showLinksModal, setShowLinksModal] = useState(false);
-
+  const [modalTotal, setModalTotal] = useState(0);
   const carritoLocalStorage = JSON.parse(localStorage.getItem('carrito'));
 
   useEffect(() => {}, [location, check, isAuth]);
@@ -90,7 +90,8 @@ export const Header = ({ handleDelete }) => {
     }
   };
 
-  const handlePay = () => {
+  const handlePay = (total) => {
+    setModalTotal(total); // Guardar el total en el estado
     setIsModalOpen(true);
     setShowCart(false);
     handleBlur();
@@ -209,15 +210,16 @@ export const Header = ({ handleDelete }) => {
 
       <div className={isModalOpen || showLinksModal ? 'modal-background' : ''}>
         {isModalOpen && (
-          <ModalBuy
-            email={email}
-            setEmail={setEmail}
-            handleSubmit={handleSubmit}
-            setIsModalOpen={setIsModalOpen}
-            checkRef={checkRef}
-            check={check}
-            handleCheck={handleCheck}
-          />
+      <ModalBuy
+      total={modalTotal}  // Pasar el total a ModalBuy
+      email={email}
+      setEmail={setEmail}
+      handleSubmit={handleSubmit}
+      setIsModalOpen={setIsModalOpen}
+      checkRef={checkRef}
+      check={check}
+      handleCheck={handleCheck}
+    />
         )}
 
         {showLinksModal && <LinksModal closeModal={() => setShowLinksModal(false)} />}
