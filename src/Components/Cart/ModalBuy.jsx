@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Terms from './Terms';
 import { useCustomContext } from '../../Hooks/Context/Context';  
+ 
 
 const ModalBuy = ({
   handleSubmit,
@@ -21,7 +22,7 @@ const ModalBuy = ({
   const handleModal = () => {
     setModal(!modal);
   };
-
+  
 const handleNavigate = () => {
   // Check if the user has accepted the privacy policies
   if (!check) {
@@ -41,6 +42,8 @@ const handleNavigate = () => {
   } else {
     // Ensure `carrito[0]` is defined before passing it to `handleDownload`
     if (carrito && carrito.length > 0) {
+    
+
       handleDownload(carrito[0]);
     } else {
       alert('No hay productos disponibles para descargar.');

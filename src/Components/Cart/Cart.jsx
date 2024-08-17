@@ -59,11 +59,13 @@ function Cart({ close, buy }) {
             <span>Total</span>
             <span>{!isNaN(total) ? `$${total.toFixed(2)}` : '$0'}</span>
           </p>
+          {carrito.length > 0 && (
           <div className='compra_btn'>
             <button onClick={() => buy(total)}>
               {total > 0 ? 'Iniciar compra' : 'Descargar'}
             </button>
           </div>
+          )}
         </div>
         <div className='modal-background' onClick={close}></div>
       </div>
