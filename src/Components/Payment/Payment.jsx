@@ -13,6 +13,7 @@ function PaymentGateway() {
       color: 'blue',
     },
   });
+
   const { removeFromCart, handleDownload } = useCustomContext();
   const [modalPaypal, setModalPaypal] = useState(false);
   const [contadorCarrito, setContadorCarrito] = useState(false);
@@ -24,7 +25,6 @@ function PaymentGateway() {
     console.log('Seleccionaste el método de pago:', paymentMethod);
     if (paymentMethod === 'paypal') {
       handleModal();
-      //return handleCreateOrder(precioTotal);
     }
   };
 
@@ -33,27 +33,43 @@ function PaymentGateway() {
   };
 
   const createOrder = (data, actions) => {
-    let newTotal = 0;
-    if (carrito.length > 0) {
-      newTotal = carrito.reduce((accumulator, product) => {
-        const productPrice = parseFloat(product.price);
-        return isNaN(productPrice) ? accumulator : accumulator + productPrice;
-      }, 0);
-    }
-    return actions.order.create({
-      purchase_units: [
-        {
-          amount: {
-            value: newTotal,
-          },
-        },
-      ],
+  let newTotal = 0;
+
+  if (carrito.length > 0) {
+    carrito.forEach((product) => {
+      // Eliminar el símbolo de moneda y convertir el precio a número
+      const priceString = product.price.replace(/[^0-9.-]+/g, ''); // Eliminar caracteres no numéricos excepto punto y guión
+      const productPrice = parseFloat(priceString);
+
+      console.log('Processing product:', product, 'Price:', productPrice); // Verificar datos del producto
+
+      if (!isNaN(productPrice)) {
+        newTotal += productPrice;
+      } else {
+        console.warn('Invalid price for product:', product);
+      }
     });
-  };
+  }
+
+  // Asegurarse de que newTotal es un número y redondeado a dos decimales
+  newTotal = newTotal.toFixed(2);
+  console.log('Total amount to be charged:', newTotal); // Verificar monto total
+
+  return actions.order.create({
+    purchase_units: [
+      {
+        amount: {
+          value: newTotal,
+        },
+      },
+    ],
+  });
+};
 
   const onApprove = (data, actions) => {
     return actions.order.capture(handlePay());
   };
+
   const handlePay = () => {
     localStorage.clear('carrito');
     setContadorCarrito(!contadorCarrito);
@@ -65,7 +81,6 @@ function PaymentGateway() {
       alert('No hay productos en el carrito para descargar.');
     }
   };
-  
 
   const [width, setWidth] = React.useState(window.innerWidth);
   const breakpoint = 1024;
@@ -78,6 +93,7 @@ function PaymentGateway() {
       window.removeEventListener('resize', handleResizeWindow);
     };
   }, []);
+
   if (width > breakpoint) {
     return (
       <Suspense>
@@ -85,7 +101,6 @@ function PaymentGateway() {
           <Header cartItem={localStorage.getItem('carrito')} handleDelete={removeFromCart} />
           <div className='payment-content'>
             <h1 className='title-payment'>Pasarela de Pagos</h1>
-            {/* <button onClick={handlehandle}>descargar</button> */}
             <div className={width > breakpoint ? 'payment-options' : 'paymentSlider'}>
               {/* PayPal */}
               <div className='payment-option' onClick={() => handlePayment('paypal')}>
@@ -104,5 +119,6 @@ function PaymentGateway() {
     );
   }
 }
+
 
 export default PaymentGateway;
