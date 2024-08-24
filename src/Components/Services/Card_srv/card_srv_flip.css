@@ -2,9 +2,8 @@
   display: flex;
   justify-content: center;
   margin: 30px 10px 30px 10px;
-
-  width: 250px;
-  height: 300px;
+  width: 280px;
+  height: 330px;
   -webkit-perspective: 1000px;
   perspective: 1000px; 
 
@@ -92,8 +91,8 @@
   flex-direction: column;
   justify-content: center;
   background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
-  width: 290px;
-  height: 290px;
+  width: 330px;
+  height: 330px;
   color: white;
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);

@@ -9,7 +9,7 @@ const VideoBackgroundComponent = () => {
         autoPlay
         loop
         muted
-        playsInline // Añadido para mayor compatibilidad en iOS
+        playsInline
         style={{
           position: 'fixed',
           top: 0,
