@@ -18,13 +18,20 @@
   font-weight: bold;
   font-size: 14px;
   margin-bottom: -8px;
+  color: white;
 }
+
 .sub {
-  font-size: 12px;
+  font-size: 21px;
   font-weight: bold;
+  color: rgba(185, 4, 139, 0.915) !important;
 }
 .des_3_flip {
-  color: #3af6ff;
+  color: rgba(185, 4, 139, 0.9154228855721394);;
+
+  .agregar-carrito2{
+    color: aqua;
+  }
 
 }
 .flip-card-inner {
@@ -38,6 +45,8 @@
   transition: transform 0.8s, -webkit-transform 0.8s;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  color: aqua;
+  font-weight: bold;
 }
 .card_btn_ctn {
   text-align: center;
@@ -49,7 +58,7 @@
   font-size: 16px;
   font-weight: bold;
   border: none;
-  color: rgba(185, 4, 139, 0.9154228855721394);
+  color: #3af6ff;
   cursor: pointer;
 }
 .flip-card:hover .flip-card-inner {

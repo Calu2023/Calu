@@ -6,16 +6,13 @@ const Card_srv_flip = ({ image, title, sub, des_1, des_2, des_3 }) => {
     if (typeof text !== 'string') {
       return [];
     }
-    return text.split('\n').map((line, index) => {
-      return (
-        <React.Fragment key={index}>
-          {line}
-          <br />
-        </React.Fragment>
-      );
-    });
+    return text.split('\n').map((line, index) => (
+      <React.Fragment key={index}>
+        {line}
+        <br />
+      </React.Fragment>
+    ));
   };
-
 
   return (
     <div className='flip-card'>
@@ -23,11 +20,14 @@ const Card_srv_flip = ({ image, title, sub, des_1, des_2, des_3 }) => {
         <div className='flip-card-front'>
           <div>
             <div className='front_items'>
-              <img src={image} alt={image} width='100px' />
+              <img src={image} alt={title} width='100px' />
             </div>
-            <div className='title_flip'>{title}</div>
-            <br />
             <div className='sub'>{sub}</div>
+            <div className='actions'>
+            <div className='agregar-carrito2'>{des_3}</div> {/* Agregar al carrito */}
+            <div>{des_1}</div> {/* Ver Detalles */}
+
+            </div>
           </div>
         </div>
 
@@ -35,11 +35,9 @@ const Card_srv_flip = ({ image, title, sub, des_1, des_2, des_3 }) => {
           <div>
             <p>{renderDescription(des_1)}</p>
           </div>
-
           <div>
             <p>{renderDescription(des_2)}</p>
           </div>
-
           <div className='des_3_flip'>
             <p>{renderDescription(des_3)}</p>
           </div>

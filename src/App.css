@@ -47,9 +47,7 @@ iframe[src^="https://www.google.com/recaptcha/"]
   h2 {
     font-size: 18px;
   }
-  p {
-    font-size: 14px;
-  }
+
   section {
     margin-top: 20px;
     margin-bottom: 150px;
@@ -64,9 +62,7 @@ iframe[src^="https://www.google.com/recaptcha/"]
   h2 {
     font-size: 18px;
   }
-  p {
-    font-size: 14px;
-  }
+
 }
 /* Estilos para tablet */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {

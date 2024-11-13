@@ -29,7 +29,7 @@
   text-align: center;
   cursor: pointer;
   transition: box-shadow 0.3s ease;
-  margin: 30px 20px 30px 20px;
+  margin: 30px 20px;
   border-radius: 30% 0% 30% 0%;
   width: 210px;
   height: 210px;
@@ -45,22 +45,38 @@
 .payment-option:hover {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
-.paypalButton {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 300px;
+.wallet-button-Atv_hz.svelte-15s5jlf {
+  width: 300px !important;
+  max-width: 100%;
+  margin: 0 auto;
 }
+
+.grey-3TbucO.svelte-1wbwr8x.svelte-1wbwr8x{
+  display: none;
+}
+#wallet_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  padding-top: 20px; 
+}
+
 @media (max-width: 1248px) {
   .payment-content {
     display: flex;
     justify-content: center;
     flex-direction: column;
   }
+
+ 
+
+  
   .paymentSlider {
     margin-top: 10%;
   }
 }
+
 @media (max-width: 624px) {
   .title-payment {
     display: flex;

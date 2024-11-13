@@ -30,12 +30,13 @@ function ProductForm({ productId }) {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    
+  
     try {
       setUploading(true);
   
       let thumbnailURL = "";
       if (thumbnailFile) {
+        console.log("Nombre del archivo de miniatura:", thumbnailFile.name); // Verifica el nombre del archivo de miniatura
         const thumbnailRef = ref(storage, `thumbnails/${thumbnailFile.name}`);
         await uploadBytes(thumbnailRef, thumbnailFile);
         thumbnailURL = await getDownloadURL(thumbnailRef);
@@ -43,6 +44,7 @@ function ProductForm({ productId }) {
   
       let compressedURL = "";
       if (compressedFile) {
+        console.log("Nombre del archivo comprimido:", compressedFile.name); // Verifica el nombre del archivo comprimido
         const compressedRef = ref(storage, `compressed/${compressedFile.name}`);
         await uploadBytes(compressedRef, compressedFile);
         compressedURL = await getDownloadURL(compressedRef);
@@ -52,7 +54,7 @@ function ProductForm({ productId }) {
         title,
         thumbnail: thumbnailURL,
         compressed: compressedURL,
-        price: price ? `$${price}` : "Gratis", // Agrega $ solo si price tiene un valor
+        price: price ? `$${price}` : "Gratis",
         detail,
         category,
         createdAt: serverTimestamp(),
@@ -77,12 +79,13 @@ function ProductForm({ productId }) {
       setCategory("");
       setUploading(false);
   
-      history("/product-list"); // Navegar de vuelta a la lista de productos después de agregar/editar
+      history("/product-list");
     } catch (error) {
       console.error("Error al agregar o editar el producto:", error);
       setUploading(false);
     }
   };
+  
 
   const handleThumbnailChange = (e) => {
     const file = e.target.files[0];
@@ -96,39 +99,36 @@ function ProductForm({ productId }) {
     const file = e.target.files[0];
     if (file) {
       console.log("Tipo MIME del archivo:", file.type);
-
+  
       // Validar tipo MIME y permitir .zip y .rar
-      if (file.type === "application/zip" || file.type === "application/x-rar-compressed" || file.name.toLowerCase().endsWith('.rar')) {
+      const validMimeTypes = ["application/zip", "application/x-rar-compressed", "application/octet-stream"];
+      const validExtensions = [".zip", ".rar"];
+  
+      if (validMimeTypes.includes(file.type) || validExtensions.some(ext => file.name.toLowerCase().endsWith(ext))) {
         setCompressedFileName(file.name);
         setCompressedFile(file);
-
+  
         // Subir archivo a Firebase Storage
         const storageRef = ref(storage, `compressed/${file.name}`);
         const uploadTask = uploadBytes(storageRef, file);
-
+  
         uploadTask.then(async (snapshot) => {
           console.log("Archivo subido con éxito:", snapshot);
           const downloadURL = await getDownloadURL(storageRef);
           console.log("URL de descarga:", downloadURL);
-
+  
           // Actualizar la interfaz para mostrar el nombre del archivo
-          const fileNameElement = document.getElementById('compressed-file-name');
+          const fileNameElement = document.getElementById("compressed-file-name");
           if (fileNameElement) {
             fileNameElement.textContent = file.name;
           }
-
-          // Si es un archivo ZIP, mostrar una miniatura genérica
-          if (file.type === "application/zip") {
-            const imgElement = document.getElementById('compressed-thumbnail');
-            if (imgElement) {
-              imgElement.src = '/path/to/zip-icon.png'; // Asegúrate de tener esta imagen
-            }
-          } else {
-            // Si es un archivo RAR, mostrar una miniatura genérica para RAR
-            const imgElement = document.getElementById('compressed-thumbnail');
-            if (imgElement) {
-              imgElement.src = '/path/to/rar-icon.png'; // Asegúrate de tener esta imagen
-            }
+  
+          // Mostrar una miniatura genérica según el tipo de archivo
+          const imgElement = document.getElementById("compressed-thumbnail");
+          if (imgElement) {
+            imgElement.src = file.name.toLowerCase().endsWith(".zip") 
+              ? "/path/to/zip-icon.png" 
+              : "/path/to/rar-icon.png";
           }
         }).catch((error) => {
           console.error("Error al subir el archivo:", error);
@@ -139,6 +139,7 @@ function ProductForm({ productId }) {
       }
     }
   };
+  
   
   
 

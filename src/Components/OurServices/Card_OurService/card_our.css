@@ -25,7 +25,10 @@
   font-size: 14px;
   display: flex;
   justify-content: center;
+  color: white;
 }
+
+
 .des {
   color: aliceblue;
   font-size: 12px;

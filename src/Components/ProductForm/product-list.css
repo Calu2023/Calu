@@ -135,15 +135,14 @@
 }
 
 .product-price .price {
-  color: rgba(185, 4, 139, 0.9154228855721394);
+  color: rgba(185, 4, 139, 0.915); /* Color personalizado */
   font-weight: 700;
   font-size: 21px;
-
   margin-bottom: -5px;
 }
 
 .product-price .carrito-price {
-  color: #3af6ff;
+  color: #3af6ff !important; /* Color personalizado */
   font-weight: 700;
   cursor: pointer;
   margin-bottom: 20px;
@@ -154,7 +153,7 @@
   border: none;
   background: none;
   text-decoration: none;
-  color: rgba(185, 4, 139, 0.9154228855721394);
+  color: rgba(185, 4, 139, 0.915); /* Color personalizado */
   font-size: 24px;
   font-weight: bold;
   cursor: pointer;
@@ -166,6 +165,12 @@
   justify-content: flex-start;
   margin-bottom: 0;
 }
+
+.product-front, .product-back {
+  background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
+  color: white;
+}
+
 @media (max-width: 991px) {
   .products {
     margin-left: 0;

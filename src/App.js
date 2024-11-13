@@ -23,6 +23,7 @@ import { Provider } from './Hooks/Context/Context';
 import Terms from './Components/Cart/Terms';
 import { Scrollbars } from 'react-custom-scrollbars-2';
 import PrivacyPolicy from './Components/politicasPrivacidad/privacyPolicy';
+import SuccessPayment from './Components/Payment/SuccessPayment';
 
 function App() {
   const [isAuth, setIsAuth] = useState(false);
@@ -190,6 +191,16 @@ function App() {
                 </Scrollbars>
               }
             />
+
+             <Route
+              path='/success-payment'
+              element={
+                <Scrollbars style={{ height: '100vh' }}>
+                  <SuccessPayment/>
+                </Scrollbars>
+              }
+            />
+
           </Routes>
         </div>
       </Router>
